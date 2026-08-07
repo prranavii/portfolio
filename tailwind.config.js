@@ -1,38 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       colors: {
-        charcoal: {
-          DEFAULT: '#0A0B10',
-          light: '#12131C',
-          lighter: '#1E2030',
+        dark: {
+          DEFAULT: '#0A0A0A',
+          surface: '#141414',
+          elevated: '#1A1A1A',
+          border: '#1E1E1E',
         },
-        'accent-cyan': {
-          DEFAULT: '#00F2FE',
-          dim: 'rgba(0, 242, 254, 0.15)',
-          glow: 'rgba(0, 242, 254, 0.4)',
-        }
+        warm: {
+          DEFAULT: '#E8E4DE',
+          secondary: '#6B6B6B',
+          faint: '#3A3A3A',
+        },
+        accent: {
+          DEFAULT: '#C4A35A',
+          dim: 'rgba(196, 163, 90, 0.15)',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Outfit', 'sans-serif'],
+        display: ['"Instrument Serif"', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
-      animation: {
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'grid-travel': 'grid-travel 24s linear infinite',
-      },
-      keyframes: {
-        'grid-travel': {
-          '0%': { transform: 'translateY(0)' },
-          '100%': { transform: 'translateY(40px)' },
-        }
-      }
     },
   },
   plugins: [],
-}
+};
