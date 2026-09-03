@@ -23,20 +23,20 @@ const About = () => {
       {/* Main Grid Spread */}
       <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 max-w-7xl mx-auto">
         
-        {/* Left Column: .SOBRE MÍ / Narrative Bio */}
+        {/* Left Column: .ABOUT ME / Narrative Bio */}
         <div className="lg:col-span-4 space-y-4">
           <h3 className="font-mono font-bold text-sm text-ink tracking-tight">
-            .SOBRE MÍ / ABOUT
+            .ABOUT ME
           </h3>
           <div className="typewriter-text text-xs sm:text-[13px] text-ink-secondary leading-relaxed space-y-4 text-justify">
             <p>
-              Soy estudiante de Ingeniería en Ciencias de la Computación (graduación 2027), apasionada por el diseño de sistemas resilientes, arquitecturas de software limpias y la inteligencia artificial generativa.
+              I am a Computer Science and Engineering student (graduating Class of 2027), driven by building resilient backend systems, clean software architectures, and production-grade intelligent applications.
             </p>
             <p>
-              I specialize in turning complex algorithmic challenges into elegant, efficient software. My core technical exploration centers around Retrieval-Augmented Generation (RAG), local LLM deployments with Ollama, and performant backend services.
+              I specialize in turning complex algorithmic challenges into elegant, efficient software. My core technical exploration centers around Retrieval-Augmented Generation (RAG), offline LLM deployments with Ollama, and performant distributed services.
             </p>
             <p>
-              Para mí, el código no es solo una herramienta funcional, sino una disciplina formal donde la precisión lógica y la simplicidad estructural conviven para resolver problemas reales y duraderos.
+              To me, code is not merely a functional tool, but a formal engineering discipline where logical rigor and structural simplicity come together to solve tangible, real-world problems.
             </p>
           </div>
         </div>
@@ -102,13 +102,13 @@ const About = () => {
           </div>
         </div>
 
-        {/* Right Section: .EDUCACIÓN, .EXPERIENCIA, .SOFTWARE, .HABILIDADES */}
+        {/* Right Section: .EDUCATION, .EXPERIENCE, .SOFTWARE, .TECHNICAL SKILLS */}
         <div className="lg:col-span-5 space-y-8">
           
-          {/* .EDUCACIÓN */}
+          {/* .EDUCATION */}
           <div className="space-y-2">
             <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-tight">
-              .EDUCACIÓN / EDUCATION
+              .EDUCATION
             </h3>
             <div className="font-mono text-xs space-y-1">
               <div className="flex justify-between items-baseline text-ink font-semibold">
@@ -121,10 +121,10 @@ const About = () => {
             </div>
           </div>
 
-          {/* .EXPERIENCIA */}
+          {/* .EXPERIENCE */}
           <div className="space-y-2">
             <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-tight">
-              .EXPERIENCIA / EXPERIENCE
+              .EXPERIENCE
             </h3>
             <div className="font-mono text-xs space-y-3">
               <div>
@@ -141,7 +141,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Dual Columns: .SOFTWARE & .HABILIDADES */}
+          {/* Dual Columns: .SOFTWARE & .TECHNICAL SKILLS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2 border-t border-paper-border/60">
             {/* .SOFTWARE */}
             <div className="space-y-2">
@@ -159,10 +159,10 @@ const About = () => {
               </ul>
             </div>
 
-            {/* .HABILIDADES & .MÉTRICAS */}
+            {/* .TECHNICAL SKILLS */}
             <div className="space-y-2">
               <h4 className="font-mono font-bold text-xs text-ink">
-                .HABILIDADES / SKILLS
+                .TECHNICAL SKILLS
               </h4>
               <ul className="font-mono text-[11px] text-ink-secondary space-y-1 leading-tight">
                 <li>RAG Architecture</li>

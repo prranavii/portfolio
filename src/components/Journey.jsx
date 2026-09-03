@@ -29,7 +29,7 @@ const Journey = () => {
     <section id="journey" className="py-20 md:py-32 px-6 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
       <div className="flex justify-between items-center w-full font-mono text-xs text-ink-secondary border-b border-paper-border pb-4 mb-14">
         <span>Portfolio/ Pranavi Jain</span>
-        <span className="uppercase tracking-widest text-ink font-semibold">.Trayectoria / Timeline</span>
+        <span className="uppercase tracking-widest text-ink font-semibold">.Career Timeline</span>
       </div>
 
       <div className="max-w-4xl mx-auto">

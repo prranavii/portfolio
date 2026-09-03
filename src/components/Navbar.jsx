@@ -99,10 +99,10 @@ const Navbar = () => {
               {[
                 { id: 'home', num: '00', label: 'Cover / Start' },
                 { id: 'about', num: '01', label: 'Curriculum Vitae' },
-                { id: 'work', num: '02', label: 'Contenido / Projects' },
+                { id: 'work', num: '02', label: 'Selected Works' },
                 { id: 'skills', num: '03', label: 'Software & Toolkit' },
-                { id: 'journey', num: '04', label: 'Trayectoria / Journey' },
-                { id: 'contact', num: '05', label: 'Contacto / Contact' },
+                { id: 'journey', num: '04', label: 'Career Timeline' },
+                { id: 'contact', num: '05', label: 'Contact & Inquiries' },
               ].map((item) => (
                 <div 
                   key={item.id}

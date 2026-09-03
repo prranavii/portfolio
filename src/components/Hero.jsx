@@ -87,7 +87,7 @@ const Hero = () => {
               href="#work"
               className="border-b border-ink text-ink hover:text-ink-secondary transition-colors"
             >
-              [ .Contenido ]
+              [ .Selected Works ]
             </a>
           </div>
         </div>

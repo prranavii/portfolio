@@ -251,7 +251,7 @@ const Work = () => {
       {/* Top Section Header matching Pagnotta Image 3 */}
       <div className="flex justify-between items-center w-full font-mono text-xs text-ink-secondary border-b border-paper-border pb-4 mb-14">
         <span>Portfolio/ Pranavi Jain</span>
-        <span className="uppercase tracking-widest text-ink font-semibold">Contenido / Works</span>
+        <span className="uppercase tracking-widest text-ink font-semibold">Selected Works / Projects</span>
       </div>
 
       {/* 4-Column Architectural Showcase (Image 3 Reference) */}
@@ -378,7 +378,7 @@ const Work = () => {
                 <div className="lg:col-span-6 space-y-6 font-mono text-xs">
                   <div className="space-y-2">
                     <h4 className="font-bold text-ink uppercase tracking-wider">
-                      .PROBLEMÁTICA / THE PROBLEM
+                      .THE PROBLEM
                     </h4>
                     <p className="typewriter-text text-ink-secondary text-[12px] leading-relaxed">
                       {selectedProject.problem}
@@ -387,7 +387,7 @@ const Work = () => {
 
                   <div className="space-y-2">
                     <h4 className="font-bold text-ink uppercase tracking-wider">
-                      .ESTRATEGIA / SOLUTION
+                      .THE SOLUTION & STRATEGY
                     </h4>
                     <p className="typewriter-text text-ink-secondary text-[12px] leading-relaxed">
                       {selectedProject.solution}
@@ -396,7 +396,7 @@ const Work = () => {
 
                   <div className="space-y-2">
                     <h4 className="font-bold text-ink uppercase tracking-wider">
-                      .RETOS Y APRENDIZAJE / CHALLENGES
+                      .CHALLENGES & KEY LEARNINGS
                     </h4>
                     <p className="typewriter-text text-ink-secondary text-[12px] leading-relaxed">
                       {selectedProject.challenges}

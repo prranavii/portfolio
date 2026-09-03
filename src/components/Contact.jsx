@@ -23,14 +23,14 @@ const Contact = () => {
     <section id="contact" className="py-20 md:py-32 px-6 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
       <div className="flex justify-between items-center w-full font-mono text-xs text-ink-secondary border-b border-paper-border pb-4 mb-14">
         <span>Portfolio/ Pranavi Jain</span>
-        <span className="uppercase tracking-widest text-ink font-semibold">.Contacto / Inquiries</span>
+        <span className="uppercase tracking-widest text-ink font-semibold">.Contact & Inquiries</span>
       </div>
 
       <div className="max-w-4xl mx-auto">
         <motion.div {...fadeUp} className="space-y-12">
           <div>
             <h2 className="font-mono font-bold text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight text-ink mb-4">
-              .LET'S TALK / CONTACTO
+              .LET'S TALK
             </h2>
             <p className="typewriter-text text-xs sm:text-sm text-ink-secondary max-w-xl leading-relaxed">
               Currently preparing for 2027 Software Engineering roles. Open to discussions regarding distributed systems, Retrieval-Augmented Generation, and full-stack engineering challenges.
