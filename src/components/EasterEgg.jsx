@@ -1,157 +1,124 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Terminal, X, ShieldAlert } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const EasterEgg = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [sequence, setSequence] = useState('');
-  const [logLines, setLogLines] = useState([]);
+  const [inputSequence, setInputSequence] = useState('');
+  const [logs, setLogs] = useState([]);
+  
   const targetSequence = 'hireme';
 
   useEffect(() => {
-    console.log("%cHint: Sometimes typing what you want makes it happen. Looking for a developer?", "color: #C4A35A; font-size: 14px; font-weight: bold;");
-  }, []);
+    console.log("%cHello there! I see you checking the console. Looking for a hint? Try typing 'hireme' on the page.", "color: #0A0A0A; font-size: 14px; font-weight: bold;");
 
-  useEffect(() => {
     const handleKeyDown = (e) => {
-      if (isOpen) return;
-      const key = e.key.toLowerCase();
-      if (!/^[a-z]$/.test(key)) return;
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      
+      const char = e.key.toLowerCase();
+      if (!/^[a-z]$/.test(char)) return;
 
-      setSequence((prev) => {
-        const next = prev + key;
-        if (targetSequence.startsWith(next)) {
-          if (next === targetSequence) {
-            setIsOpen(true);
-            return '';
-          }
-          return next;
+      setInputSequence(prev => {
+        const newSeq = (prev + char).slice(-targetSequence.length);
+        if (newSeq === targetSequence) {
+          setIsOpen(true);
+          return '';
         }
-        return key === targetSequence[0] ? key : '';
+        return newSeq;
       });
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen]);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      const lines = [
-        "INITIALIZING SECURE CONNECTION...",
-        "BYPASSING STANDARD PROTOCOLS...",
-        "ACCESS GRANTED.",
-        "========================================",
-        `TARGET: ${portfolioData.personalInfo.name.toUpperCase()}`,
-        `ROLE: DEVELOPER & ARCHITECT`,
-        `STATUS: OPEN TO OPPORTUNITIES`,
-        "========================================",
-        "DECRYPTING CONTACT INFO...",
-        `EMAIL: ${portfolioData.personalInfo.email}`,
-        "READY FOR TRANSMISSION."
+      setLogs([]);
+      const logMessages = [
+        "Initializing access protocol...",
+        "Bypassing security measures...",
+        "Connecting to mainframe...",
+        "Access granted.",
+        "Welcome to the inner workings.",
+        "Candidate profile identified: PRANAVI JAIN",
+        "Status: READY TO HIRE"
       ];
       
-      let i = 0;
-      setLogLines([]);
-      const interval = setInterval(() => {
-        if (i < lines.length) {
-          setLogLines(prev => [...prev, lines[i]]);
-          i++;
-        } else {
-          clearInterval(interval);
-        }
-      }, 400);
-
-      return () => clearInterval(interval);
-    } else {
-      document.body.style.overflow = 'unset';
-      setLogLines([]);
+      let delay = 0;
+      logMessages.forEach((msg, index) => {
+        setTimeout(() => {
+          setLogs(prev => [...prev, msg]);
+        }, delay);
+        delay += 600 + Math.random() * 400;
+      });
     }
   }, [isOpen]);
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-dark/95 backdrop-blur-md cursor-pointer"
-            onClick={() => setIsOpen(false)}
-          />
-          
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0, y: 20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.9, opacity: 0, y: 20 }}
-            className="relative w-full max-w-2xl bg-dark-surface border border-accent/30 rounded-lg shadow-[0_0_30px_rgba(196,163,90,0.15)] overflow-hidden font-mono"
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-paper/90 backdrop-blur-sm p-4"
+        >
+          <motion.div 
+            initial={{ scale: 0.9, y: 20 }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="w-full max-w-2xl bg-paper border border-ink shadow-2xl rounded-none overflow-hidden"
           >
-            {/* Header */}
-            <div className="flex items-center justify-between px-4 py-2 border-b border-accent/30 bg-accent/5">
-              <div className="flex items-center gap-2 text-accent">
-                <Terminal size={16} />
-                <span className="text-xs font-bold tracking-widest">SYSTEM_OVERRIDE_ACTIVE</span>
+            <div className="flex items-center justify-between px-4 py-3 border-b border-paper-border bg-paper-dark/30">
+              <div className="flex items-center gap-2 text-ink">
+                <Terminal size={15} />
+                <span className="font-mono text-xs font-semibold">sys_kernel.sh — admin terminal</span>
               </div>
               <button 
                 onClick={() => setIsOpen(false)}
-                className="text-warm-faint hover:text-accent transition-colors cursor-pointer"
+                className="text-ink-secondary hover:text-ink transition-colors cursor-pointer bg-transparent border-none p-0"
               >
-                <X size={18} />
+                <X size={16} />
               </button>
             </div>
-
-            {/* Terminal Body */}
-            <div className="p-6 h-[400px] overflow-y-auto custom-scrollbar flex flex-col">
-              <div className="flex items-center gap-3 text-accent mb-6">
-                <ShieldAlert size={24} />
-                <h2 className="text-xl font-bold">RECRUITMENT PROTOCOL INITIATED</h2>
+            
+            <div className="p-6 font-mono text-sm space-y-4">
+              <div className="flex items-start gap-3 text-ink">
+                <ShieldAlert size={22} className="mt-1 shrink-0 text-ink" />
+                <div>
+                  <h3 className="font-bold text-base uppercase tracking-tight mb-0.5">.SECRET SEQUENCE UNLOCKED</h3>
+                  <p className="text-ink-secondary text-xs">Accessing candidate diagnostic logs...</p>
+                </div>
               </div>
               
-              <div className="flex flex-col gap-2 flex-grow">
-                {logLines.map((line, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    className={`text-sm ${
-                      line.includes('ERROR') ? 'text-red-400' :
-                      line.includes('================') ? 'text-accent/50' :
-                      line.includes('EMAIL:') || line.includes('TARGET:') ? 'text-warm font-bold' :
-                      'text-accent'
-                    }`}
-                  >
-                    <span className="opacity-50 mr-2">{'>'}</span>
-                    {line}
-                  </motion.div>
+              <div className="bg-paper-light p-4 border border-paper-border rounded-none h-48 overflow-y-auto space-y-2 font-mono text-xs">
+                {logs.map((log, i) => (
+                  <div key={i} className="text-ink">
+                    <span className="text-ink-muted mr-2">{'>'}</span> 
+                    {log}
+                  </div>
                 ))}
-                
-                {logLines.length === 11 && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
+                {logs.length === 7 && (
+                  <motion.div 
+                    initial={{ opacity: 0 }} 
                     animate={{ opacity: 1 }}
-                    className="mt-8 flex justify-center"
+                    className="mt-4 pt-4 border-t border-paper-border"
                   >
+                    <span className="text-ink font-bold">NEXT ACTION: </span>
                     <a 
-                      href={`mailto:${portfolioData.personalInfo.email}?subject=Let's build something great`}
-                      className="bg-accent text-dark px-6 py-3 rounded text-sm font-bold tracking-widest hover:bg-warm transition-colors inline-flex items-center gap-2 cursor-pointer"
+                      href={`mailto:${portfolioData.personalInfo.email}?subject=Found your portfolio easter egg! Let's talk.`}
+                      className="text-ink hover:underline font-semibold cursor-pointer"
                     >
-                      INITIATE CONTACT
-                      <span className="animate-pulse">_</span>
+                      [ Send Candidate Email ↗ ]
                     </a>
                   </motion.div>
-                )}
-                
-                {/* Blinking cursor */}
-                {logLines.length < 11 && (
-                  <div className="text-accent animate-pulse">_</div>
                 )}
               </div>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       )}
     </AnimatePresence>
   );

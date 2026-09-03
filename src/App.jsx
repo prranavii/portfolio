@@ -1,5 +1,4 @@
 import Navbar from './components/Navbar';
-import CustomCursor from './components/CustomCursor';
 import Hero from './components/Hero';
 import About from './components/About';
 import Work from './components/Work';
@@ -11,9 +10,11 @@ import EasterEgg from './components/EasterEgg';
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-dark text-warm overflow-x-hidden">
+    <div className="relative min-h-screen bg-paper text-ink overflow-x-hidden">
+      {/* Authentic Tactile Paper Grain Texture Overlay */}
+      <div className="paper-grain" aria-hidden="true" />
+
       <Navbar />
-      <CustomCursor />
       <EasterEgg />
       <Hero />
       <About />

@@ -160,16 +160,6 @@ export const portfolioData = {
       description: "Began Bachelor of Technology in Computer Science & Engineering, building solid foundations in computing concepts, mathematics, and OOP."
     },
     {
-      year: "2023",
-      title: "AI/ML Virtual Internship",
-      description: "Completed curriculum by Eduskills & AWS Academy, learning data models, neural networks, and cloud deployment basics."
-    },
-    {
-      year: "2024–2025",
-      title: "Built Projects & Hackathons",
-      description: "Developed healthcare scheduling portals, local RAG document engines, and OpenCV coordinate mapping. Earned top-20 placements in college-level hackathons."
-    },
-    {
       year: "2026",
       title: "Algorithms & Placement Prep",
       description: "Deepened knowledge in Data Structures, Algorithms, and System Design patterns. Solved 200+ problems on Leetcode (1565 max rating)."
@@ -182,30 +172,13 @@ export const portfolioData = {
   ],
 
   certifications: [
-    {
-      title: "AI-ML Virtual Internship",
-      issuer: "Eduskills — Supported by AWS Academy",
-      year: "2023",
-      details: "Focused on AWS SageMaker, machine learning pipelines, and model evaluation metrics."
-    },
-    {
-      title: "Juniper Cloud Virtual Internship",
-      issuer: "Juniper Networks",
-      year: "2024",
-      details: "Learned cloud network topologies, IP routing protocols, and virtualization structures."
-    },
+    
     {
       title: "Generative AI Certification",
-      issuer: "GeeksforGeeks",
-      year: "2024",
+      issuer: "Udemy",
+      year: "2026",
       details: "Deep dive into Transformer architectures, prompt optimization, and local weights setup."
     },
-    {
-      title: "Python Certifications",
-      issuer: "GUVI",
-      year: "2023",
-      details: "Validated knowledge in algorithmic scripting, script speed optimization, and pandas module."
-    }
   ],
 
   personality: [

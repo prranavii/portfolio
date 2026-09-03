@@ -5,44 +5,57 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #0A0A0A;
-    color: #E8E4DE;
+    background-color: #F0EBE1;
+    color: #141414;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #F0EBE1;
   }
 
   ::selection {
-    background-color: #C4A35A;
-    color: #0A0A0A;
+    background-color: #141414;
+    color: #F0EBE1;
   }
 
-  /* Minimal scrollbar */
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #0A0A0A;
+    background: #F0EBE1;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1E1E1E;
+    background: #D5CEC2;
     border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #3A3A3A;
-  }
-
-  /* Hide default cursor on desktop for custom cursor */
-  @media (hover: hover) {
-    * {
-      cursor: none !important;
-    }
+    background: #A0988A;
   }
 }
 
-/* Reduced motion support */
+/* Subtle paper grain texture overlay */
+.paper-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+/* Typewriter / print text justification */
+.typewriter-text {
+  font-family: 'Courier Prime', 'Space Mono', monospace;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
