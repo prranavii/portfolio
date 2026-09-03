@@ -22,6 +22,20 @@ export const portfolioData = {
 
   projects: [
     {
+      id: "placepilot",
+      title: "PlacePilot AI",
+      subtitle: "AI-powered placement command center & career preparation platform.",
+      tech: ["React", "Tailwind CSS", "LangChain", "Vector Search", "Python", "REST APIs"],
+      problem: "College placement preparation is fragmented across messy spreadsheets, ungrounded resume advice, and lack of realistic technical mock interview practice.",
+      idea: "An integrated career command center that combines RAG-based resume-to-job matching, adaptive AI mock interviewers, and real-time application pipeline tracking.",
+      architecture: "React interface communicating with intelligent evaluation microservices. Resumes and job descriptions are vectorized for semantic gap analysis, while an adaptive LLM engine conducts dynamic technical interview sessions with instant feedback.",
+      challenges: "Calibrating semantic matching thresholds between diverse resume formats and specialized job descriptions while maintaining low-latency conversational mock interview streams.",
+      solution: "Engineered a structured extraction and vector embedding pipeline for resume-JD alignment and implemented streaming evaluation prompts that score user responses across clarity, depth, and relevance.",
+      learning: "Production experience with end-to-end career intelligence workflows, semantic vector similarity, conversational AI state orchestration, and building responsive recruitment analytics dashboards.",
+      github: "https://github.com/prranavii/PlacePilot.git",
+      demo: "https://place-pilot-xi.vercel.app/"
+    },
+    {
       id: "intellirag",
       title: "IntelliRAG",
       subtitle: "AI-powered document intelligence system using Retrieval-Augmented Generation.",
@@ -47,20 +61,6 @@ export const portfolioData = {
       solution: "Employed Server-Sent Events (SSE) for sub-second text streaming and built a custom regex parser to render side-by-side git diffs dynamically in the React view.",
       learning: "Deeper knowledge of Ollama parameter configurations (temperature, system templates), token streams in Python, and rendering virtualized DOM nodes for large codebases.",
       github: "https://github.com/prranavii/RefactorIQ.git",
-      demo: "#"
-    },
-    {
-      id: "ai-doctor",
-      title: "AI Doctor Appointment Platform",
-      subtitle: "Full-stack healthcare appointment platform.",
-      tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-      problem: "Traditional hospital reservation panels suffer from manual queue delays, scheduling conflicts, and double-booking errors.",
-      idea: "A streamlined full-stack scheduler connecting patients and physicians with automated booking channels and instantaneous calendar updates.",
-      architecture: "React frontend for doctor browsing and patient profiles; Node/Express server acting as the REST API layer; MongoDB for structured patient records and availability schedules.",
-      challenges: "Preventing race conditions where multiple patients attempt to book the exact same slot at the exact same millisecond.",
-      solution: "Utilized atomic updates in MongoDB ($set with filtering check) and optimistic document versioning to reject duplicate concurrent reservations gracefully.",
-      learning: "Learned database lock mechanics, custom JWT authorization middleware, and session management in Express.",
-      github: "https://github.com/prranavii/doctor-appointment.git",
       demo: "#"
     },
     {

@@ -105,42 +105,57 @@ const ProjectCardVisual = ({ projectId }) => {
         </div>
       );
 
-    case 'ai-doctor':
+    case 'placepilot':
       return (
         <div className="w-full h-full bg-paper-dark/40 p-4 flex flex-col justify-between relative overflow-hidden font-mono select-none group-hover:bg-paper-dark/70 transition-colors">
           <div className="flex justify-between items-start text-[9px] text-ink-muted border-b border-paper-border/80 pb-1">
-            <span>FIG. 03 — SYSTEM</span>
-            <span>MERN // REST API</span>
+            <span>FIG. 01 — COMMAND AI</span>
+            <span>REACT // RAG // LLM</span>
           </div>
 
           <div className="my-auto py-4 flex flex-col items-center justify-center">
             <svg viewBox="0 0 120 180" className="w-full max-h-56 stroke-ink stroke-[1.1] fill-none">
-              {/* Schedule Calendar Matrix */}
-              <rect x="15" y="20" width="90" height="70" />
-              <line x1="15" y1="36" x2="105" y2="36" strokeWidth="0.75" />
-              <text x="60" y="30" fontSize="7" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">SLOT_MATRIX</text>
+              {/* Resume vector block */}
+              <rect x="15" y="16" width="90" height="34" />
+              <line x1="15" y1="28" x2="105" y2="28" strokeWidth="0.75" />
+              <text x="22" y="25" fontSize="6" fontFamily="monospace" fill="#141414" stroke="none">RESUME_VECTORS</text>
+              <text x="82" y="25" fontSize="6" fontFamily="monospace" fill="#15803D" stroke="none">94% FIT</text>
+              <line x1="22" y1="36" x2="75" y2="36" strokeWidth="1" strokeDasharray="3 1" />
+              <line x1="22" y1="42" x2="90" y2="42" strokeWidth="1" strokeDasharray="3 1" />
 
-              {/* Grid slots */}
-              <rect x="22" y="44" width="22" height="18" fill="#141414" />
-              <rect x="49" y="44" width="22" height="18" strokeDasharray="2 2" />
-              <rect x="76" y="44" width="22" height="18" strokeDasharray="2 2" />
-              <rect x="22" y="66" width="22" height="18" strokeDasharray="2 2" />
-              <rect x="49" y="66" width="22" height="18" fill="#141414" />
-              <rect x="76" y="66" width="22" height="18" strokeDasharray="2 2" />
+              {/* RAG Job Matching Ring */}
+              <line x1="60" y1="50" x2="60" y2="64" strokeWidth="1" />
+              <circle cx="60" cy="78" r="14" />
+              <circle cx="60" cy="78" r="7" strokeDasharray="2 2" />
+              <text x="60" y="81" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">JD MATCH</text>
 
-              {/* Concurrency Lock Protocol */}
-              <path d="M60 100 L60 120" strokeWidth="1" />
-              <circle cx="60" cy="132" r="12" />
-              <path d="M56 130 L60 134 L65 128" strokeWidth="1.5" />
-              <text x="60" y="152" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#5A5A5A" stroke="none">ATOMIC LOCK</text>
-              <rect x="25" y="158" width="70" height="14" />
-              <text x="60" y="167" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">ZERO RACE COND.</text>
+              {/* Mock Interview Stream */}
+              <line x1="60" y1="92" x2="60" y2="106" strokeWidth="1" />
+              <polygon points="58,102 60,108 62,102" fill="#141414" />
+
+              {/* Pipeline Kanban Blocks */}
+              <rect x="15" y="110" width="90" height="52" />
+              <line x1="15" y1="122" x2="105" y2="122" strokeWidth="0.75" />
+              <text x="60" y="119" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">APPLICATION_PIPELINE</text>
+              
+              {/* 3 stages columns */}
+              <rect x="20" y="128" width="22" height="14" fill="#141414" />
+              <text x="31" y="137" fontSize="5" fontFamily="monospace" textAnchor="middle" fill="#F0EBE1" stroke="none">APPLIED</text>
+
+              <rect x="49" y="128" width="22" height="14" strokeDasharray="2 2" />
+              <text x="60" y="137" fontSize="5" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">OA/INTERV</text>
+
+              <rect x="78" y="128" width="22" height="14" />
+              <text x="89" y="137" fontSize="5" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">OFFER</text>
+
+              <line x1="20" y1="150" x2="100" y2="150" strokeWidth="0.75" strokeDasharray="2 2" />
+              <text x="60" y="157" fontSize="5.5" fontFamily="monospace" textAnchor="middle" fill="#5A5A5A" stroke="none">AI MOCK INTERVIEWER</text>
             </svg>
           </div>
 
           <div className="flex justify-between items-end text-[9px] text-ink-muted border-t border-paper-border/80 pt-1">
-            <span>MONGODB ATOMIC</span>
-            <span>JWT AUTH</span>
+            <span>RAG RESUME MATCHER</span>
+            <span>VERCEL DEPLOYED</span>
           </div>
         </div>
       );
@@ -243,7 +258,7 @@ const Work = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 max-w-7xl mx-auto">
         {portfolioData.projects.map((project, index) => {
           const projectNum = String(index + 1).padStart(2, '0');
-          const projectYear = project.id === 'intellirag' ? '2025' : project.id === 'refactoriq' ? '2024' : project.id === 'ai-doctor' ? '2024' : '2023';
+          const projectYear = project.id === 'placepilot' ? '2025' : project.id === 'intellirag' ? '2025' : project.id === 'refactoriq' ? '2024' : '2023';
 
           return (
             <motion.div
@@ -337,13 +352,13 @@ const Work = () => {
                   <div>
                     <span className="text-ink-muted block text-[10px] uppercase">Domain</span>
                     <span className="font-medium text-ink">
-                      {selectedProject.id === 'intellirag' ? 'RAG / Document AI' : selectedProject.id === 'refactoriq' ? 'Code Intelligence / AST' : selectedProject.id === 'ai-doctor' ? 'Healthcare Booking' : 'Computer Vision'}
+                      {selectedProject.id === 'placepilot' ? 'Career AI / Placement Command' : selectedProject.id === 'intellirag' ? 'RAG / Document AI' : selectedProject.id === 'refactoriq' ? 'Code Intelligence / AST' : 'Computer Vision'}
                     </span>
                   </div>
                   <div>
                     <span className="text-ink-muted block text-[10px] uppercase">Architecture</span>
                     <span className="font-medium text-ink">
-                      {selectedProject.id === 'intellirag' ? 'FAISS + Ollama' : selectedProject.id === 'refactoriq' ? 'FastAPI + SSE Stream' : selectedProject.id === 'ai-doctor' ? 'MERN + Optimistic Lock' : 'MediaPipe + OpenCV'}
+                      {selectedProject.id === 'placepilot' ? 'React + RAG + LLM Interviewer' : selectedProject.id === 'intellirag' ? 'FAISS + Ollama' : selectedProject.id === 'refactoriq' ? 'FastAPI + SSE Stream' : 'MediaPipe + OpenCV'}
                     </span>
                   </div>
                   <div>
