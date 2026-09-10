@@ -30,13 +30,13 @@ const About = () => {
           </h3>
           <div className="typewriter-text text-xs sm:text-[13px] text-ink-secondary leading-relaxed space-y-4 text-justify">
             <p>
-              I am a Computer Science and Engineering student (graduating Class of 2027), driven by building resilient backend systems, clean software architectures, and production-grade intelligent applications.
+              I am a Computer Science & Engineering student (Class of 2027) focused on building resilient backend systems, robust API microservices, and production-ready intelligent applications.
             </p>
             <p>
-              I specialize in turning complex algorithmic challenges into elegant, efficient software. My core technical exploration centers around Retrieval-Augmented Generation (RAG), offline LLM deployments with Ollama, and performant distributed services.
+              My engineering focus centers on Retrieval-Augmented Generation (RAG), offline LLM orchestration using LangChain & Ollama, vector search optimization, and performant full-stack architectures.
             </p>
             <p>
-              To me, code is not merely a functional tool, but a formal engineering discipline where logical rigor and structural simplicity come together to solve tangible, real-world problems.
+              Driven by algorithmic discipline and clean software design, I transform complex data workflows into intuitive, high-performance software built for real-world impact.
             </p>
           </div>
         </div>

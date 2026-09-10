@@ -3,7 +3,7 @@ export const portfolioData = {
     name: "Pranavi Jain",
     title: "Software Engineer",
     tagline: "I craft resilient backend systems and explore the intersection of software and intelligent systems.",
-    shortBio: "I'm Pranavi, a Computer Science Engineering student graduating in 2027 who enjoys turning complicated problems into simple, useful software. I spend most of my time solving DSA problems, building full-stack applications, and exploring local LLMs and Retrieval-Augmented Generation (RAG) systems.",
+    shortBio: "I'm Pranavi, a Computer Science Engineering student (Class of 2027) specializing in resilient backend architectures, full-stack systems, and Retrieval-Augmented Generation (RAG) applications.",
     location: "India",
     resumeLink: "https://drive.google.com/file/d/1cOfJPlq8615lKFNkf-3f64mm6Rravd4V/view?usp=sharing",
     email: "mailto:pranavijain47@gmail.com",
