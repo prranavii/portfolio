@@ -97,7 +97,6 @@ const About = () => {
             <div className="pt-1 flex gap-3 text-[11px]">
               <a href={personalInfo.github} target="_blank" rel="noreferrer" className="hover:text-ink underline">GitHub</a>
               <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="hover:text-ink underline">LinkedIn</a>
-              <a href={personalInfo.leetcode} target="_blank" rel="noreferrer" className="hover:text-ink underline">LeetCode</a>
             </div>
           </div>
         </div>
@@ -167,7 +166,7 @@ const About = () => {
               <ul className="font-mono text-[11px] text-ink-secondary space-y-1 leading-tight">
                 <li>RAG Architecture</li>
                 <li>System Optimization</li>
-                <li>LeetCode 1765 Rating</li>
+                <li>Algorithmic Problem Solving</li>
                 <li>800+ Solved Algorithms</li>
                 <li>Concurrency Control</li>
                 <li>API Architecture</li>

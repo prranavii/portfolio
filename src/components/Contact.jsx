@@ -16,7 +16,6 @@ const Contact = () => {
   const socials = [
     { name: 'LinkedIn', label: 'in/pranavi-jain5', url: personalInfo.linkedin },
     { name: 'GitHub', label: 'github.com/prranavii', url: personalInfo.github },
-    { name: 'LeetCode', label: 'leetcode.com/u/prranavii_ (1765)', url: personalInfo.leetcode },
   ];
 
   return (

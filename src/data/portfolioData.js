@@ -9,14 +9,12 @@ export const portfolioData = {
     email: "mailto:pranavijain47@gmail.com",
     github: "https://github.com/prranavii",
     linkedin: "https://www.linkedin.com/in/pranavi-jain5/",
-    leetcode: "https://leetcode.com/u/prranavii_/",
     availability: "Open to Software Engineering Opportunities — 2027"
   },
   
   stats: [
     { value: "2027", label: "Graduation" },
     { value: "800+", label: "DSA Problems" },
-    { value: "1765", label: "LeetCode Rating" },
     { value: "20+", label: "Hackathon Placements" }
   ],
 
@@ -144,13 +142,6 @@ export const portfolioData = {
 
   dsa: {
     problemsSolved: 800,
-    leetcodeRating: 1765,
-    platforms: [
-      { name: "LeetCode", url: "https://leetcode.com/u/prranavii_/", status: "Active" },
-      { name: "GeeksforGeeks", url: "https://auth.geeksforgeeks.org/user/prranavii", status: "Active" },
-      { name: "HackerRank", url: "https://www.hackerrank.com/prranavii", status: "Completed" }
-    ],
-    leetcodeUrl: "https://leetcode.com/u/prranavii_/"
   },
 
   journey: [
@@ -162,7 +153,7 @@ export const portfolioData = {
     {
       year: "2026",
       title: "Algorithms & Placement Prep",
-      description: "Deepened knowledge in Data Structures, Algorithms, and System Design patterns. Solved 200+ problems on Leetcode (1565 max rating)."
+      description: "Deepened knowledge in Data Structures, Algorithms, and System Design patterns. Solved 200+ algorithmic problems."
     },
     {
       year: "2027",
@@ -191,3 +182,4 @@ export const portfolioData = {
     "probably drafting a new script"
   ]
 };
+
