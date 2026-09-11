@@ -247,15 +247,15 @@ const Work = () => {
   }, [selectedProject]);
 
   return (
-    <section id="work" className="py-10 md:py-16 px-6 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
+    <section id="work" className="py-10 md:py-16 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
       {/* Top Section Header matching Pagnotta Image 3 */}
-      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-secondary border-b border-paper-border pb-3 mb-6">
+      <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-6">
         <span>Portfolio/ Pranavi Jain</span>
         <span className="uppercase tracking-widest text-ink font-semibold">Selected Works / Projects</span>
       </div>
 
       {/* 4-Column Architectural Showcase (Image 3 Reference) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-6 max-w-7xl mx-auto">
         {portfolioData.projects.map((project, index) => {
           const projectNum = String(index + 1).padStart(2, '0');
           const projectYear = project.id === 'placepilot' ? '2025' : project.id === 'intellirag' ? '2025' : project.id === 'refactoriq' ? '2024' : '2023';
@@ -296,7 +296,7 @@ const Work = () => {
       </div>
 
       {/* Bottom Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-muted tracking-widest pt-4 mt-8 border-t border-paper-border/50">
+      <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-muted tracking-widest pt-4 mt-8 border-t border-paper-border/50">
         <span>2023</span>
         <span>2027</span>
       </div>
@@ -304,7 +304,7 @@ const Work = () => {
       {/* Architectural Editorial Case Study Modal (Images 4 & 5 Reference) */}
       <AnimatePresence>
         {selectedProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-10">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -321,10 +321,10 @@ const Work = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.98 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-5xl max-h-[90vh] bg-paper border border-ink/80 shadow-2xl overflow-y-auto z-10 flex flex-col p-6 sm:p-10 md:p-12"
+              className="relative w-full max-w-5xl max-h-[92vh] bg-paper border border-ink/80 shadow-2xl overflow-y-auto z-10 flex flex-col p-4 sm:p-8 md:p-12"
             >
               {/* Top Modal Header Line */}
-              <div className="flex justify-between items-center border-b border-paper-border pb-4 font-mono text-xs text-ink-secondary">
+              <div className="flex justify-between items-center border-b border-paper-border pb-3 font-mono text-xs sm:text-sm text-ink-secondary">
                 <span>Portfolio/ Pranavi Jain</span>
                 <span className="text-ink font-bold tracking-wider uppercase">Project Case Study</span>
                 <button
@@ -337,18 +337,18 @@ const Work = () => {
               </div>
 
               {/* Title & Metadata Layout (As seen in Image 4) */}
-              <div className="mt-8 mb-8 space-y-6">
+              <div className="mt-6 mb-6 space-y-4 sm:space-y-6">
                 <div>
-                  <h2 className="font-mono font-bold text-xl sm:text-2xl md:text-3xl uppercase tracking-tight text-ink">
+                  <h2 className="font-mono font-bold text-lg sm:text-2xl md:text-3xl uppercase tracking-tight text-ink">
                     0{portfolioData.projects.findIndex(p => p.id === selectedProject.id) + 1} {selectedProject.title}
                   </h2>
-                  <p className="font-mono text-xs text-ink-secondary mt-1">
+                  <p className="font-mono text-xs sm:text-sm text-ink-secondary mt-1">
                     {selectedProject.subtitle}
                   </p>
                 </div>
 
                 {/* Technical Metadata Spec Block */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 border border-paper-border bg-paper-light font-mono text-xs">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 p-3 border border-paper-border bg-paper-light font-mono text-xs">
                   <div>
                     <span className="text-ink-muted block text-[10px] uppercase">Domain</span>
                     <span className="font-medium text-ink">

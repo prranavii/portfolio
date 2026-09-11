@@ -9,17 +9,17 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen relative flex flex-col justify-between p-6 sm:p-10 md:p-16 pt-20 md:pt-24 select-none overflow-hidden"
+      className="min-h-screen relative flex flex-col justify-between p-4 sm:p-8 md:p-16 pt-20 sm:pt-22 md:pt-24 select-none overflow-hidden"
     >
       {/* Top Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-muted tracking-widest">
+      <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-muted tracking-widest">
         <span>2023</span>
         <span>2027</span>
       </div>
 
       {/* Center Theatrical Blurred Typographic Masterpiece (Name Focal Art) */}
       <div 
-        className="my-auto py-6 flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-16 w-full max-w-6xl mx-auto"
+        className="my-auto py-4 sm:py-6 flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-16 w-full max-w-6xl mx-auto"
         onMouseEnter={() => setIsFocused(true)}
         onMouseLeave={() => setIsFocused(false)}
       >
@@ -32,17 +32,17 @@ const Hero = () => {
 
           {/* Layer 1: Blurred Depth-of-Field Echo */}
           <div 
-            className={`font-sans font-black text-6xl sm:text-7xl md:text-8xl lg:text-[9.5rem] leading-[0.85] tracking-tight text-ink/80 transition-all duration-700 select-none ${
+            className={`font-sans font-black text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] leading-[0.85] tracking-tight text-ink/80 transition-all duration-700 select-none ${
               isFocused ? 'filter blur-[3px] opacity-70' : 'filter blur-[10px] md:blur-[14px] opacity-90'
             }`}
           >
             <div>pranavi</div>
-            <div className="-mt-2 sm:-mt-4 md:-mt-6">jain</div>
+            <div className="-mt-1.5 sm:-mt-4 md:-mt-6">jain</div>
           </div>
 
           {/* Layer 2: Semi-sharp Focal Layer with optical contrast */}
           <div 
-            className="absolute inset-0 font-sans font-black text-6xl sm:text-7xl md:text-8xl lg:text-[9.5rem] leading-[0.85] tracking-tight text-ink select-none mix-blend-multiply transition-all duration-700"
+            className="absolute inset-0 font-sans font-black text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] leading-[0.85] tracking-tight text-ink select-none mix-blend-multiply transition-all duration-700"
             style={{
               clipPath: isFocused 
                 ? 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' 
@@ -50,12 +50,12 @@ const Hero = () => {
             }}
           >
             <div>pranavi</div>
-            <div className="-mt-2 sm:-mt-4 md:-mt-6">jain</div>
+            <div className="-mt-1.5 sm:-mt-4 md:-mt-6">jain</div>
           </div>
 
           {/* Layer 3: Sharp crisp overlay accents */}
           <div 
-            className="absolute inset-0 font-sans font-black text-6xl sm:text-7xl md:text-8xl lg:text-[9.5rem] leading-[0.85] tracking-tight text-transparent select-none pointer-events-none"
+            className="absolute inset-0 font-sans font-black text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] leading-[0.85] tracking-tight text-transparent select-none pointer-events-none"
             style={{
               WebkitTextStroke: '1px rgba(20, 20, 20, 0.4)',
               opacity: isFocused ? 0.9 : 0.4,
@@ -63,20 +63,20 @@ const Hero = () => {
             }}
           >
             <div>pranavi</div>
-            <div className="-mt-2 sm:-mt-4 md:-mt-6">jain</div>
+            <div className="-mt-1.5 sm:-mt-4 md:-mt-6">jain</div>
           </div>
         </div>
 
         {/* Right Label Block */}
-        <div className="flex flex-col items-center lg:items-start space-y-3 text-center lg:text-left">
-          <div className="font-mono text-sm sm:text-base tracking-[0.25em] uppercase font-bold text-ink">
+        <div className="flex flex-col items-center lg:items-start space-y-2 sm:space-y-3 text-center lg:text-left">
+          <div className="font-mono text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.25em] uppercase font-bold text-ink">
             SOFTWARE ENGINEER
           </div>
           <div className="font-mono text-xs text-ink-muted uppercase tracking-wider max-w-xs leading-relaxed">
             Resilient Backend / Intelligent Systems / CSE '27
           </div>
 
-          <div className="pt-2 flex items-center gap-4 text-sm font-mono">
+          <div className="pt-2 flex flex-wrap justify-center lg:justify-start items-center gap-3 sm:gap-4 text-xs sm:text-sm font-mono">
             <a 
               href="#about"
               className="border-b border-ink text-ink hover:text-ink-secondary transition-colors"
@@ -94,7 +94,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-muted tracking-wider pt-8 border-t border-paper-border/50">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-0 w-full font-mono text-xs sm:text-sm text-ink-muted tracking-wider pt-6 sm:pt-8 border-t border-paper-border/50">
         <span>Software & Systems</span>
         <span>Distributed AI</span>
       </div>

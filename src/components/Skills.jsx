@@ -4,7 +4,7 @@ import { portfolioData } from '../data/portfolioData';
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-10 md:py-16 px-6 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
+    <section id="skills" className="py-10 md:py-16 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
       <div className="flex justify-between items-center w-full font-mono text-sm text-ink-secondary border-b border-paper-border pb-3 mb-6">
         <span>Portfolio/ Pranavi Jain</span>
         <span className="uppercase tracking-widest text-ink font-semibold">.Toolkit / Software</span>

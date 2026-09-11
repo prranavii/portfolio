@@ -13,19 +13,19 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-10 md:py-16 px-6 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
+    <section id="about" className="py-10 md:py-16 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
       {/* Header bar of section matching Image 2 */}
-      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-secondary border-b border-paper-border pb-3 mb-6">
+      <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-6">
         <span>Portfolio/ Pranavi Jain</span>
         <span className="uppercase tracking-widest text-ink font-semibold">Curriculum vitae</span>
       </div>
 
       {/* Main Grid Spread */}
-      <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 max-w-7xl mx-auto">
+      <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 max-w-7xl mx-auto">
         
         {/* Left Column: .ABOUT ME / Narrative Bio */}
         <div className="lg:col-span-4 space-y-4">
-          <h3 className="font-mono font-bold text-base text-ink tracking-tight">
+          <h3 className="font-mono font-bold text-sm sm:text-base text-ink tracking-tight">
             .ABOUT ME
           </h3>
           <div className="typewriter-text text-sm sm:text-[14px] text-ink-secondary leading-relaxed space-y-4 text-justify">
@@ -42,7 +42,7 @@ const About = () => {
         </div>
 
         {/* Column 2: Portrait Block & Identity */}
-        <div className="lg:col-span-3 flex flex-col items-center sm:items-start space-y-4">
+        <div className="lg:col-span-3 flex flex-col items-center lg:items-start space-y-4">
           {/* Framed Editorial Portrait Container */}
           <div className="w-full max-w-[240px] aspect-[4/5] border border-paper-border p-2 bg-paper-dark/30 shadow-inner relative overflow-hidden group">
             {/* Architectural / Engineering Blueprint Art Frame */}
@@ -76,7 +76,7 @@ const About = () => {
           </div>
 
           {/* Under-Photo Typography block as in reference */}
-          <div className="space-y-1 font-mono text-sm text-left w-full max-w-[240px]">
+          <div className="space-y-1 font-mono text-sm text-center lg:text-left w-full max-w-[240px]">
             <div className="font-bold text-ink uppercase tracking-wider">
               PRANAVI JAIN
             </div>
@@ -94,7 +94,7 @@ const About = () => {
                 pranavijain47@gmail.com
               </a>
             </div>
-            <div className="pt-1 flex gap-3 text-xs">
+            <div className="pt-1 flex justify-center lg:justify-start gap-3 text-xs">
               <a href={personalInfo.github} target="_blank" rel="noreferrer" className="hover:text-ink underline">GitHub</a>
               <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="hover:text-ink underline">LinkedIn</a>
             </div>
@@ -102,7 +102,7 @@ const About = () => {
         </div>
 
         {/* Right Section: .EDUCATION, .EXPERIENCE, .SOFTWARE, .TECHNICAL SKILLS */}
-        <div className="lg:col-span-5 space-y-8">
+        <div className="lg:col-span-5 space-y-6 sm:space-y-8">
           
           {/* .EDUCATION */}
           <div className="space-y-2">
@@ -110,7 +110,7 @@ const About = () => {
               .EDUCATION
             </h3>
             <div className="font-mono text-sm space-y-1">
-              <div className="flex justify-between items-baseline text-ink font-semibold">
+              <div className="flex flex-col sm:flex-row justify-between sm:items-baseline text-ink font-semibold">
                 <span>B.Tech Computer Science & Engineering</span>
                 <span className="text-ink-muted text-xs">2023 — 2027</span>
               </div>
@@ -127,7 +127,7 @@ const About = () => {
             </h3>
             <div className="font-mono text-sm space-y-3">
               <div>
-                <div className="flex justify-between items-baseline text-ink font-semibold">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-baseline text-ink font-semibold">
                   <span>AI/ML Engineer & Systems Research</span>
                   <span className="text-ink-muted text-xs">2024 — present</span>
                 </div>
@@ -141,10 +141,10 @@ const About = () => {
           </div>
 
           {/* Dual Columns: .SOFTWARE & .TECHNICAL SKILLS */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2 border-t border-paper-border/60">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-2 border-t border-paper-border/60">
             {/* .SOFTWARE */}
             <div className="space-y-2">
-              <h4 className="font-mono font-bold text-sm text-ink">
+              <h4 className="font-mono font-bold text-xs sm:text-sm text-ink">
                 .SOFTWARE
               </h4>
               <ul className="font-mono text-xs text-ink-secondary space-y-1 leading-tight">
@@ -160,7 +160,7 @@ const About = () => {
 
             {/* .TECHNICAL SKILLS */}
             <div className="space-y-2">
-              <h4 className="font-mono font-bold text-sm text-ink">
+              <h4 className="font-mono font-bold text-xs sm:text-sm text-ink">
                 .TECHNICAL SKILLS
               </h4>
               <ul className="font-mono text-xs text-ink-secondary space-y-1 leading-tight">
