@@ -13,9 +13,9 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 md:py-32 px-6 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
+    <section id="about" className="py-10 md:py-16 px-6 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
       {/* Header bar of section matching Image 2 */}
-      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-secondary border-b border-paper-border pb-4 mb-14">
+      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-secondary border-b border-paper-border pb-3 mb-6">
         <span>Portfolio/ Pranavi Jain</span>
         <span className="uppercase tracking-widest text-ink font-semibold">Curriculum vitae</span>
       </div>
@@ -179,7 +179,7 @@ const About = () => {
       </motion.div>
 
       {/* Bottom Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-muted tracking-widest pt-12 mt-12 border-t border-paper-border/50">
+      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-muted tracking-widest pt-4 mt-8 border-t border-paper-border/50">
         <span>2023</span>
         <span>2027</span>
       </div>
