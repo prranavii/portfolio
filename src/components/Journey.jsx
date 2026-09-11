@@ -1,61 +1,85 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
+import { Sparkles, Calendar, Briefcase, GraduationCap } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const Journey = () => {
-  const combinedEntries = useMemo(() => {
-    const journeyEntries = portfolioData.journey.map(item => ({
-      year: item.year,
-      title: item.title,
-      description: item.description,
-      type: 'journey'
-    }));
-
-    const certEntries = portfolioData.certifications.map(cert => ({
-      year: cert.year,
-      title: cert.title,
-      description: `Issued by ${cert.issuer}`,
-      type: 'certification'
-    }));
-
-    return [...journeyEntries, ...certEntries].sort((a, b) => {
-      const yearA = parseInt(a.year.split('-')[0]) || parseInt(a.year) || 0;
-      const yearB = parseInt(b.year.split('-')[0]) || parseInt(b.year) || 0;
-      return yearB - yearA;
-    });
-  }, []);
-
   return (
-    <section id="journey" className="py-12 md:py-20 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
-      {/* Section Header */}
-      <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-8 sm:mb-12">
-        <span className="uppercase tracking-widest text-ink font-semibold">Career Timeline</span>
-        <span className="text-ink-muted text-xs">03</span>
-      </div>
+    <section id="experience" className="py-24 px-4 sm:px-8 md:px-12 border-t border-dark-border relative">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-dark-border pb-6">
+          <div>
+            <div className="flex items-center gap-2 font-mono text-xs text-lime-accent uppercase tracking-widest font-semibold mb-2">
+              <Sparkles size={14} />
+              <span>CAREER & EDUCATION</span>
+            </div>
+            <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-ink-primary">
+              EXPERIENCE TIMELINE
+            </h2>
+          </div>
+          <p className="font-mono text-xs text-ink-secondary mt-3 md:mt-0 max-w-md">
+            Academic foundation in Computer Science & Engineering combined with practical AI research and full-stack software development.
+          </p>
+        </div>
 
-      <div className="max-w-4xl mx-auto">
-        <div className="border-t border-paper-border">
-          {combinedEntries.map((entry, index) => (
+        {/* Vertical Editorial Timeline */}
+        <div className="relative max-w-4xl mx-auto border-l-2 border-dark-border pl-6 sm:pl-10 space-y-12">
+          {portfolioData.journey.map((item, idx) => (
             <motion.div
-              key={`${entry.title}-${index}`}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={`${item.year}-${idx}`}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.05 }}
-              className="grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-6 py-4 border-b border-paper-border items-baseline hover:bg-paper-light/50 transition-colors px-2"
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="relative group"
             >
-              <div className="sm:col-span-3 font-mono text-sm text-ink-muted">
-                {entry.year}
-              </div>
-              <div className="sm:col-span-6 font-mono text-sm text-ink font-semibold">
-                {entry.title}
-              </div>
-              <div className="sm:col-span-3 font-mono text-xs text-ink-secondary sm:text-right">
-                {entry.description}
+              {/* Timeline Bullet Node */}
+              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-dark-card border-2 border-lime-accent group-hover:bg-lime-accent group-hover:scale-125 transition-all duration-200" />
+
+              <div className="p-6 rounded-xl bg-dark-card border border-dark-border hover:border-lime-accent/50 transition-all duration-200 space-y-4 lime-glow-card">
+                
+                {/* Year & Organization */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-xs border-b border-dark-border pb-3">
+                  <div className="flex items-center gap-2 text-lime-accent font-bold text-sm">
+                    <Calendar size={14} />
+                    <span>{item.year}</span>
+                  </div>
+                  <span className="text-ink-muted uppercase tracking-wider font-semibold">
+                    {item.company}
+                  </span>
+                </div>
+
+                {/* Role Title */}
+                <div>
+                  <h3 className="font-display font-bold text-xl sm:text-2xl text-ink-primary uppercase tracking-tight group-hover:text-lime-accent transition-colors">
+                    {item.role}
+                  </h3>
+                </div>
+
+                {/* Description */}
+                <p className="font-sans text-sm text-ink-secondary leading-relaxed">
+                  {item.description}
+                </p>
+
+                {/* Tech Tags */}
+                <div className="pt-2 flex flex-wrap gap-2 font-mono text-xs">
+                  {item.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="px-2.5 py-1 rounded bg-dark-surface border border-dark-border text-ink-primary font-medium"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
               </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

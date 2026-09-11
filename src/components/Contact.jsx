@@ -1,73 +1,62 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { Sparkles, Mail, ArrowUpRight, ArrowRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const Contact = () => {
   const { personalInfo } = portfolioData;
 
-  const fadeUp = {
-    initial: { opacity: 0, y: 15 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
-  };
-
-  const socials = [
-    { name: 'LinkedIn', label: 'in/pranavi-jain5', url: personalInfo.linkedin },
-    { name: 'GitHub', label: 'github.com/prranavii', url: personalInfo.github },
-  ];
-
   return (
-    <section id="contact" className="py-12 md:py-20 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
-      {/* Section Header */}
-      <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-8 sm:mb-12">
-        <span className="uppercase tracking-widest text-ink font-semibold">Contact & Inquiries</span>
-        <span className="text-ink-muted text-xs">04</span>
-      </div>
+    <section id="contact" className="py-28 px-4 sm:px-8 md:px-12 border-t border-dark-border bg-dark-surface/40 relative overflow-hidden">
+      {/* Background Ambient Radial Glow */}
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-lime-accent/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto">
-        <motion.div {...fadeUp} className="space-y-6">
-          <div>
-            <h2 className="font-mono font-bold text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight text-ink mb-4">
-              .LET'S TALK
-            </h2>
-            <p className="typewriter-text text-sm sm:text-base text-ink-secondary max-w-xl leading-relaxed">
-              Currently preparing for 2027 Software Engineering roles. Open to discussions regarding distributed systems, Retrieval-Augmented Generation, and full-stack engineering challenges.
-            </p>
-          </div>
+      <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
+        
+        {/* Badge Header */}
+        <div className="inline-flex items-center gap-2 font-mono text-xs text-lime-accent uppercase tracking-widest font-semibold px-3.5 py-1.5 rounded-full bg-dark-card border border-dark-border">
+          <Sparkles size={14} />
+          <span>GET IN TOUCH</span>
+        </div>
 
-          <div className="border border-paper-border p-6 sm:p-8 bg-paper-light/70 space-y-6">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline gap-2 font-mono text-sm border-b border-paper-border/80 pb-4">
-              <span className="text-ink-muted uppercase">DIRECT DISPATCH</span>
-              <a 
-                href={personalInfo.email} 
-                className="text-ink font-semibold text-base sm:text-lg hover:underline break-all"
-              >
-                pranavijain47@gmail.com ↗
-              </a>
-            </div>
+        {/* High Impact Headline */}
+        <h2 className="font-display font-black text-4xl sm:text-6xl md:text-7xl uppercase tracking-tight text-ink-primary max-w-3xl mx-auto leading-[0.95]">
+          LET'S BUILD SOMETHING INTELLIGENT.
+        </h2>
 
-            <div className="space-y-3 font-mono text-sm">
-              <span className="text-ink-muted text-xs uppercase tracking-wider block">PROFILES & NETWORKS</span>
-              {socials.map((social) => (
-                <a 
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex justify-between items-center py-2.5 border-b border-paper-border/50 text-ink hover:bg-paper-dark/30 px-1 transition-colors group cursor-pointer"
-                >
-                  <span className="font-semibold">{social.name}</span>
-                  <span className="text-ink-secondary text-xs group-hover:text-ink flex items-center gap-1">
-                    {social.label}
-                    <ArrowUpRight size={14} className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+        {/* Subtitle */}
+        <p className="font-sans text-base sm:text-xl text-ink-secondary max-w-xl mx-auto leading-relaxed">
+          Have an interesting idea, opportunity or problem to solve? Let's talk.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="pt-6 flex flex-wrap items-center justify-center gap-4 font-mono text-xs">
+          <a
+            href={personalInfo.email}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded bg-lime-accent text-dark font-bold text-sm uppercase tracking-wider hover:bg-lime-glow transition-all duration-200 shadow-xl shadow-lime-accent/10"
+          >
+            <Mail size={16} /> Email Me <ArrowRight size={16} />
+          </a>
+
+          <a
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-4 rounded bg-dark-card border border-dark-border hover:border-lime-accent/50 text-ink-primary hover:text-lime-accent font-semibold uppercase tracking-wider transition-all duration-200"
+          >
+            LinkedIn <ArrowUpRight size={16} />
+          </a>
+
+          <a
+            href={personalInfo.github}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-4 rounded bg-dark-card border border-dark-border hover:border-lime-accent/50 text-ink-primary hover:text-lime-accent font-semibold uppercase tracking-wider transition-all duration-200"
+          >
+            GitHub <ArrowUpRight size={16} />
+          </a>
+        </div>
+
       </div>
     </section>
   );

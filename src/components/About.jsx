@@ -1,153 +1,94 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Sparkles, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const About = () => {
   const { personalInfo } = portfolioData;
 
-  const fadeUp = {
-    initial: { opacity: 0, y: 15 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
-  };
-
-  const emailDisplay = personalInfo.email.replace('mailto:', '');
-
   return (
-    <section id="about" className="py-12 md:py-20 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
-      {/* Header bar */}
-      <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-8 sm:mb-12">
-        <span className="uppercase tracking-widest text-ink font-semibold">Curriculum Vitae</span>
-        <span className="text-ink-muted text-xs">01</span>
-      </div>
-
-      {/* Main Grid Spread */}
-      <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 max-w-6xl mx-auto">
+    <section id="about" className="py-24 px-4 sm:px-8 md:px-12 border-t border-dark-border relative overflow-hidden">
+      <div className="max-w-7xl mx-auto">
         
-        {/* Left Column: Identity & Narrative Bio */}
-        <div className="lg:col-span-5 space-y-8">
+        {/* Section Header */}
+        <div className="flex items-center gap-2 font-mono text-xs text-lime-accent uppercase tracking-widest font-semibold mb-6">
+          <Sparkles size={14} />
+          <span>ENGINEERING PHILOSOPHY</span>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Clean Identity Header */}
-          <div className="space-y-1 font-mono text-sm">
-            <h2 className="font-bold text-ink uppercase tracking-wider text-base sm:text-lg">
-              PRANAVI JAIN
+          {/* Left Column: Big Headline */}
+          <div className="lg:col-span-7 space-y-6">
+            <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-ink-primary leading-[1.05]">
+              {personalInfo.aboutHeadline}
             </h2>
-            <p className="text-ink-secondary text-xs sm:text-sm">
-              Computer Science Engineer (Class of '27)
-            </p>
-            <p className="text-ink-muted text-xs">
-              India — Global Remote
-            </p>
-            <div className="pt-3 flex items-center gap-4 text-xs font-mono">
-              <a href={personalInfo.email} className="text-ink underline hover:text-ink-secondary">
-                {emailDisplay}
-              </a>
-              <span>·</span>
-              <a href={personalInfo.github} target="_blank" rel="noreferrer" className="text-ink hover:underline">
-                GitHub ↗
-              </a>
-              <span>·</span>
-              <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="text-ink hover:underline">
-                LinkedIn ↗
-              </a>
+
+            <div className="space-y-4 font-sans text-base sm:text-lg text-ink-secondary leading-relaxed pt-2">
+              {personalInfo.aboutBio.map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
+            </div>
+
+            <div className="pt-4 flex items-center gap-6 font-mono text-xs text-ink-muted">
+              <div className="flex items-center gap-2 text-ink-primary">
+                <CheckCircle2 size={16} className="text-lime-accent" />
+                <span>Class of 2027</span>
+              </div>
+              <div className="flex items-center gap-2 text-ink-primary">
+                <CheckCircle2 size={16} className="text-lime-accent" />
+                <span>India — Global Remote</span>
+              </div>
             </div>
           </div>
 
-          {/* Narrative About */}
-          <div className="space-y-3 pt-2">
-            <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
-              .ABOUT ME
-            </h3>
-            <div className="font-mono text-xs sm:text-sm text-ink-secondary leading-relaxed space-y-4">
-              <p>
-                I am a Computer Science & Engineering student (Class of 2027) focused on building resilient backend systems, robust API microservices, and production-ready intelligent applications.
-              </p>
-              <p>
-                My engineering focus centers on Retrieval-Augmented Generation (RAG), offline LLM orchestration using LangChain & Ollama, vector search optimization, and performant full-stack architectures.
-              </p>
-              <p>
-                Driven by algorithmic discipline and clean software design, I transform complex data workflows into performant software built for real-world impact.
-              </p>
+          {/* Right Column: Spec Card */}
+          <div className="lg:col-span-5 rounded-xl bg-dark-card border border-dark-border p-6 sm:p-8 space-y-6 font-mono text-xs">
+            <div className="flex justify-between items-center border-b border-dark-border pb-4">
+              <span className="font-bold text-ink-primary text-sm uppercase">CANDIDATE BRIEF</span>
+              <span className="text-lime-accent font-semibold">PRANAVI JAIN</span>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <span className="text-ink-muted">Primary Role:</span>
+                <span className="text-ink-primary font-semibold">AI / Software Engineer</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-ink-muted">Degree:</span>
+                <span className="text-ink-primary">B.Tech Computer Science</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-ink-muted">Core Focus:</span>
+                <span className="text-lime-accent font-medium">Generative AI, RAG & Full-Stack</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-ink-muted">Status:</span>
+                <span className="text-lime-accent font-bold">Open to Internships '27</span>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-dark-border flex items-center justify-between">
+              <a
+                href={personalInfo.email}
+                className="text-ink-primary hover:text-lime-accent transition-colors font-bold underline"
+              >
+                pranavijain47@gmail.com
+              </a>
+              <a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="text-lime-accent hover:underline flex items-center gap-1 font-semibold"
+              >
+                LinkedIn <ArrowUpRight size={14} />
+              </a>
             </div>
           </div>
 
         </div>
 
-        {/* Right Column: Education, Experience, Software & Skills */}
-        <div className="lg:col-span-7 space-y-8">
-          
-          {/* .EDUCATION */}
-          <div className="space-y-2">
-            <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
-              .EDUCATION
-            </h3>
-            <div className="font-mono text-xs sm:text-sm space-y-1">
-              <div className="flex flex-col sm:flex-row justify-between sm:items-baseline text-ink font-semibold">
-                <span>B.Tech Computer Science & Engineering</span>
-                <span className="text-ink-muted text-xs font-normal">2023 — 2027</span>
-              </div>
-              <p className="text-ink-secondary text-xs">
-                Focus on Algorithms, Distributed Computing & AI Systems
-              </p>
-            </div>
-          </div>
-
-          {/* .EXPERIENCE */}
-          <div className="space-y-2">
-            <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
-              .EXPERIENCE
-            </h3>
-            <div className="font-mono text-xs sm:text-sm space-y-2">
-              <div className="flex flex-col sm:flex-row justify-between sm:items-baseline text-ink font-semibold">
-                <span>AI/ML Engineer & Systems Research</span>
-                <span className="text-ink-muted text-xs font-normal">2024 — present</span>
-              </div>
-              <ul className="text-xs text-ink-secondary space-y-1 pt-1 leading-relaxed">
-                <li>- Design of offline RAG pipelines & chunking strategies.</li>
-                <li>- FAISS vector indexing & local LLM runtime optimization.</li>
-                <li>- Production full-stack services with real-time SSE streams.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Clean Dual Column Lists: .SOFTWARE & .TECHNICAL SKILLS */}
-          <div className="grid grid-cols-2 gap-8 pt-4 border-t border-paper-border/60">
-            {/* .SOFTWARE */}
-            <div className="space-y-3">
-              <h4 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
-                .SOFTWARE
-              </h4>
-              <ul className="font-mono text-xs text-ink-secondary space-y-1.5 leading-relaxed">
-                <li>Python / C++</li>
-                <li>React / Next.js</li>
-                <li>FastAPI / Node.js</li>
-                <li>FAISS / Vector DBs</li>
-                <li>LangChain / Ollama</li>
-                <li>MongoDB / PostgreSQL</li>
-                <li>Tailwind CSS / Git</li>
-              </ul>
-            </div>
-
-            {/* .TECHNICAL SKILLS */}
-            <div className="space-y-3">
-              <h4 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
-                .TECHNICAL SKILLS
-              </h4>
-              <ul className="font-mono text-xs text-ink-secondary space-y-1.5 leading-relaxed">
-                <li>RAG Architecture</li>
-                <li>System Optimization</li>
-                <li>Algorithmic Problem Solving</li>
-                <li>800+ Solved Algorithms</li>
-                <li>Concurrency Control</li>
-                <li>API Architecture</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-
-      </motion.div>
+      </div>
     </section>
   );
 };
