@@ -9,14 +9,8 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen relative flex flex-col justify-between p-4 sm:p-8 md:p-16 pt-20 sm:pt-22 md:pt-24 select-none overflow-hidden"
+      className="min-h-screen relative flex flex-col justify-center items-center p-4 sm:p-8 md:p-16 pt-24 sm:pt-28 md:pt-32 select-none overflow-hidden"
     >
-      {/* Top Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-muted tracking-widest">
-        <span>2023</span>
-        <span>2027</span>
-      </div>
-
       {/* Center Theatrical Blurred Typographic Masterpiece */}
       <div 
         className="my-auto py-4 sm:py-6 flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-16 w-full max-w-6xl mx-auto"
@@ -91,12 +85,6 @@ const Hero = () => {
             </a>
           </div>
         </div>
-      </div>
-
-      {/* Bottom Corner Markers */}
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-0 w-full font-mono text-xs sm:text-sm text-ink-muted tracking-wider pt-6 sm:pt-8 border-t border-paper-border/50">
-        <span>Software & Systems</span>
-        <span>Distributed AI</span>
       </div>
     </section>
   );

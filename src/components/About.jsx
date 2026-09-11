@@ -18,11 +18,11 @@ const About = () => {
     <section id="about" className="py-12 md:py-20 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
       {/* Header bar */}
       <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-8 sm:mb-12">
-        <span>Portfolio/ Pranavi Jain</span>
         <span className="uppercase tracking-widest text-ink font-semibold">Curriculum Vitae</span>
+        <span className="text-ink-muted text-xs">01</span>
       </div>
 
-      {/* Main Grid Spread with generous breathing room */}
+      {/* Main Grid Spread */}
       <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 max-w-6xl mx-auto">
         
         {/* Left Column: Identity & Narrative Bio */}
@@ -148,12 +148,6 @@ const About = () => {
         </div>
 
       </motion.div>
-
-      {/* Bottom Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-muted tracking-widest pt-4 mt-12 border-t border-paper-border/50">
-        <span>2023</span>
-        <span>2027</span>
-      </div>
     </section>
   );
 };

@@ -19,10 +19,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-10 md:py-16 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
-      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-secondary border-b border-paper-border pb-3 mb-6">
-        <span>Portfolio/ Pranavi Jain</span>
-        <span className="uppercase tracking-widest text-ink font-semibold">.Contact & Inquiries</span>
+    <section id="contact" className="py-12 md:py-20 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
+      {/* Section Header */}
+      <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-8 sm:mb-12">
+        <span className="uppercase tracking-widest text-ink font-semibold">Contact & Inquiries</span>
+        <span className="text-ink-muted text-xs">04</span>
       </div>
 
       <div className="max-w-4xl mx-auto">
@@ -67,12 +68,6 @@ const Contact = () => {
             </div>
           </div>
         </motion.div>
-      </div>
-
-      {/* Bottom Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-muted tracking-widest pt-4 mt-8 border-t border-paper-border/50">
-        <span>2023</span>
-        <span>2027</span>
       </div>
     </section>
   );

@@ -41,12 +41,6 @@ const Navbar = () => {
               .Works
             </button>
             <button 
-              onClick={() => scrollToSection('skills')}
-              className="hover:text-ink transition-colors cursor-pointer"
-            >
-              .Toolkit
-            </button>
-            <button 
               onClick={() => scrollToSection('journey')}
               className="hover:text-ink transition-colors cursor-pointer"
             >
@@ -85,7 +79,7 @@ const Navbar = () => {
             className="fixed inset-0 z-50 bg-paper flex flex-col justify-between p-6 sm:p-10 md:p-16"
           >
             <div className="flex justify-between items-center w-full border-b border-paper-border pb-4 font-mono text-sm">
-              <span className="text-ink-secondary">Portfolio/ Pranavi Jain</span>
+              <span className="text-ink-secondary">Pranavi Jain</span>
               <button 
                 onClick={() => setIsOpen(false)}
                 className="p-1.5 border border-paper-border hover:bg-paper-dark transition-colors cursor-pointer text-ink"
@@ -100,9 +94,8 @@ const Navbar = () => {
                 { id: 'home', num: '00', label: 'Cover / Start' },
                 { id: 'about', num: '01', label: 'Curriculum Vitae' },
                 { id: 'work', num: '02', label: 'Selected Works' },
-                { id: 'skills', num: '03', label: 'Software & Toolkit' },
-                { id: 'journey', num: '04', label: 'Career Timeline' },
-                { id: 'contact', num: '05', label: 'Contact & Inquiries' },
+                { id: 'journey', num: '03', label: 'Career Timeline' },
+                { id: 'contact', num: '04', label: 'Contact & Inquiries' },
               ].map((item) => (
                 <div 
                   key={item.id}

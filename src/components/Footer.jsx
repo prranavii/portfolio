@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className="border-t border-paper-border py-8 px-4 sm:px-10 md:px-16 bg-paper font-mono text-sm text-ink-muted">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
         <div>
-          <span className="text-ink font-semibold">Portfolio/ Pranavi Jain</span>
+          <span className="text-ink font-semibold">Pranavi Jain</span>
           <span className="ml-2">© 2026 — All Rights Reserved.</span>
         </div>
         
