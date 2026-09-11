@@ -27,7 +27,7 @@ const Journey = () => {
 
   return (
     <section id="journey" className="py-10 md:py-16 px-6 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
-      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-secondary border-b border-paper-border pb-3 mb-6">
+      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-secondary border-b border-paper-border pb-3 mb-6">
         <span>Portfolio/ Pranavi Jain</span>
         <span className="uppercase tracking-widest text-ink font-semibold">.Career Timeline</span>
       </div>
@@ -43,13 +43,13 @@ const Journey = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.05 }}
               className="grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-6 py-4 border-b border-paper-border items-baseline hover:bg-paper-light/50 transition-colors px-2"
             >
-              <div className="sm:col-span-3 font-mono text-xs text-ink-muted">
+              <div className="sm:col-span-3 font-mono text-sm text-ink-muted">
                 {entry.year}
               </div>
-              <div className="sm:col-span-6 font-mono text-xs text-ink font-semibold">
+              <div className="sm:col-span-6 font-mono text-sm text-ink font-semibold">
                 {entry.title}
               </div>
-              <div className="sm:col-span-3 font-mono text-[11px] text-ink-secondary sm:text-right">
+              <div className="sm:col-span-3 font-mono text-xs text-ink-secondary sm:text-right">
                 {entry.description}
               </div>
             </motion.div>
@@ -58,7 +58,7 @@ const Journey = () => {
       </div>
 
       {/* Bottom Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-muted tracking-widest pt-4 mt-8 border-t border-paper-border/50">
+      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-muted tracking-widest pt-4 mt-8 border-t border-paper-border/50">
         <span>2023</span>
         <span>2027</span>
       </div>

@@ -15,8 +15,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-40 px-6 md:px-12 py-5 bg-paper/85 backdrop-blur-sm border-b border-paper-border/60 transition-all duration-300">
-        <div className="flex justify-between items-center w-full max-w-7xl mx-auto font-mono text-xs text-ink-secondary">
+      <nav className="fixed top-0 left-0 w-full z-40 px-6 md:px-12 py-4 bg-paper/85 backdrop-blur-sm border-b border-paper-border/60 transition-all duration-300">
+        <div className="flex justify-between items-center w-full max-w-7xl mx-auto font-mono text-sm text-ink-secondary">
           {/* Brand mark */}
           <button 
             onClick={() => scrollToSection('home')}
@@ -27,7 +27,7 @@ const Navbar = () => {
           </button>
 
           {/* Center Quick Navigation (Desktop) */}
-          <div className="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-wider text-ink-muted">
+          <div className="hidden md:flex items-center gap-8 text-xs uppercase tracking-wider text-ink-muted">
             <button 
               onClick={() => scrollToSection('about')}
               className="hover:text-ink transition-colors cursor-pointer"
@@ -62,12 +62,12 @@ const Navbar = () => {
 
           {/* Right Status / Menu Toggle */}
           <div className="flex items-center gap-4">
-            <span className="hidden sm:inline-block font-mono text-[11px] text-ink-muted">
+            <span className="hidden sm:inline-block font-mono text-xs text-ink-muted">
               Software Engineer
             </span>
             <button 
               onClick={() => setIsOpen(true)}
-              className="md:hidden border border-paper-border px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider hover:bg-paper-dark transition-colors cursor-pointer"
+              className="md:hidden border border-paper-border px-2.5 py-1 text-xs font-mono uppercase tracking-wider hover:bg-paper-dark transition-colors cursor-pointer"
             >
               Index
             </button>
@@ -84,7 +84,7 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-50 bg-paper flex flex-col justify-between p-8 md:p-16"
           >
-            <div className="flex justify-between items-center w-full border-b border-paper-border pb-4 font-mono text-xs">
+            <div className="flex justify-between items-center w-full border-b border-paper-border pb-4 font-mono text-sm">
               <span className="text-ink-secondary">Portfolio/ Pranavi Jain</span>
               <button 
                 onClick={() => setIsOpen(false)}
@@ -109,7 +109,7 @@ const Navbar = () => {
                   onClick={() => scrollToSection(item.id)}
                   className="flex items-baseline gap-4 group cursor-pointer border-b border-paper-border/60 pb-3"
                 >
-                  <span className="font-mono text-xs text-ink-muted group-hover:text-ink transition-colors">
+                  <span className="font-mono text-sm text-ink-muted group-hover:text-ink transition-colors">
                     {item.num}
                   </span>
                   <span className="font-display font-medium text-3xl md:text-5xl text-ink group-hover:translate-x-2 transition-transform duration-300">
@@ -119,7 +119,7 @@ const Navbar = () => {
               ))}
             </div>
 
-            <div className="flex justify-between font-mono text-[11px] text-ink-muted border-t border-paper-border pt-4">
+            <div className="flex justify-between font-mono text-xs text-ink-muted border-t border-paper-border pt-4">
               <span>2023 — 2027</span>
               <span>Computer Science & Engineering</span>
             </div>

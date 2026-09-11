@@ -5,7 +5,7 @@ import { portfolioData } from '../data/portfolioData';
 const Skills = () => {
   return (
     <section id="skills" className="py-10 md:py-16 px-6 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
-      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-secondary border-b border-paper-border pb-3 mb-6">
+      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-secondary border-b border-paper-border pb-3 mb-6">
         <span>Portfolio/ Pranavi Jain</span>
         <span className="uppercase tracking-widest text-ink font-semibold">.Toolkit / Software</span>
       </div>
@@ -22,19 +22,19 @@ const Skills = () => {
               className="border border-paper-border p-5 bg-paper-light/60 space-y-3"
             >
               <div className="flex justify-between items-baseline border-b border-paper-border/80 pb-2">
-                <h3 className="font-mono font-bold text-xs uppercase tracking-tight text-ink">
+                <h3 className="font-mono font-bold text-sm uppercase tracking-tight text-ink">
                   .{category.name}
                 </h3>
-                <span className="font-mono text-[10px] text-ink-muted">
+                <span className="font-mono text-xs text-ink-muted">
                   SEC.0{index + 1}
                 </span>
               </div>
 
               <div className="space-y-2">
                 {category.items.map((item) => (
-                  <div key={item.name} className="flex justify-between items-baseline font-mono text-xs">
+                  <div key={item.name} className="flex justify-between items-baseline font-mono text-sm">
                     <span className="text-ink font-medium">{item.name}</span>
-                    <span className="text-ink-muted text-[10px] truncate max-w-[140px] text-right">
+                    <span className="text-ink-muted text-xs truncate max-w-[150px] text-right">
                       {item.useCase}
                     </span>
                   </div>
@@ -46,7 +46,7 @@ const Skills = () => {
       </div>
 
       {/* Bottom Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-muted tracking-widest pt-4 mt-8 border-t border-paper-border/50">
+      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-muted tracking-widest pt-4 mt-8 border-t border-paper-border/50">
         <span>2023</span>
         <span>2027</span>
       </div>

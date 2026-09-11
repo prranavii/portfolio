@@ -12,7 +12,7 @@ const Hero = () => {
       className="min-h-screen relative flex flex-col justify-between p-6 sm:p-10 md:p-16 pt-20 md:pt-24 select-none overflow-hidden"
     >
       {/* Top Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-muted tracking-widest">
+      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-muted tracking-widest">
         <span>2023</span>
         <span>2027</span>
       </div>
@@ -69,14 +69,14 @@ const Hero = () => {
 
         {/* Right Label Block */}
         <div className="flex flex-col items-center lg:items-start space-y-3 text-center lg:text-left">
-          <div className="font-mono text-xs sm:text-sm tracking-[0.25em] uppercase font-bold text-ink">
+          <div className="font-mono text-sm sm:text-base tracking-[0.25em] uppercase font-bold text-ink">
             SOFTWARE ENGINEER
           </div>
-          <div className="font-mono text-[11px] text-ink-muted uppercase tracking-wider max-w-xs leading-relaxed">
+          <div className="font-mono text-xs text-ink-muted uppercase tracking-wider max-w-xs leading-relaxed">
             Resilient Backend / Intelligent Systems / CSE '27
           </div>
 
-          <div className="pt-2 flex items-center gap-4 text-xs font-mono">
+          <div className="pt-2 flex items-center gap-4 text-sm font-mono">
             <a 
               href="#about"
               className="border-b border-ink text-ink hover:text-ink-secondary transition-colors"
@@ -94,7 +94,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-muted tracking-wider pt-8 border-t border-paper-border/50">
+      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-muted tracking-wider pt-8 border-t border-paper-border/50">
         <span>Software & Systems</span>
         <span>Distributed AI</span>
       </div>

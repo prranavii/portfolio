@@ -249,7 +249,7 @@ const Work = () => {
   return (
     <section id="work" className="py-10 md:py-16 px-6 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
       {/* Top Section Header matching Pagnotta Image 3 */}
-      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-secondary border-b border-paper-border pb-3 mb-6">
+      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-secondary border-b border-paper-border pb-3 mb-6">
         <span>Portfolio/ Pranavi Jain</span>
         <span className="uppercase tracking-widest text-ink font-semibold">Selected Works / Projects</span>
       </div>
@@ -271,7 +271,7 @@ const Work = () => {
               className="flex flex-col cursor-pointer group"
             >
               {/* Number above the card as in Image 3 */}
-              <div className="font-mono text-xs text-ink-muted mb-2 tracking-wider">
+              <div className="font-mono text-sm text-ink-muted mb-2 tracking-wider">
                 {projectNum}
               </div>
 
@@ -282,10 +282,10 @@ const Work = () => {
 
               {/* Title and metadata below the card */}
               <div className="mt-3 space-y-1">
-                <h3 className="font-mono font-bold text-xs uppercase tracking-tight text-ink group-hover:underline">
+                <h3 className="font-mono font-bold text-sm uppercase tracking-tight text-ink group-hover:underline">
                   {project.title}
                 </h3>
-                <div className="flex justify-between items-center font-mono text-[10px] text-ink-muted">
+                <div className="flex justify-between items-center font-mono text-xs text-ink-muted">
                   <span>{projectYear}</span>
                   <span className="uppercase tracking-wider">[ Inspect ]</span>
                 </div>
@@ -296,7 +296,7 @@ const Work = () => {
       </div>
 
       {/* Bottom Corner Markers */}
-      <div className="flex justify-between items-center w-full font-mono text-xs text-ink-muted tracking-widest pt-4 mt-8 border-t border-paper-border/50">
+      <div className="flex justify-between items-center w-full font-mono text-sm text-ink-muted tracking-widest pt-4 mt-8 border-t border-paper-border/50">
         <span>2023</span>
         <span>2027</span>
       </div>
