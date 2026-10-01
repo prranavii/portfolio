@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
+import HeroBackground3D from './HeroBackground3D';
 
 const Hero = () => {
   const { personalInfo } = portfolioData;
@@ -11,9 +12,12 @@ const Hero = () => {
       id="home" 
       className="min-h-screen relative flex flex-col justify-center items-center p-4 sm:p-8 md:p-16 pt-24 sm:pt-28 md:pt-32 select-none overflow-hidden"
     >
+      {/* 3D Animated Background Canvas */}
+      <HeroBackground3D />
+
       {/* Center Theatrical Blurred Typographic Masterpiece */}
       <div 
-        className="my-auto py-4 sm:py-6 flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-16 w-full max-w-6xl mx-auto"
+        className="my-auto py-4 sm:py-6 flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-16 w-full max-w-6xl mx-auto relative z-10"
         onMouseEnter={() => setIsFocused(true)}
         onMouseLeave={() => setIsFocused(false)}
       >
