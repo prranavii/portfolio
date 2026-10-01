@@ -5,17 +5,17 @@ export default {
     extend: {
       colors: {
         paper: {
-          DEFAULT: '#F0EBE1',
-          light: '#F8F5EE',
-          dark: '#E5DED2',
-          border: '#D8D1C3',
-          line: '#C8C0B0',
+          DEFAULT: 'var(--bg-paper)',
+          light: 'var(--bg-paper-light)',
+          dark: 'var(--bg-paper-dark)',
+          border: 'var(--border-paper)',
+          line: 'var(--border-paper-line)',
         },
         ink: {
-          DEFAULT: '#141414',
-          secondary: '#4A4742',
-          muted: '#888075',
-          faint: '#B8B0A2',
+          DEFAULT: 'var(--text-ink)',
+          secondary: 'var(--text-ink-secondary)',
+          muted: 'var(--text-ink-muted)',
+          faint: 'var(--text-ink-faint)',
         },
       },
       fontFamily: {

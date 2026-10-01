@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
 
+const themes = [
+  { id: 'paper', label: 'Paper' },
+  { id: 'dark', label: 'Dark' },
+  { id: 'minimal', label: 'Light' },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('portfolio-theme') || 'paper';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
+  }, [theme]);
 
   const scrollToSection = (id) => {
     setIsOpen(false);
@@ -15,7 +29,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-40 px-4 sm:px-8 md:px-12 py-3.5 sm:py-4 bg-paper/85 backdrop-blur-sm border-b border-paper-border/60 transition-all duration-300">
+      <nav className="fixed top-0 left-0 w-full z-40 px-4 sm:px-8 md:px-12 py-3.5 sm:py-4 bg-paper/85 backdrop-blur-sm border-b border-paper-border/60 transition-colors duration-300">
         <div className="flex justify-between items-center w-full max-w-7xl mx-auto font-mono text-sm text-ink-secondary">
           {/* Brand mark */}
           <button 
@@ -54,11 +68,26 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Right Status / Menu Toggle */}
+          {/* Right Theme Selector & Menu Toggle */}
           <div className="flex items-center gap-3 sm:gap-4">
-            <span className="hidden sm:inline-block font-mono text-xs text-ink-muted">
-              Software Engineer
-            </span>
+            {/* 3-Theme Selector Pill */}
+            <div className="flex items-center border border-paper-border p-0.5 bg-paper-light text-[10px] sm:text-[11px] font-mono">
+              {themes.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => setTheme(t.id)}
+                  aria-label={`Switch to ${t.label} theme`}
+                  className={`px-2 py-0.5 uppercase tracking-wider transition-all cursor-pointer ${
+                    theme === t.id
+                      ? 'bg-ink text-paper font-bold shadow-xs'
+                      : 'text-ink-muted hover:text-ink'
+                  }`}
+                >
+                  {t.label}
+                </button>
+              ))}
+            </div>
+
             <button 
               onClick={() => setIsOpen(true)}
               className="md:hidden border border-paper-border px-2.5 py-1 text-xs font-mono uppercase tracking-wider hover:bg-paper-dark transition-colors cursor-pointer"
@@ -79,7 +108,7 @@ const Navbar = () => {
             className="fixed inset-0 z-50 bg-paper flex flex-col justify-between p-6 sm:p-10 md:p-16"
           >
             <div className="flex justify-between items-center w-full border-b border-paper-border pb-4 font-mono text-sm">
-              <span className="text-ink-secondary">Pranavi Jain</span>
+              <span className="text-ink-secondary font-semibold">Pranavi Jain</span>
               <button 
                 onClick={() => setIsOpen(false)}
                 className="p-1.5 border border-paper-border hover:bg-paper-dark transition-colors cursor-pointer text-ink"
@@ -112,9 +141,24 @@ const Navbar = () => {
               ))}
             </div>
 
-            <div className="flex justify-between font-mono text-xs text-ink-muted border-t border-paper-border pt-4">
-              <span>2023 — 2027</span>
-              <span>Computer Science & Engineering</span>
+            {/* Mobile Footer with Theme Switcher */}
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-3 font-mono text-xs text-ink-muted border-t border-paper-border pt-4">
+              <span>Theme:</span>
+              <div className="flex items-center border border-paper-border p-0.5 bg-paper-light text-[11px]">
+                {themes.map((t) => (
+                  <button
+                    key={t.id}
+                    onClick={() => setTheme(t.id)}
+                    className={`px-3 py-1 uppercase tracking-wider transition-colors cursor-pointer ${
+                      theme === t.id
+                        ? 'bg-ink text-paper font-bold'
+                        : 'text-ink-muted hover:text-ink'
+                    }`}
+                  >
+                    {t.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}

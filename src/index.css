@@ -3,37 +3,79 @@
 @tailwind utilities;
 
 @layer base {
+  :root, [data-theme="paper"] {
+    --bg-paper: #F0EBE1;
+    --bg-paper-light: #F8F5EE;
+    --bg-paper-dark: #E5DED2;
+    --border-paper: #D8D1C3;
+    --border-paper-line: #C8C0B0;
+    --text-ink: #141414;
+    --text-ink-secondary: #4A4742;
+    --text-ink-muted: #888075;
+    --text-ink-faint: #B8B0A2;
+    --paper-grain-opacity: 0.35;
+  }
+
+  [data-theme="dark"] {
+    --bg-paper: #0B0C10;
+    --bg-paper-light: #13161F;
+    --bg-paper-dark: #1A1E2B;
+    --border-paper: #282D3F;
+    --border-paper-line: #343B52;
+    --text-ink: #F3F4F6;
+    --text-ink-secondary: #9CA3AF;
+    --text-ink-muted: #6B7280;
+    --text-ink-faint: #374151;
+    --paper-grain-opacity: 0.12;
+  }
+
+  [data-theme="minimal"] {
+    --bg-paper: #FFFFFF;
+    --bg-paper-light: #F5F5F7;
+    --bg-paper-dark: #E5E5E7;
+    --border-paper: #E1E1E4;
+    --border-paper-line: #D1D1D6;
+    --text-ink: #000000;
+    --text-ink-secondary: #555555;
+    --text-ink-muted: #888888;
+    --text-ink-faint: #CCCCCC;
+    --paper-grain-opacity: 0.04;
+  }
+
   html {
     scroll-behavior: smooth;
-    background-color: #F0EBE1;
-    color: #141414;
+    background-color: var(--bg-paper);
+    color: var(--text-ink);
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 17px;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #F0EBE1;
+    background-color: var(--bg-paper);
+    color: var(--text-ink);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::selection {
-    background-color: #141414;
-    color: #F0EBE1;
+    background-color: var(--text-ink);
+    color: var(--bg-paper);
   }
 
   ::-webkit-scrollbar {
     width: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #F0EBE1;
+    background: var(--bg-paper);
   }
   ::-webkit-scrollbar-thumb {
-    background: #D5CEC2;
+    background: var(--border-paper);
     border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #A0988A;
+    background: var(--text-ink-muted);
   }
 }
 
@@ -46,7 +88,8 @@
   height: 100vh;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.35;
+  opacity: var(--paper-grain-opacity);
+  transition: opacity 0.3s ease;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
 }
 
