@@ -228,7 +228,7 @@ const Work = () => {
       {/* Section Header */}
       <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-8 sm:mb-12">
         <span className="uppercase tracking-widest text-ink font-semibold">Selected Works</span>
-        <span className="text-ink-muted text-xs">03</span>
+        <span className="text-ink-muted text-xs">02</span>
       </div>
 
       {/* 4-Column Showcase */}
