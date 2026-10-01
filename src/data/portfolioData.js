@@ -18,6 +18,41 @@ export const portfolioData = {
     { value: "20+", label: "Hackathon Placements" }
   ],
 
+  experiences: [
+    {
+      id: "ordinal",
+      company: "Ordinal",
+      role: "Software Engineering Intern",
+      period: "Sep 2026 – Present",
+      isCurrent: true,
+      badge: "Currently",
+      description: "Contributing to AI-powered voice agents that automate claims, dispute, and payment workflows. Working on AI-driven conversational workflows and software systems supporting business process automation.",
+      highlights: [
+        "AI-powered voice agents",
+        "Conversational AI",
+        "Workflow automation",
+        "Backend/API systems",
+        "AI engineering"
+      ]
+    },
+    {
+      id: "bitecode",
+      company: "BiteCode",
+      role: "Freelance Developer",
+      period: "Client Work",
+      isCurrent: false,
+      badge: "FREELANCE",
+      description: "Worked as a freelance developer with BiteCode, contributing to the redesign and development of its web experience. Worked across UI/UX improvements, responsive frontend development, and implementation of client requirements to create a cleaner and more engaging developer-focused product experience.",
+      highlights: [
+        "Freelance / client work",
+        "UI/UX improvement",
+        "Frontend development",
+        "Responsive design",
+        "Working from client requirements and feedback"
+      ]
+    }
+  ],
+
   projects: [
     {
       id: "placepilot",
@@ -142,44 +177,5 @@ export const portfolioData = {
 
   dsa: {
     problemsSolved: 800,
-  },
-
-  journey: [
-    {
-      year: "2023",
-      title: "Started B.Tech CSE",
-      description: "Began Bachelor of Technology in Computer Science & Engineering, building solid foundations in computing concepts, mathematics, and OOP."
-    },
-    {
-      year: "2026",
-      title: "Algorithms & Placement Prep",
-      description: "Deepened knowledge in Data Structures, Algorithms, and System Design patterns. Solved 200+ algorithmic problems."
-    },
-    {
-      year: "2027",
-      title: "Graduation & Next Chapter",
-      description: "Exiting B.Tech with an engineering mindset, ready to build robust, intelligent software systems in a production-level environment."
-    }
-  ],
-
-  certifications: [
-    
-    {
-      title: "Generative AI Certification",
-      issuer: "Udemy",
-      year: "2026",
-      details: "Deep dive into Transformer architectures, prompt optimization, and local weights setup."
-    },
-  ],
-
-  personality: [
-    "solving DSA questions",
-    "breaking side projects",
-    "fixing what I just broke",
-    "compiling local RAG pipelines",
-    "hacking in campus hackathons",
-    "arguing with compiler logs",
-    "probably drafting a new script"
-  ]
+  }
 };
-
