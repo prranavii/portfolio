@@ -23,7 +23,7 @@ const Contact = () => {
       {/* Section Header */}
       <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-8 sm:mb-12">
         <span className="uppercase tracking-widest text-ink font-semibold">Contact & Inquiries</span>
-        <span className="text-ink-muted text-xs">04</span>
+        <span className="text-ink-muted text-xs">05</span>
       </div>
 
       <div className="max-w-4xl mx-auto">

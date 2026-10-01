@@ -14,8 +14,8 @@ const Journey = () => {
     <section id="journey" className="py-12 md:py-20 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
       {/* Header bar of section */}
       <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-8 sm:mb-12">
-        <span>Portfolio/ Pranavi Jain</span>
         <span className="uppercase tracking-widest text-ink font-semibold">Experience & Roles</span>
+        <span className="text-ink-muted text-xs">04</span>
       </div>
 
       {/* Experience Cards Grid */}

@@ -111,40 +111,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Clean Dual Column Lists: .SOFTWARE & .TECHNICAL SKILLS */}
-          <div className="grid grid-cols-2 gap-8 pt-4 border-t border-paper-border/60">
-            {/* .SOFTWARE */}
-            <div className="space-y-3">
-              <h4 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
-                .SOFTWARE
-              </h4>
-              <ul className="font-mono text-xs text-ink-secondary space-y-1.5 leading-relaxed">
-                <li>Python / C++</li>
-                <li>React / Next.js</li>
-                <li>FastAPI / Node.js</li>
-                <li>FAISS / Vector DBs</li>
-                <li>LangChain / Ollama</li>
-                <li>MongoDB / PostgreSQL</li>
-                <li>Tailwind CSS / Git</li>
-              </ul>
-            </div>
-
-            {/* .TECHNICAL SKILLS */}
-            <div className="space-y-3">
-              <h4 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
-                .TECHNICAL SKILLS
-              </h4>
-              <ul className="font-mono text-xs text-ink-secondary space-y-1.5 leading-relaxed">
-                <li>RAG Architecture</li>
-                <li>System Optimization</li>
-                <li>Algorithmic Problem Solving</li>
-                <li>800+ Solved Algorithms</li>
-                <li>Concurrency Control</li>
-                <li>API Architecture</li>
-              </ul>
-            </div>
-          </div>
-
         </div>
 
       </motion.div>
