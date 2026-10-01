@@ -25,8 +25,8 @@ const About = () => {
       {/* Main Grid Spread */}
       <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 max-w-6xl mx-auto">
         
-        {/* Left Column: Identity & Narrative Bio */}
-        <div className="lg:col-span-5 space-y-8">
+        {/* Left Column: Identity & Concise Phrase Bio */}
+        <div className="lg:col-span-6 space-y-8">
           
           {/* Clean Identity Header */}
           <div className="space-y-1 font-mono text-sm">
@@ -54,60 +54,36 @@ const About = () => {
             </div>
           </div>
 
-          {/* Narrative About */}
+          {/* Shortened Phrase-Based About */}
           <div className="space-y-3 pt-2">
             <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
               .ABOUT ME
             </h3>
-            <div className="font-mono text-xs sm:text-sm text-ink-secondary leading-relaxed space-y-4">
-              <p>
-                I am a Computer Science & Engineering student (Class of 2027) focused on building resilient backend systems, robust API microservices, and production-ready intelligent applications.
-              </p>
-              <p>
-                My engineering focus centers on Retrieval-Augmented Generation (RAG), offline LLM orchestration using LangChain & Ollama, vector search optimization, and performant full-stack architectures.
-              </p>
-              <p>
-                Driven by algorithmic discipline and clean software design, I transform complex data workflows into performant software built for real-world impact.
-              </p>
-            </div>
+            <ul className="font-mono text-xs sm:text-sm text-ink-secondary space-y-2 leading-relaxed">
+              <li>- Focus on resilient backend systems & production AI microservices.</li>
+              <li>- RAG pipelines, offline LLM orchestration (LangChain, Ollama) & vector search optimization.</li>
+              <li>- Algorithmic discipline, clean software design & performant full-stack architectures.</li>
+            </ul>
           </div>
 
         </div>
 
-        {/* Right Column: Education, Experience, Software & Skills */}
-        <div className="lg:col-span-7 space-y-8">
+        {/* Right Column: Education */}
+        <div className="lg:col-span-6 space-y-8">
           
           {/* .EDUCATION */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
               .EDUCATION
             </h3>
-            <div className="font-mono text-xs sm:text-sm space-y-1">
+            <div className="font-mono text-xs sm:text-sm space-y-2">
               <div className="flex flex-col sm:flex-row justify-between sm:items-baseline text-ink font-semibold">
                 <span>B.Tech Computer Science & Engineering</span>
                 <span className="text-ink-muted text-xs font-normal">2023 — 2027</span>
               </div>
-              <p className="text-ink-secondary text-xs">
-                Focus on Algorithms, Distributed Computing & AI Systems
+              <p className="text-ink-secondary text-xs leading-relaxed">
+                Focus on Algorithms, Distributed Computing & AI Systems.
               </p>
-            </div>
-          </div>
-
-          {/* .EXPERIENCE */}
-          <div className="space-y-2">
-            <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
-              .EXPERIENCE
-            </h3>
-            <div className="font-mono text-xs sm:text-sm space-y-2">
-              <div className="flex flex-col sm:flex-row justify-between sm:items-baseline text-ink font-semibold">
-                <span>AI/ML Engineer & Systems Research</span>
-                <span className="text-ink-muted text-xs font-normal">2024 — present</span>
-              </div>
-              <ul className="text-xs text-ink-secondary space-y-1 pt-1 leading-relaxed">
-                <li>- Design of offline RAG pipelines & chunking strategies.</li>
-                <li>- FAISS vector indexing & local LLM runtime optimization.</li>
-                <li>- Production full-stack services with real-time SSE streams.</li>
-              </ul>
             </div>
           </div>
 
