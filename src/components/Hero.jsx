@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 import { portfolioData } from '../data/portfolioData';
 import HeroBackground3D from './HeroBackground3D';
 
 const Hero = () => {
   const { personalInfo } = portfolioData;
-  const [isFocused, setIsFocused] = useState(false);
 
   return (
     <section 
@@ -15,55 +13,14 @@ const Hero = () => {
       {/* 3D Animated Background Canvas */}
       <HeroBackground3D />
 
-      {/* Center Theatrical Blurred Typographic Masterpiece */}
-      <div 
-        className="my-auto py-4 sm:py-6 flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-16 w-full max-w-6xl mx-auto relative z-10"
-        onMouseEnter={() => setIsFocused(true)}
-        onMouseLeave={() => setIsFocused(false)}
-      >
-        {/* The Blurred "pranavi / jain" Interactive Animation Composition */}
-        <div className="relative cursor-pointer group uppercase">
-          {/* Background Blurred Glow Shadow Layer */}
-          <div 
-            className="absolute -inset-4 bg-ink/10 filter blur-xl rounded-full opacity-60 transition-opacity duration-700 pointer-events-none"
-          />
-
-          {/* Layer 1: Blurred Depth-of-Field Echo */}
-          <div 
-            className={`font-sans font-black text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.85] tracking-tight text-ink/80 transition-all duration-700 select-none ${
-              isFocused ? 'filter blur-[3px] opacity-70' : 'filter blur-[8px] md:blur-[12px] opacity-90'
-            }`}
-          >
-            <div>pranavi</div>
-            <div className="-mt-1 sm:-mt-3 md:-mt-5">jain</div>
-          </div>
-
-          {/* Layer 2: Semi-sharp Focal Layer with optical contrast */}
-          <div 
-            className="absolute inset-0 font-sans font-black text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.85] tracking-tight text-ink select-none mix-blend-multiply transition-all duration-700"
-            style={{
-              clipPath: isFocused 
-                ? 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' 
-                : 'polygon(35% 0%, 100% 0%, 85% 100%, 20% 100%)'
-            }}
-          >
-            <div>pranavi</div>
-            <div className="-mt-1 sm:-mt-3 md:-mt-5">jain</div>
-          </div>
-
-          {/* Layer 3: Sharp crisp overlay accents */}
-          <div 
-            className="absolute inset-0 font-sans font-black text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.85] tracking-tight text-transparent select-none pointer-events-none"
-            style={{
-              WebkitTextStroke: '1px rgba(20, 20, 20, 0.4)',
-              opacity: isFocused ? 0.9 : 0.4,
-              transition: 'opacity 0.5s ease'
-            }}
-          >
-            <div>pranavi</div>
-            <div className="-mt-1 sm:-mt-3 md:-mt-5">jain</div>
-          </div>
-        </div>
+      {/* Center Typographic Masterpiece */}
+      <div className="my-auto py-4 sm:py-6 flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-16 w-full max-w-6xl mx-auto relative z-10">
+        
+        {/* Crisp Bold Name Display (Clean & Static) */}
+        <h1 className="font-sans font-black text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.85] tracking-tight text-ink uppercase select-none">
+          <div>pranavi</div>
+          <div className="-mt-1 sm:-mt-3 md:-mt-5">jain</div>
+        </h1>
 
         {/* Right Label Block */}
         <div className="flex flex-col items-center lg:items-start space-y-2 sm:space-y-3 text-center lg:text-left">
@@ -89,6 +46,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
+
       </div>
     </section>
   );
