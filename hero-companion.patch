@@ -1,0 +1,1862 @@
+diff --git a/package-lock.json b/package-lock.json
+index 6ae8d1d..4f6454c 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -11,8 +11,7 @@
+         "framer-motion": "^12.42.2",
+         "lucide-react": "^1.26.0",
+         "react": "^19.2.7",
+-        "react-dom": "^19.2.7",
+-        "three": "^0.186.1"
++        "react-dom": "^19.2.7"
+       },
+       "devDependencies": {
+         "@types/react": "^19.2.17",
+@@ -45,6 +44,7 @@
+       "dev": true,
+       "license": "MIT",
+       "optional": true,
++      "peer": true,
+       "dependencies": {
+         "@emnapi/wasi-threads": "1.2.3",
+         "tslib": "^2.4.0"
+@@ -57,6 +57,19 @@
+       "dev": true,
+       "license": "MIT",
+       "optional": true,
++      "peer": true,
++      "dependencies": {
++        "tslib": "^2.4.0"
++      }
++    },
++    "node_modules/@emnapi/runtime": {
++      "version": "1.11.3",
++      "resolved": "https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.11.3.tgz",
++      "integrity": "sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA==",
++      "dev": true,
++      "license": "MIT",
++      "optional": true,
++      "peer": true,
+       "dependencies": {
+         "tslib": "^2.4.0"
+       }
+@@ -805,7 +818,6 @@
+       "integrity": "sha512-MXfmqaVPEVgkBT/aY0aGCkRWWtByiYQXo3xdQ8r5RzuFrPiRn8Gar2tQdXSUQ2GKV3bkXckek89V8wQBY2Q/Aw==",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "csstype": "^3.2.2"
+       }
+@@ -983,7 +995,6 @@
+         }
+       ],
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "baseline-browser-mapping": "^2.10.44",
+         "caniuse-lite": "^1.0.30001806",
+@@ -1379,7 +1390,6 @@
+       "integrity": "sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "bin": {
+         "jiti": "bin/jiti.js"
+       }
+@@ -1866,7 +1876,6 @@
+       "integrity": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "engines": {
+         "node": ">=12"
+       },
+@@ -1914,7 +1923,6 @@
+         }
+       ],
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "nanoid": "^3.3.16",
+         "picocolors": "^1.1.1",
+@@ -2084,7 +2092,6 @@
+       "resolved": "https://registry.npmjs.org/react/-/react-19.2.8.tgz",
+       "integrity": "sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==",
+       "license": "MIT",
+-      "peer": true,
+       "engines": {
+         "node": ">=0.10.0"
+       }
+@@ -2094,7 +2101,6 @@
+       "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-19.2.8.tgz",
+       "integrity": "sha512-rVprimfGBG3DR+Tq0IQG2DT5PxKth1WIGDmj5yPmlzr4YBe7uyE+Du4oVqTDXZSHGGGXRtTJEGSSePyQCMBglQ==",
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "scheduler": "^0.27.0"
+       },
+@@ -2342,12 +2348,6 @@
+         "node": ">=0.8"
+       }
+     },
+-    "node_modules/three": {
+-      "version": "0.186.1",
+-      "resolved": "https://registry.npmjs.org/three/-/three-0.186.1.tgz",
+-      "integrity": "sha512-blFeqb49wRCSGUGj7gtpfnSGHy2lwDk94RhUmS1c/hTby70kvChbWpkJ4Pm1390LqzzvTmzgXKHPEafJwCb8jA==",
+-      "license": "MIT"
+-    },
+     "node_modules/tinyglobby": {
+       "version": "0.2.17",
+       "resolved": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.17.tgz",
+@@ -2435,7 +2435,6 @@
+       "integrity": "sha512-7ULLwsCdYx/nRyrpiEwvqb5TFHrMVZyBt+rg/OAXT7rgj/z+DtTDyKFeLAdDkubDVDKD8jOsndmy7m55XcfUsw==",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "lightningcss": "^1.32.0",
+         "picomatch": "^4.0.5",
+diff --git a/package.json b/package.json
+index daee81d..8937012 100644
+--- a/package.json
++++ b/package.json
+@@ -13,8 +13,7 @@
+     "framer-motion": "^12.42.2",
+     "lucide-react": "^1.26.0",
+     "react": "^19.2.7",
+-    "react-dom": "^19.2.7",
+-    "three": "^0.186.1"
++    "react-dom": "^19.2.7"
+   },
+   "devDependencies": {
+     "@types/react": "^19.2.17",
+diff --git a/src/components/CursorChaseCanvas.jsx b/src/components/CursorChaseCanvas.jsx
+deleted file mode 100644
+index 15ca86c..0000000
+--- a/src/components/CursorChaseCanvas.jsx
++++ /dev/null
+@@ -1,597 +0,0 @@
+-import React, { useEffect, useRef, useState } from 'react';
+-import { motion, AnimatePresence } from 'framer-motion';
+-import * as THREE from 'three';
+-
+-const CursorChaseCanvas = ({ onStateChange }) => {
+-  const containerRef = useRef(null);
+-  const [speechBubble, setSpeechBubble] = useState('');
+-  const [speechPos, setSpeechPos] = useState({ x: 0, y: 0 });
+-
+-  useEffect(() => {
+-    const container = containerRef.current;
+-    if (!container) return;
+-
+-    // Scene Setup
+-    const scene = new THREE.Scene();
+-    const camera = new THREE.PerspectiveCamera(
+-      42,
+-      container.clientWidth / container.clientHeight,
+-      0.1,
+-      1000
+-    );
+-    camera.position.set(0, 0.5, 14);
+-
+-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+-    renderer.setSize(container.clientWidth, container.clientHeight);
+-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+-    container.appendChild(renderer.domElement);
+-
+-    // Color system from CSS variables
+-    const getThemeColors = () => {
+-      const style = getComputedStyle(document.documentElement);
+-      const ink = style.getPropertyValue('--text-ink').trim() || '#141414';
+-      const bgLight = style.getPropertyValue('--bg-paper-light').trim() || '#F8F5EE';
+-      const border = style.getPropertyValue('--border-paper').trim() || '#D8D1C3';
+-      const secondary = style.getPropertyValue('--text-ink-secondary').trim() || '#4A4742';
+-      return { ink, bgLight, border, secondary };
+-    };
+-
+-    let colors = getThemeColors();
+-
+-    // Lighting
+-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+-    scene.add(ambientLight);
+-
+-    const mainLight = new THREE.DirectionalLight(0xffffff, 0.95);
+-    mainLight.position.set(6, 10, 8);
+-    scene.add(mainLight);
+-
+-    const fillLight = new THREE.PointLight(0xffedd5, 0.6, 25);
+-    fillLight.position.set(-6, 4, 6);
+-    scene.add(fillLight);
+-
+-    // ----------------------------------------------------
+-    // HOME MICRO-ENVIRONMENT (Desk, Laptop, Plant, Mug)
+-    // ----------------------------------------------------
+-    const homePos = new THREE.Vector3(1.8, -1.2, 0); // Home desk base location
+-    const envGroup = new THREE.Group();
+-    envGroup.position.copy(homePos);
+-    scene.add(envGroup);
+-
+-    // Wooden Desk Surface
+-    const deskGeo = new THREE.BoxGeometry(3.8, 0.22, 1.8);
+-    const deskMat = new THREE.MeshStandardMaterial({
+-      color: new THREE.Color(colors.border),
+-      roughness: 0.6,
+-    });
+-    const desk = new THREE.Mesh(deskGeo, deskMat);
+-    desk.position.set(0, 0, 0);
+-    envGroup.add(desk);
+-
+-    // Desk Legs
+-    const legGeo = new THREE.CylinderGeometry(0.06, 0.06, 1.8);
+-    const legMat = new THREE.MeshStandardMaterial({ color: new THREE.Color(colors.secondary), roughness: 0.5 });
+-    const leg1 = new THREE.Mesh(legGeo, legMat);
+-    leg1.position.set(-1.7, -0.9, 0.7);
+-    envGroup.add(leg1);
+-    const leg2 = new THREE.Mesh(legGeo, legMat);
+-    leg2.position.set(1.7, -0.9, 0.7);
+-    envGroup.add(leg2);
+-
+-    // Mini Open Laptop
+-    const laptopBaseGeo = new THREE.BoxGeometry(0.9, 0.04, 0.65);
+-    const laptopMat = new THREE.MeshStandardMaterial({ color: new THREE.Color(colors.secondary), roughness: 0.3 });
+-    const laptopBase = new THREE.Mesh(laptopBaseGeo, laptopMat);
+-    laptopBase.position.set(-0.6, 0.13, 0.2);
+-    envGroup.add(laptopBase);
+-
+-    const screenGeo = new THREE.BoxGeometry(0.88, 0.58, 0.03);
+-    const screenMat = new THREE.MeshStandardMaterial({ color: new THREE.Color(colors.ink), roughness: 0.2 });
+-    const screen = new THREE.Mesh(screenGeo, screenMat);
+-    screen.position.set(-0.6, 0.44, -0.1);
+-    screen.rotation.x = -0.15;
+-    envGroup.add(screen);
+-
+-    // Glow on Screen
+-    const displayGlowGeo = new THREE.PlaneGeometry(0.8, 0.5);
+-    const displayGlowMat = new THREE.MeshBasicMaterial({ color: 0xfffbeb });
+-    const displayGlow = new THREE.Mesh(displayGlowGeo, displayGlowMat);
+-    displayGlow.position.set(-0.6, 0.44, -0.08);
+-    displayGlow.rotation.x = -0.15;
+-    envGroup.add(displayGlow);
+-
+-    // Mini Coffee Mug
+-    const mugGeo = new THREE.CylinderGeometry(0.18, 0.15, 0.32, 16);
+-    const mugMat = new THREE.MeshStandardMaterial({ color: new THREE.Color(colors.bgLight), roughness: 0.4 });
+-    const mug = new THREE.Mesh(mugGeo, mugMat);
+-    mug.position.set(0.6, 0.28, 0.3);
+-    envGroup.add(mug);
+-
+-    // Mini Potted Plant
+-    const potGeo = new THREE.CylinderGeometry(0.22, 0.17, 0.35, 16);
+-    const potMat = new THREE.MeshStandardMaterial({ color: new THREE.Color(colors.secondary), roughness: 0.5 });
+-    const pot = new THREE.Mesh(potGeo, potMat);
+-    pot.position.set(1.3, 0.29, -0.2);
+-    envGroup.add(pot);
+-
+-    const leafMat = new THREE.MeshStandardMaterial({ color: 0x48bb78, roughness: 0.5 });
+-    const leaf1 = new THREE.Mesh(new THREE.SphereGeometry(0.18, 8, 8), leafMat);
+-    leaf1.position.set(1.3, 0.52, -0.2);
+-    leaf1.scale.set(1, 1.4, 0.6);
+-    envGroup.add(leaf1);
+-    const leaf2 = new THREE.Mesh(new THREE.SphereGeometry(0.15, 8, 8), leafMat);
+-    leaf2.position.set(1.42, 0.48, -0.1);
+-    leaf2.rotation.z = -0.5;
+-    envGroup.add(leaf2);
+-
+-    // ----------------------------------------------------
+-    // HANDCRAFTED CREATURE ("Nari") - 250px–320px Visual Scale
+-    // ----------------------------------------------------
+-    const characterGroup = new THREE.Group();
+-    characterGroup.position.copy(homePos);
+-    characterGroup.position.y += 1.1; // Sits on desk at home
+-    scene.add(characterGroup);
+-
+-    // 1. Oversized Rounded Head
+-    const headGeo = new THREE.SphereGeometry(1.65, 32, 32);
+-    headGeo.scale(1, 1.06, 0.98);
+-    const bodyMat = new THREE.MeshStandardMaterial({
+-      color: new THREE.Color(colors.bgLight),
+-      roughness: 0.35,
+-      metalness: 0.05,
+-    });
+-    const head = new THREE.Mesh(headGeo, bodyMat);
+-    head.position.set(0, 1.4, 0);
+-    characterGroup.add(head);
+-
+-    // Stylized Hair Bun on top
+-    const hairBunGeo = new THREE.SphereGeometry(0.75, 24, 24);
+-    const hairMat = new THREE.MeshStandardMaterial({
+-      color: new THREE.Color(colors.secondary),
+-      roughness: 0.5,
+-    });
+-    const hairBun = new THREE.Mesh(hairBunGeo, hairMat);
+-    hairBun.position.set(0, 3.1, -0.3);
+-    characterGroup.add(hairBun);
+-
+-    // Hair Lock Accents
+-    const lock1 = new THREE.Mesh(new THREE.SphereGeometry(0.4, 16, 16), hairMat);
+-    lock1.position.set(-1.2, 2.2, 0.3);
+-    characterGroup.add(lock1);
+-    const lock2 = new THREE.Mesh(new THREE.SphereGeometry(0.4, 16, 16), hairMat);
+-    lock2.position.set(1.2, 2.2, 0.3);
+-    characterGroup.add(lock2);
+-
+-    // 2. Face Details: Expressive Eyes & Pupil Reflection Highlights
+-    const eyeGroup = new THREE.Group();
+-    eyeGroup.position.set(0, 1.4, 1.35);
+-    characterGroup.add(eyeGroup);
+-
+-    const eyeGeo = new THREE.SphereGeometry(0.32, 20, 20);
+-    eyeGeo.scale(1, 1.25, 0.4);
+-    const eyeMat = new THREE.MeshStandardMaterial({ color: new THREE.Color(colors.ink), roughness: 0.1 });
+-
+-    const leftEye = new THREE.Mesh(eyeGeo, eyeMat);
+-    leftEye.position.set(-0.55, 0.1, 0.2);
+-    eyeGroup.add(leftEye);
+-
+-    const rightEye = new THREE.Mesh(eyeGeo, eyeMat);
+-    rightEye.position.set(0.55, 0.1, 0.2);
+-    eyeGroup.add(rightEye);
+-
+-    // White Pupil Reflections
+-    const reflectGeo = new THREE.SphereGeometry(0.09, 8, 8);
+-    const reflectMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+-
+-    const leftReflect = new THREE.Mesh(reflectGeo, reflectMat);
+-    leftReflect.position.set(-0.48, 0.18, 0.34);
+-    eyeGroup.add(leftReflect);
+-
+-    const rightReflect = new THREE.Mesh(reflectGeo, reflectMat);
+-    rightReflect.position.set(0.62, 0.18, 0.34);
+-    eyeGroup.add(rightReflect);
+-
+-    // Warm Blush Cheeks
+-    const blushGeo = new THREE.SphereGeometry(0.24, 16, 16);
+-    blushGeo.scale(1.2, 0.7, 0.3);
+-    const blushMat = new THREE.MeshBasicMaterial({ color: 0xf472b6, transparent: true, opacity: 0.5 });
+-
+-    const leftBlush = new THREE.Mesh(blushGeo, blushMat);
+-    leftBlush.position.set(-0.85, -0.3, 0.15);
+-    eyeGroup.add(leftBlush);
+-
+-    const rightBlush = new THREE.Mesh(blushGeo, blushMat);
+-    rightBlush.position.set(0.85, -0.3, 0.15);
+-    eyeGroup.add(rightBlush);
+-
+-    // 3. Cute Sweater Body
+-    const sweaterGeo = new THREE.SphereGeometry(1.2, 28, 28);
+-    sweaterGeo.scale(0.95, 1.1, 0.9);
+-    const sweaterMat = new THREE.MeshStandardMaterial({
+-      color: new THREE.Color(colors.border),
+-      roughness: 0.6,
+-    });
+-    const sweater = new THREE.Mesh(sweaterGeo, sweaterMat);
+-    sweater.position.set(0, -0.3, 0);
+-    characterGroup.add(sweater);
+-
+-    // 4. Arms & Hands
+-    const armGeo = new THREE.CylinderGeometry(0.16, 0.14, 0.9);
+-    const armMat = new THREE.MeshStandardMaterial({ color: new THREE.Color(colors.bgLight), roughness: 0.4 });
+-
+-    const leftArmGroup = new THREE.Group();
+-    leftArmGroup.position.set(-1.05, 0.1, 0);
+-    characterGroup.add(leftArmGroup);
+-    const leftArm = new THREE.Mesh(armGeo, armMat);
+-    leftArm.position.set(0, -0.4, 0);
+-    leftArmGroup.add(leftArm);
+-
+-    const rightArmGroup = new THREE.Group();
+-    rightArmGroup.position.set(1.05, 0.1, 0);
+-    characterGroup.add(rightArmGroup);
+-    const rightArm = new THREE.Mesh(armGeo, armMat);
+-    rightArm.position.set(0, -0.4, 0);
+-    rightArmGroup.add(rightArm);
+-
+-    // Tiny Shoes / Feet
+-    const shoeGeo = new THREE.SphereGeometry(0.28, 16, 16);
+-    shoeGeo.scale(1, 0.7, 1.4);
+-    const shoeMat = new THREE.MeshStandardMaterial({ color: new THREE.Color(colors.ink), roughness: 0.4 });
+-
+-    const leftFoot = new THREE.Mesh(shoeGeo, shoeMat);
+-    leftFoot.position.set(-0.45, -1.3, 0.2);
+-    characterGroup.add(leftFoot);
+-
+-    const rightFoot = new THREE.Mesh(shoeGeo, shoeMat);
+-    rightFoot.position.set(0.45, -1.3, 0.2);
+-    characterGroup.add(rightFoot);
+-
+-    // Dynamic Character Shadow
+-    const shadowGeo = new THREE.PlaneGeometry(2.6, 2.6);
+-    const shadowCanvas = document.createElement('canvas');
+-    shadowCanvas.width = 128;
+-    shadowCanvas.height = 128;
+-    const ctx = shadowCanvas.getContext('2d');
+-    const grad = ctx.createRadialGradient(64, 64, 0, 64, 64, 60);
+-    grad.addColorStop(0, 'rgba(0,0,0,0.28)');
+-    grad.addColorStop(1, 'rgba(0,0,0,0)');
+-    ctx.fillStyle = grad;
+-    ctx.fillRect(0, 0, 128, 128);
+-
+-    const shadowTex = new THREE.CanvasTexture(shadowCanvas);
+-    const shadowMat = new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false });
+-    const shadowMesh = new THREE.Mesh(shadowGeo, shadowMat);
+-    shadowMesh.rotation.x = -Math.PI / 2;
+-    shadowMesh.position.set(homePos.x, -1.18, homePos.z);
+-    scene.add(shadowMesh);
+-
+-    // ----------------------------------------------------
+-    // STAR TRAIL PARTICLES (Subtle Hand-drawn Star Trail)
+-    // ----------------------------------------------------
+-    const trailCount = 20;
+-    const trailGeo = new THREE.BufferGeometry();
+-    const trailPositions = new Float32Array(trailCount * 3);
+-    const trailOpacities = new Float32Array(trailCount);
+-
+-    trailGeo.setAttribute('position', new THREE.BufferAttribute(trailPositions, 3));
+-    const trailMat = new THREE.PointsMaterial({
+-      color: new THREE.Color(colors.ink),
+-      size: 0.25,
+-      transparent: true,
+-      opacity: 0.4,
+-    });
+-
+-    const trailSystem = new THREE.Points(trailGeo, trailMat);
+-    scene.add(trailSystem);
+-
+-    let trailPointer = 0;
+-
+-    // ----------------------------------------------------
+-    // STATE MACHINE & PHYSICS VARIABLES
+-    // ----------------------------------------------------
+-    const position = new THREE.Vector3().copy(characterGroup.position);
+-    const velocity = new THREE.Vector3(0, 0, 0);
+-    const targetPos = new THREE.Vector3().copy(characterGroup.position);
+-
+-    let currentState = 'IDLE_HOME'; // IDLE_HOME | CHASING | CATCHING_UP | HOVER | RETURNING_HOME
+-    let lastMouseMoveTime = Date.now();
+-    let speechCooldown = 0;
+-    let blinkTimer = 0;
+-    let blinkDuration = 0;
+-    let runCycle = 0;
+-
+-    // Convert mouse to 3D world target
+-    const handleMouseMove = (e) => {
+-      lastMouseMoveTime = Date.now();
+-      const rect = container.getBoundingClientRect();
+-      const mouseX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+-      const mouseY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+-
+-      // Bound target within viewport
+-      targetPos.x = THREE.MathUtils.clamp(mouseX * 6.5, -6.5, 6.5);
+-      targetPos.y = THREE.MathUtils.clamp(mouseY * 4.2 - 0.2, -2.8, 3.8);
+-      targetPos.z = 0.5;
+-
+-      // Check hover
+-      const targetEl = document.elementFromPoint(e.clientX, e.clientY);
+-      if (targetEl && container.contains(targetEl)) {
+-        currentState = 'HOVER';
+-      }
+-    };
+-
+-    window.addEventListener('mousemove', handleMouseMove);
+-
+-    // Theme Change Observer
+-    const themeObserver = new MutationObserver(() => {
+-      colors = getThemeColors();
+-      deskMat.color.set(colors.border);
+-      legMat.color.set(colors.secondary);
+-      laptopMat.color.set(colors.secondary);
+-      screenMat.color.set(colors.ink);
+-      mugMat.color.set(colors.bgLight);
+-      potMat.color.set(colors.secondary);
+-      bodyMat.color.set(colors.bgLight);
+-      hairMat.color.set(colors.secondary);
+-      eyeMat.color.set(colors.ink);
+-      sweaterMat.color.set(colors.border);
+-      armMat.color.set(colors.bgLight);
+-      shoeMat.color.set(colors.ink);
+-      trailMat.color.set(colors.ink);
+-    });
+-
+-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+-
+-    // ----------------------------------------------------
+-    // ANIMATION LOOP (60 FPS DAMPED SPRING PHYSICS)
+-    // ----------------------------------------------------
+-    let animationFrameId;
+-    const clock = new THREE.Clock();
+-
+-    const triggerSpeech = (text) => {
+-      if (speechCooldown > 0) return;
+-      setSpeechBubble(text);
+-      speechCooldown = 3.5;
+-      setTimeout(() => setSpeechBubble(''), 2200);
+-    };
+-
+-    const animate = () => {
+-      animationFrameId = requestAnimationFrame(animate);
+-      const delta = clock.getDelta();
+-      const elapsedTime = clock.getElapsedTime();
+-
+-      if (speechCooldown > 0) speechCooldown -= delta;
+-
+-      const idleDuration = (Date.now() - lastMouseMoveTime) / 1000;
+-      const distToTarget = position.distanceTo(targetPos);
+-      const distToHome = position.distanceTo(new THREE.Vector3(homePos.x, homePos.y + 1.1, homePos.z));
+-
+-      // State Transition Evaluation
+-      if (currentState === 'HOVER') {
+-        // Handled via hover event
+-      } else if (idleDuration > 3.8 && distToHome > 0.4) {
+-        // User ignored -> Return Home!
+-        if (currentState !== 'RETURNING_HOME') {
+-          currentState = 'RETURNING_HOME';
+-          triggerSpeech('hm... back to work! ☕');
+-        }
+-        targetPos.set(homePos.x, homePos.y + 1.1, homePos.z);
+-      } else if (distToHome <= 0.4 && currentState === 'RETURNING_HOME') {
+-        currentState = 'IDLE_HOME';
+-      } else if (distToTarget > 2.2 && idleDuration <= 3.8) {
+-        if (currentState === 'IDLE_HOME') {
+-          triggerSpeech('wait for me! 🏃');
+-        }
+-        currentState = 'CHASING';
+-      } else if (distToTarget <= 1.5 && currentState === 'CHASING') {
+-        currentState = 'CATCHING_UP';
+-        triggerSpeech('got you! ✦');
+-      }
+-
+-      // Spring Physics Movement Calculation
+-      let springStiffness = 0.05;
+-      let damping = 0.76;
+-
+-      if (currentState === 'RETURNING_HOME') {
+-        springStiffness = 0.025; // Gentle walk home
+-      } else if (currentState === 'CHASING') {
+-        springStiffness = 0.065; // Eager run
+-      }
+-
+-      const force = new THREE.Vector3().subVectors(targetPos, position).multiplyScalar(springStiffness);
+-      velocity.add(force);
+-      velocity.multiplyScalar(damping);
+-      position.add(velocity);
+-
+-      characterGroup.position.copy(position);
+-
+-      // Shadow Position & Scale
+-      shadowMesh.position.x = position.x;
+-      shadowMesh.position.z = position.z;
+-      const shadowY = Math.max(0.3, 1 - (position.y - (homePos.y + 1.1)) * 0.25);
+-      shadowMesh.scale.set(shadowY, shadowY, 1);
+-
+-      // Speed & Running Mechanics
+-      const speed = velocity.length();
+-
+-      if (speed > 0.05) {
+-        runCycle += speed * 8;
+-        // Legs stepping movement
+-        leftFoot.position.z = 0.2 + Math.sin(runCycle) * 0.35;
+-        rightFoot.position.z = 0.2 - Math.sin(runCycle) * 0.35;
+-        leftFoot.position.y = -1.3 + Math.abs(Math.sin(runCycle)) * 0.15;
+-        rightFoot.position.y = -1.3 + Math.abs(Math.cos(runCycle)) * 0.15;
+-
+-        // Arms swinging movement
+-        leftArmGroup.rotation.x = Math.sin(runCycle) * 0.6;
+-        rightArmGroup.rotation.x = -Math.sin(runCycle) * 0.6;
+-
+-        // Inertia Body Tilt
+-        characterGroup.rotation.z = THREE.MathUtils.lerp(characterGroup.rotation.z, -velocity.x * 0.5, 0.15);
+-        characterGroup.rotation.x = THREE.MathUtils.lerp(characterGroup.rotation.x, velocity.y * 0.3, 0.15);
+-
+-        // Emit Trail Particle
+-        if (Math.random() < 0.35) {
+-          const tPos = trailGeo.attributes.position.array;
+-          tPos[trailPointer * 3] = position.x + (Math.random() - 0.5) * 0.4;
+-          tPos[trailPointer * 3 + 1] = position.y - 0.8;
+-          tPos[trailPointer * 3 + 2] = position.z + (Math.random() - 0.5) * 0.4;
+-          trailPointer = (trailPointer + 1) % trailCount;
+-          trailGeo.attributes.position.needsUpdate = true;
+-        }
+-      } else {
+-        // Idle / Sitting at desk posture
+-        leftFoot.position.set(-0.45, -1.3, 0.2);
+-        rightFoot.position.set(0.45, -1.3, 0.2);
+-        characterGroup.rotation.z = THREE.MathUtils.lerp(characterGroup.rotation.z, 0, 0.1);
+-        characterGroup.rotation.x = THREE.MathUtils.lerp(characterGroup.rotation.x, 0, 0.1);
+-
+-        if (currentState === 'IDLE_HOME') {
+-          // Resting hands on laptop
+-          leftArmGroup.rotation.x = THREE.MathUtils.lerp(leftArmGroup.rotation.x, -0.6, 0.1);
+-          rightArmGroup.rotation.x = THREE.MathUtils.lerp(rightArmGroup.rotation.x, -0.6, 0.1);
+-        }
+-      }
+-
+-      // Hover Wave Gesture
+-      if (currentState === 'HOVER') {
+-        rightArmGroup.rotation.z = Math.sin(elapsedTime * 12) * 0.5 + 1.2;
+-        rightArmGroup.rotation.x = -0.3;
+-      } else if (speed <= 0.05 && currentState !== 'IDLE_HOME') {
+-        rightArmGroup.rotation.z = THREE.MathUtils.lerp(rightArmGroup.rotation.z, 0, 0.1);
+-      }
+-
+-      // Head Eye Tracking
+-      const eyeLookTarget = new THREE.Vector3();
+-      if (currentState === 'IDLE_HOME') {
+-        // Look at laptop
+-        eyeLookTarget.set(homePos.x - 0.6, homePos.y + 0.5, 0.5);
+-      } else {
+-        // Look at cursor target
+-        eyeLookTarget.set(targetPos.x, targetPos.y + 1, 6);
+-      }
+-      eyeGroup.lookAt(eyeLookTarget);
+-
+-      // Gentle Breathing
+-      const breath = Math.sin(elapsedTime * 3) * 0.03;
+-      head.position.y = 1.4 + breath;
+-
+-      // Blinking
+-      blinkTimer += delta;
+-      if (blinkTimer > 3.2 && Math.random() < 0.04) {
+-        blinkTimer = 0;
+-        blinkDuration = 0.16;
+-      }
+-      if (blinkDuration > 0) {
+-        blinkDuration -= delta;
+-        leftEye.scale.y = 0.08;
+-        rightEye.scale.y = 0.08;
+-      } else {
+-        leftEye.scale.y = 1.25;
+-        rightEye.scale.y = 1.25;
+-      }
+-
+-      // Update Speech Bubble Screen Coordinate Position
+-      const headWorldPos = new THREE.Vector3();
+-      head.getWorldPosition(headWorldPos);
+-      headWorldPos.y += 1.8;
+-      headWorldPos.project(camera);
+-
+-      const screenX = (headWorldPos.x * 0.5 + 0.5) * container.clientWidth;
+-      const screenY = (-headWorldPos.y * 0.5 + 0.5) * container.clientHeight;
+-      setSpeechPos({ x: screenX, y: screenY });
+-
+-      renderer.render(scene, camera);
+-    };
+-
+-    animate();
+-
+-    // Resize Handler
+-    const handleResize = () => {
+-      if (!container) return;
+-      camera.aspect = container.clientWidth / container.clientHeight;
+-      camera.updateProjectionMatrix();
+-      renderer.setSize(container.clientWidth, container.clientHeight);
+-    };
+-
+-    window.addEventListener('resize', handleResize);
+-
+-    return () => {
+-      cancelAnimationFrame(animationFrameId);
+-      window.removeEventListener('mousemove', handleMouseMove);
+-      window.removeEventListener('resize', handleResize);
+-      themeObserver.disconnect();
+-
+-      if (container && renderer.domElement) {
+-        container.removeChild(renderer.domElement);
+-      }
+-      deskGeo.dispose();
+-      deskMat.dispose();
+-      legGeo.dispose();
+-      legMat.dispose();
+-      laptopBaseGeo.dispose();
+-      laptopMat.dispose();
+-      screenGeo.dispose();
+-      screenMat.dispose();
+-      displayGlowGeo.dispose();
+-      displayGlowMat.dispose();
+-      mugGeo.dispose();
+-      mugMat.dispose();
+-      potGeo.dispose();
+-      potMat.dispose();
+-      headGeo.dispose();
+-      bodyMat.dispose();
+-      hairBunGeo.dispose();
+-      hairMat.dispose();
+-      eyeGeo.dispose();
+-      eyeMat.dispose();
+-      reflectGeo.dispose();
+-      reflectMat.dispose();
+-      blushGeo.dispose();
+-      blushMat.dispose();
+-      sweaterGeo.dispose();
+-      sweaterMat.dispose();
+-      armGeo.dispose();
+-      armMat.dispose();
+-      shoeGeo.dispose();
+-      shoeMat.dispose();
+-      shadowGeo.dispose();
+-      shadowMat.dispose();
+-      shadowTex.dispose();
+-      trailGeo.dispose();
+-      trailMat.dispose();
+-      renderer.dispose();
+-    };
+-  }, []);
+-
+-  return (
+-    <div className="hero-character-zone w-full h-[360px] sm:h-[440px] md:h-[520px] relative select-none">
+-      {/* 3D WebGL Canvas */}
+-      <div ref={containerRef} className="w-full h-full" />
+-
+-      {/* Floating React Speech Bubble */}
+-      <AnimatePresence>
+-        {speechBubble && (
+-          <motion.div
+-            initial={{ opacity: 0, scale: 0.8, y: 10 }}
+-            animate={{ opacity: 1, scale: 1, y: 0 }}
+-            exit={{ opacity: 0, scale: 0.8, y: -5 }}
+-            transition={{ duration: 0.25 }}
+-            style={{
+-              position: 'absolute',
+-              left: speechPos.x,
+-              top: speechPos.y - 20,
+-              transform: 'translate(-50%, -100%)',
+-            }}
+-            className="pointer-events-none z-30 font-mono text-xs px-3 py-1.5 rounded-lg border border-paper-border bg-paper shadow-md text-ink font-semibold flex items-center gap-1.5 whitespace-nowrap"
+-          >
+-            {speechBubble}
+-            {/* Speech bubble tail pointer */}
+-            <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-6 border-x-transparent border-t-6 border-t-paper-border" />
+-          </motion.div>
+-        )}
+-      </AnimatePresence>
+-    </div>
+-  );
+-};
+-
+-export default CursorChaseCanvas;
+diff --git a/src/components/CustomCursor.jsx b/src/components/CustomCursor.jsx
+index 511ac29..7fae660 100644
+--- a/src/components/CustomCursor.jsx
++++ b/src/components/CustomCursor.jsx
+@@ -1,133 +1,153 @@
+-import React, { useEffect, useState } from 'react';
+-import { motion, useSpring, useMotionValue } from 'framer-motion';
++import React, { useEffect, useRef } from 'react';
++
++/**
++ * Subtle custom cursor: a sharp dot + a softly lagging ring.
++ * - grows over links/buttons
++ * - turns warm (accent) when it is over the hero companion
++ * - leaves the occasional tiny star that fades quickly
++ * Everything is written to the DOM via refs; React renders it exactly once.
++ * Only mounted behaviour on fine pointers (mouse / trackpad).
++ */
++const SIZES = {
++  default: { ring: 24, dot: 6 },
++  interactive: { ring: 38, dot: 8 },
++  character: { ring: 52, dot: 8 },
++};
+ 
+ const CustomCursor = () => {
+-  const [hoverState, setHoverState] = useState('default');
+-  const [isVisible, setIsVisible] = useState(false);
+-  const [sparks, setSparks] = useState([]);
+-
+-  const cursorX = useMotionValue(-100);
+-  const cursorY = useMotionValue(-100);
+-
+-  const springConfig = { damping: 25, stiffness: 350 };
+-  const trailX = useSpring(cursorX, springConfig);
+-  const trailY = useSpring(cursorY, springConfig);
++  const root = useRef(null);
++  const ring = useRef(null);
++  const dot = useRef(null);
++  const stars = useRef(null);
+ 
+   useEffect(() => {
+-    // Only enable custom cursor on fine pointer devices (desktop mouse)
+-    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+-    if (isTouch) return;
+-
+-    let lastSparkTime = 0;
+-
+-    const moveCursor = (e) => {
+-      if (!isVisible) setIsVisible(true);
+-      cursorX.set(e.clientX);
+-      cursorY.set(e.clientY);
+-
+-      // Spawn subtle particle sparkle occasionally on move
+-      const now = Date.now();
+-      if (now - lastSparkTime > 120 && Math.random() > 0.4) {
+-        lastSparkTime = now;
+-        const newSpark = {
+-          id: now + Math.random(),
+-          x: e.clientX + (Math.random() - 0.5) * 10,
+-          y: e.clientY + (Math.random() - 0.5) * 10,
+-          size: Math.random() * 3 + 2,
+-        };
+-        setSparks((prev) => [...prev.slice(-8), newSpark]);
++    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return undefined;
++    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
++    const html = document.documentElement;
++    html.classList.add('has-custom-cursor');
++
++    let tx = -100, ty = -100, rx = -100, ry = -100;
++    let raf = 0;
++    let state = 'default';
++    let overCompanion = false;
++    let overInteractive = false;
++    let shown = false;
++    let alive = 0;
++    const lastStar = { x: -999, y: -999, t: 0 };
++
++    const paint = () => {
++      const sz = SIZES[state];
++      ring.current.style.width = `${sz.ring}px`;
++      ring.current.style.height = `${sz.ring}px`;
++      ring.current.style.backgroundColor =
++        state === 'character' ? 'color-mix(in srgb, var(--accent) 16%, transparent)' : 'transparent';
++      ring.current.style.borderColor =
++        state === 'character' ? 'var(--accent)' : 'color-mix(in srgb, var(--text-ink) 40%, transparent)';
++      dot.current.style.width = `${sz.dot}px`;
++      dot.current.style.height = `${sz.dot}px`;
++      dot.current.style.backgroundColor = state === 'character' ? 'var(--accent)' : 'var(--text-ink)';
++    };
++    const setState = () => {
++      const next = overCompanion ? 'character' : overInteractive ? 'interactive' : 'default';
++      if (next !== state) {
++        state = next;
++        paint();
+       }
+     };
+ 
+-    const handleMouseLeave = () => setIsVisible(false);
+-    const handleMouseEnter = () => setIsVisible(true);
++    const loop = () => {
++      rx += (tx - rx) * 0.2;
++      ry += (ty - ry) * 0.2;
++      ring.current.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
++      raf = Math.abs(tx - rx) + Math.abs(ty - ry) > 0.1 ? requestAnimationFrame(loop) : 0;
++    };
++
++    const spawnStar = (x, y) => {
++      if (reduced || alive >= 7) return;
++      const el = document.createElement('span');
++      el.textContent = '✦';
++      const size = 7 + Math.random() * 4;
++      el.style.cssText = `position:fixed;left:0;top:0;font-size:${size}px;line-height:1;color:var(--text-ink-muted);pointer-events:none;`;
++      stars.current.appendChild(el);
++      alive += 1;
++      const dx = (Math.random() - 0.5) * 14;
++      const a = el.animate(
++        [
++          { transform: `translate(${x + dx}px, ${y}px) scale(1) rotate(0deg)`, opacity: 0.75 },
++          { transform: `translate(${x + dx}px, ${y - 14}px) scale(0.3) rotate(45deg)`, opacity: 0 },
++        ],
++        { duration: 520, easing: 'ease-out' }
++      );
++      a.onfinish = () => { el.remove(); alive -= 1; };
++    };
+ 
+-    const handleHoverCheck = (e) => {
+-      const target = e.target;
+-      if (!target) return;
++    const onMove = (e) => {
++      if (e.pointerType === 'touch') return;
++      tx = e.clientX;
++      ty = e.clientY;
++      dot.current.style.transform = `translate3d(${tx}px, ${ty}px, 0) translate(-50%, -50%)`;
++      if (!shown) {
++        shown = true;
++        rx = tx; ry = ty;
++        root.current.style.opacity = '1';
++      }
++      if (!raf) raf = requestAnimationFrame(loop);
+ 
+-      if (target.closest('.hero-character-zone')) {
+-        setHoverState('character');
+-      } else if (target.closest('a, button, [role="button"]')) {
+-        setHoverState('interactive');
+-      } else {
+-        setHoverState('default');
++      const now = performance.now();
++      if (now - lastStar.t > 110 && Math.hypot(tx - lastStar.x, ty - lastStar.y) > 30 && Math.random() < 0.55) {
++        lastStar.x = tx; lastStar.y = ty; lastStar.t = now;
++        spawnStar(tx, ty);
+       }
+     };
+-
+-    window.addEventListener('mousemove', moveCursor);
+-    window.addEventListener('mouseover', handleHoverCheck);
+-    document.addEventListener('mouseleave', handleMouseLeave);
+-    document.addEventListener('mouseenter', handleMouseEnter);
++    const onOver = (e) => {
++      overInteractive = !!(e.target instanceof Element && e.target.closest('a, button, [role="button"], [data-look]'));
++      setState();
++    };
++    const onCompanion = (e) => { overCompanion = !!e.detail; setState(); };
++    const onDown = () => { dot.current.style.scale = '0.7'; ring.current.style.scale = '0.85'; };
++    const onUp = () => { dot.current.style.scale = ''; ring.current.style.scale = ''; };
++    const onLeave = () => { root.current.style.opacity = '0'; };
++    const onEnter = () => { if (shown) root.current.style.opacity = '1'; };
++
++    paint();
++    window.addEventListener('pointermove', onMove, { passive: true });
++    window.addEventListener('pointerover', onOver, { passive: true });
++    window.addEventListener('pointerdown', onDown, { passive: true });
++    window.addEventListener('pointerup', onUp, { passive: true });
++    window.addEventListener('companion-hover', onCompanion);
++    html.addEventListener('mouseleave', onLeave);
++    html.addEventListener('mouseenter', onEnter);
+ 
+     return () => {
+-      window.removeEventListener('mousemove', moveCursor);
+-      window.removeEventListener('mouseover', handleHoverCheck);
+-      document.removeEventListener('mouseleave', handleMouseLeave);
+-      document.removeEventListener('mouseenter', handleMouseEnter);
++      cancelAnimationFrame(raf);
++      html.classList.remove('has-custom-cursor');
++      window.removeEventListener('pointermove', onMove);
++      window.removeEventListener('pointerover', onOver);
++      window.removeEventListener('pointerdown', onDown);
++      window.removeEventListener('pointerup', onUp);
++      window.removeEventListener('companion-hover', onCompanion);
++      html.removeEventListener('mouseleave', onLeave);
++      html.removeEventListener('mouseenter', onEnter);
+     };
+-  }, [cursorX, cursorY, isVisible]);
+-
+-  // Clean up old sparkles
+-  useEffect(() => {
+-    if (sparks.length === 0) return;
+-    const timer = setTimeout(() => {
+-      setSparks((prev) => prev.slice(1));
+-    }, 400);
+-    return () => clearTimeout(timer);
+-  }, [sparks]);
+-
+-  if (!isVisible) return null;
++  }, []);
+ 
+   return (
+-    <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden">
+-      {/* Sparkles */}
+-      {sparks.map((spark) => (
+-        <motion.div
+-          key={spark.id}
+-          initial={{ opacity: 0.8, scale: 1 }}
+-          animate={{ opacity: 0, scale: 0, y: spark.y - 12 }}
+-          transition={{ duration: 0.5, ease: 'easeOut' }}
+-          style={{
+-            position: 'fixed',
+-            left: spark.x,
+-            top: spark.y,
+-            width: spark.size,
+-            height: spark.size,
+-            backgroundColor: 'var(--text-ink)',
+-            borderRadius: '50%',
+-          }}
+-        />
+-      ))}
+-
+-      {/* Lagging Soft Trail Ring */}
+-      <motion.div
+-        className="fixed top-0 left-0 rounded-full border border-ink/40 pointer-events-none"
+-        style={{
+-          x: trailX,
+-          y: trailY,
+-          width: hoverState === 'interactive' ? 38 : hoverState === 'character' ? 48 : 24,
+-          height: hoverState === 'interactive' ? 38 : hoverState === 'character' ? 48 : 24,
+-          translateX: '-50%',
+-          translateY: '-50%',
+-          backgroundColor: hoverState === 'character' ? 'var(--text-ink)' : 'transparent',
+-          opacity: hoverState === 'character' ? 0.15 : 0.4,
+-          transition: 'width 0.2s ease, height 0.2s ease, background-color 0.2s ease',
+-        }}
++    <div
++      ref={root}
++      aria-hidden="true"
++      className="pointer-events-none fixed inset-0 z-[60] overflow-hidden"
++      style={{ opacity: 0, transition: 'opacity 0.2s ease' }}
++    >
++      <div ref={stars} />
++      <div
++        ref={ring}
++        className="fixed top-0 left-0 rounded-full border"
++        style={{ transition: 'width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, scale 0.15s ease' }}
+       />
+-
+-      {/* Center Sharp Pointer Dot */}
+-      <motion.div
+-        className="fixed top-0 left-0 rounded-full bg-ink pointer-events-none"
+-        style={{
+-          x: cursorX,
+-          y: cursorY,
+-          width: hoverState === 'interactive' ? 8 : hoverState === 'character' ? 10 : 6,
+-          height: hoverState === 'interactive' ? 8 : hoverState === 'character' ? 10 : 6,
+-          translateX: '-50%',
+-          translateY: '-50%',
+-          transition: 'width 0.15s ease, height 0.15s ease',
+-        }}
++      <div
++        ref={dot}
++        className="fixed top-0 left-0 rounded-full"
++        style={{ transition: 'width 0.15s ease, height 0.15s ease, background-color 0.2s ease, scale 0.15s ease' }}
+       />
+     </div>
+   );
+diff --git a/src/components/Hero.jsx b/src/components/Hero.jsx
+index 7cdf04f..7c24765 100644
+--- a/src/components/Hero.jsx
++++ b/src/components/Hero.jsx
+@@ -1,29 +1,19 @@
+-import React, { useState } from 'react';
+-import { motion, AnimatePresence } from 'framer-motion';
++import React from 'react';
+ import { portfolioData } from '../data/portfolioData';
+-import CursorChaseCanvas from './CursorChaseCanvas';
++import HeroCompanion from './HeroCompanion';
+ 
+ const Hero = () => {
+   const { personalInfo } = portfolioData;
+-  const [showHint, setShowHint] = useState(true);
+-
+-  const handleMouseMoveFirstTime = () => {
+-    if (showHint) {
+-      setShowHint(false);
+-    }
+-  };
+-
+   return (
+     <section 
+       id="home" 
+-      onMouseMove={handleMouseMoveFirstTime}
+       className="min-h-screen relative flex flex-col justify-center items-center px-4 sm:px-8 md:px-12 lg:px-16 pt-24 sm:pt-28 md:pt-32 select-none overflow-x-hidden"
+     >
+       {/* Balanced Editorial Hero Spread */}
+       <div className="my-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full max-w-7xl mx-auto relative z-10">
+         
+         {/* Left Editorial Typographic Column */}
+-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 w-full lg:w-1/2 max-w-2xl">
++        <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 w-full min-w-0 lg:w-1/2 max-w-2xl">
+           
+           {/* Greeting Accent */}
+           <div className="font-mono text-xs sm:text-sm text-ink-muted flex items-center gap-2 tracking-wider">
+@@ -33,8 +23,8 @@ const Hero = () => {
+           </div>
+ 
+           {/* Unclipped Responsive Typography */}
+-          <div className="w-full">
+-            <h1 className="font-sans font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] leading-[0.85] tracking-tight text-ink uppercase select-none">
++          <div className="w-full [container-type:inline-size]">
++            <h1 className="font-sans font-black [font-size:clamp(2.5rem,16.5cqi,6.5rem)] leading-[0.85] tracking-tight text-ink uppercase select-none">
+               <div>pranavi</div>
+               <div className="-mt-1 sm:-mt-3 md:-mt-4">jain</div>
+             </h1>
+@@ -54,12 +44,14 @@ const Hero = () => {
+           <div className="cta-button-group pt-4 flex flex-wrap justify-center lg:justify-start items-center gap-3 sm:gap-4 text-xs sm:text-sm font-mono">
+             <a 
+               href="#about"
++              data-look="cv"
+               className="border border-paper-border px-4 py-2 text-ink hover:bg-paper-dark transition-colors bg-paper-light font-semibold"
+             >
+               [ .Curriculum Vitae ]
+             </a>
+             <a 
+               href="#work"
++              data-look="works"
+               className="border border-paper-border px-4 py-2 text-ink hover:bg-paper-dark transition-colors bg-paper-light font-semibold"
+             >
+               [ .Selected Works ]
+@@ -73,29 +65,9 @@ const Hero = () => {
+           </div>
+         </div>
+ 
+-        {/* Right Side: Interactive 3D Companion Living Area */}
+-        <div className="w-full lg:w-1/2 flex flex-col items-center relative min-h-[360px] sm:min-h-[440px]">
+-          
+-          {/* Discoverable Hint Label */}
+-          <div className="h-6 mb-1">
+-            <AnimatePresence>
+-              {showHint && (
+-                <motion.span
+-                  initial={{ opacity: 0, y: -4 }}
+-                  animate={{ opacity: 1, y: 0 }}
+-                  exit={{ opacity: 0, y: -4 }}
+-                  transition={{ duration: 0.3 }}
+-                  className="font-mono text-xs text-ink-muted italic tracking-wide"
+-                >
+-                  move your cursor →
+-                </motion.span>
+-              )}
+-            </AnimatePresence>
+-          </div>
+-
+-          {/* 3D Character Canvas */}
+-          <CursorChaseCanvas />
+-
++        {/* Right Side: a tiny creature and its home */}
++        <div className="w-full min-w-0 lg:w-1/2">
++          <HeroCompanion />
+         </div>
+ 
+       </div>
+diff --git a/src/components/HeroCompanion.jsx b/src/components/HeroCompanion.jsx
+new file mode 100644
+index 0000000..9dd47ea
+--- /dev/null
++++ b/src/components/HeroCompanion.jsx
+@@ -0,0 +1,685 @@
++import React, { useEffect, useRef, useState } from 'react';
++
++/**
++ * HeroCompanion — "Nari", a tiny creature that lives in the hero.
++ *
++ * Flat SVG + one requestAnimationFrame loop. All motion is written straight to
++ * DOM attributes through refs, so React never re-renders while it animates.
++ *
++ * Behaviour (state machine):
++ *   home     stands by its desk: breathes, blinks, glances around, fidgets
++ *   notice   cursor appeared -> turns, "!" pops up, short pause
++ *   follow   chases the cursor on an under-damped spring (lag, overshoot, tilt)
++ *   linger   caught up -> looks at the cursor, one little hop, keeps it company
++ *   excited  cursor passes over it -> blink, wave, hops, happy face
++ *   return   ignored for a few seconds -> strolls back home
++ *   wander   (idle only) potters a short way from home and comes back
++ *
++ * Touch devices have no cursor: it wanders on its own and runs to a tap.
++ * prefers-reduced-motion: static pose at home, no loop.
++ */
++
++const CW = 84; // creature box width (px) at scale 1
++const CH = 100.8; // creature box height (px) at scale 1
++const FEET = 91.5; // y of the feet baseline inside the box (px)
++const HOME_W = 260; // home SVG viewBox width
++
++const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
++const lerp = (a, b, t) => a + (b - a) * t;
++const rand = (a, b) => a + Math.random() * (b - a);
++
++const CAPTION = {
++  home: 'nari, at their desk',
++  notice: 'nari noticed you',
++  follow: 'nari, in pursuit',
++  linger: 'nari, keeping you company',
++  return: 'nari, heading back to work',
++  wander: 'nari, stretching their legs',
++  excited: 'nari says hi',
++};
++
++const setT = (el, v) => {
++  if (el && el._t !== v) {
++    el.setAttribute('transform', v);
++    el._t = v;
++  }
++};
++const setAttrOnce = (el, name, v) => {
++  if (el && el['_' + name] !== v) {
++    el.setAttribute(name, v);
++    el['_' + name] = v;
++  }
++};
++
++export default function HeroCompanion() {
++  const stageRef = useRef(null);
++  const [reduced, setReduced] = useState(
++    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
++  );
++
++  useEffect(() => {
++    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
++    const onChange = () => setReduced(mq.matches);
++    mq.addEventListener('change', onChange);
++    return () => mq.removeEventListener('change', onChange);
++  }, []);
++
++  useEffect(() => {
++    const stage = stageRef.current;
++    if (!stage) return undefined;
++
++    const P = {};
++    stage.querySelectorAll('[data-p]').forEach((el) => {
++      P[el.dataset.p] = el;
++    });
++
++    const coarse = window.matchMedia('(pointer: coarse)').matches;
++    const t0 = () => performance.now() / 1000;
++
++    // ---------- geometry (cached, never read inside the frame) ----------
++    const rect = { left: 0, top: 0 };
++    const S = {
++      W: 600, H: 400, s: 1,
++      home: { x: 0, y: 0 },
++      minX: 0, maxX: 0, minY: 0, maxY: 0,
++
++      x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0,
++      mode: 'home', modeAt: 0,
++
++      air: 0, airV: 0, squash: 0,
++      runPhase: 0, runBlend: 0, energy: 0, exc: 0,
++      tuftA: 0, tuftV: 0,
++
++      gx: 0, gy: 0, gazePt: { x: 0, y: 0 }, gazeAt: 0,
++      blinkAt: t0() + 1.8, blinkT: -1, dbl: false, eyeS: 1, placed: false,
++
++      excitedUntil: 0, exciteCool: 0, nextExcHop: 0,
++      bangUntil: 0,
++      nextWander: t0() + 8, wanderPhase: 0, wanderPt: { x: 0, y: 0 }, waitUntil: 0,
++      nextHop: t0() + 10,
++      hint: true, hovered: false, shown: { happy: null },
++      glance: null, caption: '',
++    };
++    const cur = { cx: -999, cy: -999, has: false, last: -100, speed: 0, px: 0, py: 0, pt: 0 };
++
++    // ---------- layout ----------
++    const measure = () => {
++      const sr = stage.getBoundingClientRect();
++      const hr = P.home.getBoundingClientRect();
++      rect.left = sr.left;
++      rect.top = sr.top;
++      S.W = sr.width;
++      S.H = sr.height;
++      S.s = clamp(hr.width / HOME_W, 0.72, 1.05);
++      S.home.x = hr.left - sr.left + hr.width * 0.5;
++      S.home.y = hr.top - sr.top + hr.height * (127 / 150);
++      S.minX = 34 * S.s;
++      S.maxX = S.W - 34 * S.s;
++      S.minY = CH * 0.92 * S.s + 6;
++      S.maxY = S.H - 30;
++      if (S.mode === 'home' || !S.placed) {
++        S.x = S.tx = S.home.x;
++        S.y = S.ty = S.home.y;
++        S.placed = true;
++      }
++    };
++    const updateRect = () => {
++      const sr = stage.getBoundingClientRect();
++      rect.left = sr.left;
++      rect.top = sr.top;
++    };
++
++    // ---------- helpers ----------
++    const caption = () => {
++      const base = CAPTION[S.mode];
++      const hint = S.hint && S.mode === 'home' ? (coarse ? ' · tap to call' : ' · move your cursor') : '';
++      const text = 'fig. 01 — ' + base + hint;
++      if (text !== S.caption) {
++        S.caption = text;
++        P.caption.textContent = text;
++      }
++    };
++    const setMode = (m, now) => {
++      S.mode = m;
++      S.modeAt = now;
++      caption();
++    };
++    const jump = (v) => {
++      if (S.air <= 0.01) S.airV = v;
++    };
++    const pickGaze = (now, around) => {
++      const { home, s } = S;
++      const o = around
++        ? [
++            { x: S.x - 220, y: S.y - 60 }, { x: S.x + 160, y: S.y - 90 },
++            { x: S.x - 120, y: S.y + 40 }, { x: S.x + 40, y: S.y - 160 },
++          ]
++        : [
++            { x: home.x - 90 * s, y: home.y - 50 * s }, // laptop
++            { x: home.x - 90 * s, y: home.y - 50 * s },
++            { x: home.x + 80 * s, y: home.y - 34 * s }, // mug
++            { x: home.x + 125 * s, y: home.y - 44 * s }, // plant
++            { x: home.x - 230, y: home.y - 110 }, // out into the room
++            { x: home.x, y: home.y + 60 }, // at you
++          ];
++      S.gazePt = o[Math.floor(Math.random() * o.length)];
++      S.gazeAt = now + rand(1.3, 3.2);
++    };
++    const startNotice = (now) => {
++      setMode('notice', now);
++      S.hint = false;
++      S.bangUntil = now + 0.75;
++      S.tuftV -= 420;
++      S.blinkT = -1;
++      jump(210);
++    };
++    const startExcited = (now) => {
++      setMode('excited', now);
++      S.excitedUntil = now + 1.9;
++      S.nextExcHop = now + 0.05;
++      S.blinkT = 0; // blink first, then the happy face
++      S.hint = false;
++    };
++    const startWander = (now) => {
++      const reach = S.W > 480 ? 1 : 0.55;
++      S.wanderPt = {
++        x: clamp(S.home.x - rand(90, 230) * reach, S.minX, S.maxX),
++        y: clamp(S.home.y - rand(0, 55), S.minY, S.maxY),
++      };
++      S.wanderPhase = 0;
++      setMode('wander', now);
++    };
++
++    // ---------- simulation ----------
++    const step = (now, dt) => {
++      const s = S.s;
++      const bodyC = 0.45 * CH * s;
++      const sinceMove = now - cur.last;
++      const active = cur.has && sinceMove < 4.5;
++      const lx = cur.cx - rect.left;
++      const ly = cur.cy - rect.top;
++      const dCur = Math.hypot(lx - S.x, ly - (S.y - bodyC));
++      const glancing = S.glance && now < S.glance.until;
++      const sp = Math.hypot(S.vx, S.vy);
++
++      // proximity hover (drives the custom cursor + the excited reaction)
++      const hov = active && dCur < 46 * s;
++      if (hov !== S.hovered) {
++        S.hovered = hov;
++        window.dispatchEvent(new CustomEvent('companion-hover', { detail: hov }));
++      }
++      if (S.mode !== 'excited' && active && now > S.exciteCool && dCur < 34 * s + 8 && sinceMove < 1.2) {
++        startExcited(now);
++      }
++
++      const hold = () => { S.tx = S.x; S.ty = S.y; };
++
++      switch (S.mode) {
++        case 'home':
++          S.tx = S.home.x; S.ty = S.home.y;
++          if (active && !glancing && sinceMove < 0.25) startNotice(now);
++          else if (!active && now > S.nextWander) startWander(now);
++          else if (!active && now > S.nextHop) { S.nextHop = now + rand(9, 16); jump(170); }
++          break;
++
++        case 'notice':
++          hold();
++          if (!active) setMode('return', now);
++          else if (now - S.modeAt > 0.55) setMode('follow', now);
++          break;
++
++        case 'follow':
++        case 'linger': {
++          if (!active) { setMode('return', now); break; }
++          if (glancing) { hold(); break; }
++          const stop = 68 * s;
++          if (dCur > stop + 26 * s || (sinceMove < 0.12 && dCur > stop)) {
++            if (S.mode === 'linger') setMode('follow', now);
++            const dx = S.x - lx;
++            const dy = S.y - bodyC - ly;
++            const d = Math.hypot(dx, dy) || 1;
++            S.tx = lx + (dx / d) * stop;
++            S.ty = ly + (dy / d) * stop + bodyC;
++          } else if (S.mode === 'follow' && sinceMove > 0.3 && sp < 60 && Math.hypot(S.tx - S.x, S.ty - S.y) < 20) {
++            setMode('linger', now);
++            jump(270); // "got you" hop
++            hold();
++          }
++          break;
++        }
++
++        case 'excited':
++          hold();
++          if (now > S.excitedUntil) {
++            S.exciteCool = now + 3.5;
++            setMode(active ? 'linger' : 'return', now);
++          }
++          break;
++
++        case 'return':
++          S.tx = S.home.x; S.ty = S.home.y;
++          if (active && sinceMove < 0.2 && !glancing) { setMode('follow', now); jump(170); }
++          else if (Math.hypot(S.home.x - S.x, S.home.y - S.y) < 5 && sp < 25) {
++            setMode('home', now);
++            S.nextWander = now + rand(8, 13);
++          }
++          break;
++
++        case 'wander':
++          if (active && sinceMove < 0.25 && !glancing) { startNotice(now); break; }
++          if (S.wanderPhase === 0) {
++            S.tx = S.wanderPt.x; S.ty = S.wanderPt.y;
++            if (Math.hypot(S.tx - S.x, S.ty - S.y) < 8 && sp < 30) {
++              S.wanderPhase = 1;
++              S.waitUntil = now + rand(1.6, 2.8);
++              pickGaze(now, true);
++            }
++          } else {
++            hold();
++            if (now > S.gazeAt) pickGaze(now, true);
++            if (now > S.waitUntil) setMode('return', now);
++          }
++          break;
++        default:
++      }
++
++      S.tx = clamp(S.tx, S.minX, S.maxX);
++      S.ty = clamp(S.ty, S.minY, S.maxY);
++
++      // spring (semi-implicit Euler, 2 sub-steps)
++      let k = 40, zeta = 0.9;
++      if (S.mode === 'follow') { k = 52; zeta = 0.55; }
++      else if (S.mode === 'linger') { k = 30; zeta = 0.8; }
++      else if (S.mode === 'return') { k = 9; zeta = 0.95; }
++      else if (S.mode === 'wander') { k = 12; zeta = 0.95; }
++      const c = 2 * zeta * Math.sqrt(k);
++      const h = dt / 2;
++      for (let i = 0; i < 2; i += 1) {
++        S.vx += (k * (S.tx - S.x) - c * S.vx) * h;
++        S.vy += (k * (S.ty - S.y) - c * S.vy) * h;
++        S.x += S.vx * h;
++        S.y += S.vy * h;
++      }
++      const spNow = Math.hypot(S.vx, S.vy);
++      if (spNow > 1100) { S.vx *= 1100 / spNow; S.vy *= 1100 / spNow; }
++      S.x = clamp(S.x, S.minX - 6, S.maxX + 6);
++      S.y = clamp(S.y, S.minY - 6, S.maxY + 6);
++
++      // energy follows how fast the cursor (and creature) are moving
++      cur.speed *= Math.exp(-5 * dt);
++      const eT = clamp(0.55 * Math.min(1, spNow / 700) + 0.45 * Math.min(1, cur.speed / 2200), 0, 1);
++      S.energy = lerp(S.energy, eT, 1 - Math.exp(-6 * dt));
++      S.runBlend = lerp(S.runBlend, clamp((spNow - 30) / 90, 0, 1), 1 - Math.exp(-12 * dt));
++      S.runPhase += dt * (6 + spNow * 0.018 + 6 * S.energy) * (0.35 + 0.65 * S.runBlend);
++      S.exc = lerp(S.exc, S.mode === 'excited' ? 1 : 0, 1 - Math.exp(-12 * dt));
++
++      // little hops: vertical ballistic
++      if (S.mode === 'excited' && S.air <= 0.01 && now > S.nextExcHop) {
++        jump(300);
++        S.nextExcHop = now + 0.52;
++      }
++      S.airV -= 2600 * dt;
++      S.air += S.airV * dt;
++      if (S.air <= 0) {
++        if (S.airV < -140) S.squash = clamp(-S.airV / 700, 0, 1);
++        S.air = 0;
++        S.airV = 0;
++      }
++      S.squash *= Math.exp(-14 * dt);
++
++      // tuft: its own under-damped spring -> secondary motion
++      const tuftT = clamp(-S.vx * 0.03, -40, 40) + S.gx * 6;
++      S.tuftV += (-120 * (S.tuftA - tuftT) - 7 * S.tuftV) * dt;
++      S.tuftA += S.tuftV * dt;
++
++      // gaze
++      const headX = S.x;
++      const headY = S.y - 0.62 * CH * s;
++      let px;
++      let py;
++      if (glancing) {
++        px = S.glance.cx - rect.left; py = S.glance.cy - rect.top;
++      } else if (active) {
++        px = lx; py = ly;
++      } else if (S.mode === 'return') {
++        px = S.home.x; py = S.home.y - 40;
++      } else {
++        if (now > S.gazeAt) pickGaze(now, S.mode !== 'home');
++        px = S.gazePt.x; py = S.gazePt.y;
++      }
++      const gxT = clamp((px - headX) / 140, -1, 1);
++      const gyT = clamp((py - headY) / 110, -1, 1);
++      S.gx = lerp(S.gx, gxT, 1 - Math.exp(-9 * dt));
++      S.gy = lerp(S.gy, gyT, 1 - Math.exp(-9 * dt));
++
++      // blink
++      let eyeS = 1;
++      if (S.blinkT < 0 && now > S.blinkAt) S.blinkT = 0;
++      if (S.blinkT >= 0) {
++        S.blinkT += dt;
++        const p = S.blinkT / 0.15;
++        if (p < 1) eyeS = 1 - 0.94 * Math.sin(Math.PI * p);
++        else {
++          S.blinkT = -1;
++          S.blinkAt = now + (S.dbl ? 0.14 : rand(2.4, 5.2));
++          S.dbl = !S.dbl && Math.random() < 0.18;
++        }
++      }
++      S.eyeS = eyeS;
++    };
++
++    // ---------- drawing ----------
++    const draw = (now) => {
++      const s = S.s;
++      const sinP = Math.abs(Math.sin(S.runPhase));
++      const rb = S.runBlend;
++      const runHop = sinP * (2.5 + 9 * S.energy) * rb;
++      const lift = S.air + runHop;
++
++      const breathe = Math.sin(now * 3.2) * 0.014 * (1 - rb);
++      const sy = (1 + breathe) * (1 - 0.07 * (1 - sinP) * rb - 0.12 * S.squash);
++      const sx = (1 - breathe * 0.6) * (1 + 0.09 * S.squash + 0.04 * (1 - sinP) * rb);
++      const tilt =
++        clamp(S.vx * 0.028, -16, 16) + S.gx * 2.5 + Math.sin(now * 10) * 4 * S.exc;
++      setT(P.body, `translate(50 109) rotate(${tilt.toFixed(2)}) scale(${sx.toFixed(3)} ${sy.toFixed(3)}) translate(-50 -109)`);
++
++      // feet
++      const stepL = -Math.max(0, Math.sin(S.runPhase)) * 5 * rb;
++      const stepR = -Math.max(0, -Math.sin(S.runPhase)) * 5 * rb;
++      setT(P.footL, `translate(${(-rb * 1.5).toFixed(2)} ${stepL.toFixed(2)})`);
++      setT(P.footR, `translate(${(rb * 1.5).toFixed(2)} ${stepR.toFixed(2)})`);
++
++      // arms
++      const flap = sinP * (30 + 40 * S.energy) * rb;
++      let aL = 10 + flap + Math.sin(now * 0.9) * 1.5;
++      let aR = -10 - flap - Math.sin(now * 0.8) * 1.5;
++      if (S.exc > 0.01) {
++        const w = Math.sin(now * 15);
++        aR = lerp(aR, -(135 + w * 22), S.exc);
++        aL = lerp(aL, 22 + Math.sin(now * 15 + 1) * 7, S.exc);
++      }
++      setT(P.armL, `translate(24 72) rotate(${aL.toFixed(2)})`);
++      setT(P.armR, `translate(76 72) rotate(${aR.toFixed(2)})`);
++
++      // tuft + face
++      setT(P.tuft, `translate(50 28) rotate(${S.tuftA.toFixed(2)})`);
++      setT(P.face, `translate(${(S.gx * 6.4).toFixed(2)} ${(S.gy * 3.4).toFixed(2)})`);
++      setT(
++        P.eyes,
++        `translate(${(S.gx * 3).toFixed(2)} ${(S.gy * 1.8).toFixed(2)}) translate(50 57) scale(1 ${S.eyeS.toFixed(3)}) translate(-50 -57)`
++      );
++
++      const happy = S.mode === 'excited' && now - S.modeAt > 0.18;
++      if (happy !== S.shown.happy) {
++        S.shown.happy = happy;
++        setAttrOnce(P.happy, 'display', happy ? 'inline' : 'none');
++        setAttrOnce(P.eyes, 'display', happy ? 'none' : 'inline');
++        setAttrOnce(P.mouthO, 'display', happy ? 'inline' : 'none');
++        setAttrOnce(P.mouthN, 'display', happy ? 'none' : 'inline');
++      }
++
++      // "!" pop
++      if (now < S.bangUntil) {
++        const p = 1 - (S.bangUntil - now) / 0.75;
++        const pop = p < 0.2 ? (p / 0.2) * 1.2 : 1;
++        setT(P.bang, `translate(78 6) scale(${pop.toFixed(2)})`);
++        setAttrOnce(P.bang, 'opacity', p > 0.85 ? ((1 - p) / 0.15).toFixed(2) : '1');
++      } else {
++        setAttrOnce(P.bang, 'opacity', '0');
++      }
++
++      // place creature + shadow (positions live in CSS transforms, not layout)
++      P.creature.style.transform = `translate3d(${(S.x - CW / 2).toFixed(2)}px, ${(S.y - FEET - lift).toFixed(2)}px, 0) scale(${s.toFixed(3)})`;
++      const sh = clamp(1 - lift / 70, 0.5, 1);
++      P.shadow.style.transform = `translate3d(${(S.x - 28).toFixed(2)}px, ${(S.y - 5).toFixed(2)}px, 0) scale(${(sh * s).toFixed(3)})`;
++      P.shadow.style.opacity = sh.toFixed(2);
++    };
++
++    // ---------- loop ----------
++    let rafId = 0;
++    let running = false;
++    let visible = true;
++    let lastMs = 0;
++    const frame = (ms) => {
++      if (!running) return;
++      const dt = Math.min(0.033, (ms - lastMs) / 1000 || 0.016);
++      lastMs = ms;
++      const now = ms / 1000;
++      step(now, dt);
++      draw(now);
++      rafId = requestAnimationFrame(frame);
++    };
++    const sync = () => {
++      const should = visible && !document.hidden;
++      if (should && !running) {
++        running = true;
++        lastMs = performance.now();
++        rafId = requestAnimationFrame(frame);
++      } else if (!should && running) {
++        running = false;
++        cancelAnimationFrame(rafId);
++      }
++    };
++
++    // ---------- init ----------
++    measure();
++    caption();
++
++    if (reduced) {
++      // static pose at home, looking at the laptop; no loop, no listeners that move it
++      S.gx = -0.7; S.gy = 0.15; S.eyeS = 1;
++      draw(0);
++      const ro0 = new ResizeObserver(() => { measure(); draw(0); });
++      ro0.observe(stage);
++      return () => ro0.disconnect();
++    }
++
++    pickGaze(t0(), false);
++    S.gx = -0.6;
++    draw(t0());
++
++    // ---------- input ----------
++    const onMove = (e) => {
++      if (e.pointerType === 'touch') return;
++      const now = t0();
++      const dtm = Math.max(0.008, now - cur.pt);
++      cur.speed = lerp(cur.speed, Math.hypot(e.clientX - cur.px, e.clientY - cur.py) / dtm, 0.3);
++      cur.px = e.clientX; cur.py = e.clientY; cur.pt = now;
++      cur.cx = e.clientX; cur.cy = e.clientY;
++      cur.last = now;
++      cur.has = true;
++    };
++    const onTap = (e) => {
++      if (e.pointerType === 'mouse') return;
++      updateRect();
++      cur.cx = e.clientX; cur.cy = e.clientY;
++      cur.last = t0();
++      cur.has = true;
++      cur.speed = 900;
++    };
++    const onOver = (e) => {
++      const el = e.target instanceof Element ? e.target.closest('[data-look], nav a, nav button') : null;
++      if (!el) return;
++      const r = el.getBoundingClientRect();
++      S.glance = {
++        el,
++        cx: r.left + r.width / 2,
++        cy: r.top + r.height / 2,
++        until: el.hasAttribute('data-look') ? Infinity : t0() + 2.4,
++      };
++      S.tuftV -= 160;
++    };
++    const onOut = (e) => {
++      if (S.glance && !(e.relatedTarget instanceof Node && S.glance.el.contains(e.relatedTarget))) S.glance = null;
++    };
++
++    window.addEventListener('pointermove', onMove, { passive: true });
++    stage.addEventListener('pointerdown', onTap, { passive: true });
++    document.addEventListener('pointerover', onOver, { passive: true });
++    document.addEventListener('pointerout', onOut, { passive: true });
++    window.addEventListener('scroll', updateRect, { passive: true });
++    document.addEventListener('visibilitychange', sync);
++
++    const ro = new ResizeObserver(measure);
++    ro.observe(stage);
++    ro.observe(P.home);
++    const io = new IntersectionObserver(([en]) => { visible = en.isIntersecting; sync(); });
++    io.observe(stage);
++    sync();
++
++    return () => {
++      running = false;
++      cancelAnimationFrame(rafId);
++      window.removeEventListener('pointermove', onMove);
++      stage.removeEventListener('pointerdown', onTap);
++      document.removeEventListener('pointerover', onOver);
++      document.removeEventListener('pointerout', onOut);
++      window.removeEventListener('scroll', updateRect);
++      document.removeEventListener('visibilitychange', sync);
++      ro.disconnect();
++      io.disconnect();
++      if (S.hovered) window.dispatchEvent(new CustomEvent('companion-hover', { detail: false }));
++    };
++  }, [reduced]);
++
++  return (
++    <figure
++      ref={stageRef}
++      data-companion-stage
++      aria-hidden="true"
++      className="relative w-full h-[300px] sm:h-[380px] lg:h-[440px] select-none m-0"
++      style={{ contain: 'layout style' }}
++    >
++      {/* editorial crop marks */}
++      <span className="absolute top-0 left-0 w-3 h-3 border-t border-l border-paper-line" />
++      <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-paper-line" />
++      <span className="absolute bottom-6 left-0 w-3 h-3 border-b border-l border-paper-line" />
++      <span className="absolute bottom-6 right-0 w-3 h-3 border-b border-r border-paper-line" />
++
++      {/* ---------------- the little home ---------------- */}
++      <svg
++        data-p="home"
++        viewBox="0 0 260 150"
++        className="absolute right-3 sm:right-5 bottom-9 w-[min(260px,76%)] h-auto overflow-visible"
++        fill="none"
++        strokeLinecap="round"
++        strokeLinejoin="round"
++      >
++        {/* rug */}
++        <ellipse cx="130" cy="132" rx="112" ry="10" className="fill-paper-dark" />
++        <ellipse cx="130" cy="132" rx="104" ry="6" className="stroke-paper-line" strokeWidth="1" strokeDasharray="3 4" />
++
++        {/* books + laptop */}
++        <g className="stroke-ink" strokeWidth="1.6">
++          <rect x="10" y="116" width="66" height="13" rx="1.5" className="fill-paper-light" />
++          <rect x="16" y="103" width="56" height="13" rx="1.5" className="fill-accent" />
++          <rect x="13" y="91" width="60" height="12" rx="1.5" className="fill-paper-light" />
++          <path d="M18 116v13M22 103v13M19 91v12" className="stroke-ink-faint" strokeWidth="1.2" />
++          <rect x="6" y="85" width="74" height="6" rx="2" className="fill-paper-light" />
++          <rect x="18" y="46" width="50" height="39" rx="3" className="fill-ink" />
++        </g>
++        <g className="stroke-paper" strokeWidth="1.6" opacity="0.8">
++          <path d="M25 55h16M25 62h26M29 69h12M25 76h18" />
++        </g>
++        <rect x="46" y="73" width="5" height="3" className="fill-accent companion-caret" stroke="none" />
++
++        {/* mug on a book */}
++        <g className="stroke-ink" strokeWidth="1.6">
++          <rect x="178" y="116" width="46" height="13" rx="1.5" className="fill-paper-dark" />
++          <path d="M186 96h24v17q0 5-5 5h-14q-5 0-5-5Z" className="fill-paper-light" />
++          <path d="M210 100q9 0 9 8q0 7-9 7" />
++          <path d="M186 104h24" className="stroke-accent" strokeWidth="2.2" />
++        </g>
++        <g className="stroke-ink-faint companion-steam" strokeWidth="1.5">
++          <path d="M192 90q-3-5 0-9q3-4 0-8" />
++          <path d="M198 90q-3-5 0-9q3-4 0-8" style={{ animationDelay: '0.9s' }} />
++          <path d="M204 90q-3-5 0-9q3-4 0-8" style={{ animationDelay: '1.8s' }} />
++        </g>
++
++        {/* plant */}
++        <g className="stroke-ink" strokeWidth="1.6">
++          <path d="M243 110C243 98 243 90 243 82" />
++          <path d="M243 110C240 96 233 92 226 93C227 102 233 109 243 110Z" className="fill-paper-dark" />
++          <path d="M243 110C245 94 252 88 258 90C257 100 252 108 243 110Z" className="fill-paper-dark" />
++          <path d="M243 82C238 76 239 70 244 66C249 71 248 77 243 82Z" className="fill-paper-dark" />
++          <path d="M232 110h22l-3 20h-16Z" className="fill-paper-light" />
++        </g>
++      </svg>
++
++      {/* shadow (separate so it never tilts) */}
++      <div
++        data-p="shadow"
++        className="absolute left-0 top-0 pointer-events-none will-change-transform"
++        style={{
++          width: 56,
++          height: 10,
++          background: 'radial-gradient(closest-side, color-mix(in srgb, var(--text-ink) 24%, transparent), transparent)',
++        }}
++      />
++
++      {/* ---------------- the creature ---------------- */}
++      <div
++        data-p="creature"
++        className="absolute left-0 top-0 pointer-events-none will-change-transform"
++        style={{ width: CW, height: CH, transformOrigin: `${CW / 2}px ${FEET}px` }}
++      >
++        <svg viewBox="0 0 100 120" width={CW} height={CH} overflow="visible" focusable="false" fill="none" strokeLinecap="round" strokeLinejoin="round">
++          <g data-p="body">
++            {/* arms (behind body) */}
++            <g data-p="armL" transform="translate(24 72) rotate(10)">
++              <path d="M0 0Q-6 6-8 15" className="stroke-ink" strokeWidth="3.2" />
++            </g>
++            <g data-p="armR" transform="translate(76 72) rotate(-10)">
++              <path d="M0 0Q6 6 8 15" className="stroke-ink" strokeWidth="3.2" />
++            </g>
++            {/* feet */}
++            <g data-p="footL"><ellipse cx="39" cy="105.5" rx="7.5" ry="3.6" className="fill-ink" /></g>
++            <g data-p="footR"><ellipse cx="61" cy="105.5" rx="7.5" ry="3.6" className="fill-ink" /></g>
++
++            {/* body */}
++            <path
++              d="M22 70C22 42 34 26 50 26C66 26 78 42 78 70C78 90 68 103 50 103C32 103 22 90 22 70Z"
++              className="fill-paper-light stroke-ink"
++              strokeWidth="2.4"
++            />
++            <path d="M27 82l5-3M28 89l6-3" className="stroke-ink" strokeWidth="1.3" opacity="0.3" />
++
++            {/* tuft */}
++            <g data-p="tuft" transform="translate(50 28)">
++              <path d="M-5 1C-8-8-2-15 8-17C9-8 5-1-5 1Z" className="fill-accent stroke-ink" strokeWidth="2" />
++            </g>
++
++            {/* face */}
++            <g data-p="face">
++              <ellipse cx="32" cy="66" rx="5.5" ry="3.4" className="fill-accent" opacity="0.4" />
++              <ellipse cx="68" cy="66" rx="5.5" ry="3.4" className="fill-accent" opacity="0.4" />
++              <g data-p="eyes" transform="translate(50 57) scale(1 1) translate(-50 -57)">
++                <ellipse cx="40" cy="57" rx="3.3" ry="4.6" className="fill-ink" />
++                <ellipse cx="60" cy="57" rx="3.3" ry="4.6" className="fill-ink" />
++                <circle cx="41.2" cy="55.2" r="1.15" className="fill-paper-light" />
++                <circle cx="61.2" cy="55.2" r="1.15" className="fill-paper-light" />
++              </g>
++              <g data-p="happy" display="none">
++                <path d="M35.5 59Q40 51.5 44.5 59M55.5 59Q60 51.5 64.5 59" className="stroke-ink" strokeWidth="2.6" />
++              </g>
++              <path data-p="mouthN" d="M46 68Q50 71.5 54 68" className="stroke-ink" strokeWidth="2" />
++              <path data-p="mouthO" display="none" d="M45 66.5Q50 79 55 66.5Z" className="fill-ink stroke-ink" strokeWidth="1.6" />
++            </g>
++
++            {/* "!" when it notices you */}
++            <g data-p="bang" opacity="0" transform="translate(78 6) scale(0)">
++              <path d="M0 -4v10" className="stroke-accent" strokeWidth="3.4" />
++              <circle cx="0" cy="12" r="2" className="fill-accent" />
++            </g>
++          </g>
++        </svg>
++      </div>
++
++      <figcaption
++        className="absolute left-0 bottom-0 font-mono text-[10px] sm:text-xs tracking-wider text-ink-muted lowercase"
++      >
++        <span data-p="caption">fig. 01 — nari, at their desk</span>
++      </figcaption>
++    </figure>
++  );
++}
+diff --git a/src/index.css b/src/index.css
+index 971066f..c9bbfee 100644
+--- a/src/index.css
++++ b/src/index.css
+@@ -14,6 +14,7 @@
+     --text-ink-muted: #888075;
+     --text-ink-faint: #B8B0A2;
+     --paper-grain-opacity: 0.35;
++    --accent: #C4573B;
+   }
+ 
+   [data-theme="dark"] {
+@@ -27,6 +28,7 @@
+     --text-ink-muted: #6B7280;
+     --text-ink-faint: #374151;
+     --paper-grain-opacity: 0.12;
++    --accent: #E07A5C;
+   }
+ 
+   [data-theme="minimal"] {
+@@ -40,6 +42,7 @@
+     --text-ink-muted: #888888;
+     --text-ink-faint: #CCCCCC;
+     --paper-grain-opacity: 0.04;
++    --accent: #C4573B;
+   }
+ 
+   html {
+@@ -100,6 +103,27 @@
+   line-height: 1.6;
+ }
+ 
++/* Hero companion: tiny hand-made details */
++.companion-steam path {
++  transform-box: fill-box;
++  animation: companion-steam 3.2s ease-in-out infinite;
++  opacity: 0.55;
++}
++@keyframes companion-steam {
++  0%   { opacity: 0;    transform: translateY(3px); }
++  40%  { opacity: 0.75; }
++  100% { opacity: 0;    transform: translateY(-8px); }
++}
++.companion-caret { animation: companion-caret 1.1s steps(1) infinite; }
++@keyframes companion-caret { 50% { opacity: 0; } }
++
++/* Custom cursor (enabled from JS only on fine pointers) */
++html.has-custom-cursor,
++html.has-custom-cursor * { cursor: none !important; }
++html.has-custom-cursor input,
++html.has-custom-cursor textarea,
++html.has-custom-cursor select { cursor: auto !important; }
++
+ @media (prefers-reduced-motion: reduce) {
+   * {
+     animation-duration: 0.01ms !important;
+diff --git a/tailwind.config.js b/tailwind.config.js
+index f255586..763b935 100644
+--- a/tailwind.config.js
++++ b/tailwind.config.js
+@@ -11,6 +11,7 @@ export default {
+           border: 'var(--border-paper)',
+           line: 'var(--border-paper-line)',
+         },
++        accent: 'var(--accent)',
+         ink: {
+           DEFAULT: 'var(--text-ink)',
+           secondary: 'var(--text-ink-secondary)',

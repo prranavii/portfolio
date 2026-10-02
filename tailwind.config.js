@@ -11,6 +11,7 @@ export default {
           border: 'var(--border-paper)',
           line: 'var(--border-paper-line)',
         },
+        accent: 'var(--accent)',
         ink: {
           DEFAULT: 'var(--text-ink)',
           secondary: 'var(--text-ink-secondary)',

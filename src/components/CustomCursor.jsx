@@ -1,133 +1,153 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useSpring, useMotionValue } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+
+/**
+ * Subtle custom cursor: a sharp dot + a softly lagging ring.
+ * - grows over links/buttons
+ * - turns warm (accent) when it is over the hero companion
+ * - leaves the occasional tiny star that fades quickly
+ * Everything is written to the DOM via refs; React renders it exactly once.
+ * Only mounted behaviour on fine pointers (mouse / trackpad).
+ */
+const SIZES = {
+  default: { ring: 24, dot: 6 },
+  interactive: { ring: 38, dot: 8 },
+  character: { ring: 52, dot: 8 },
+};
 
 const CustomCursor = () => {
-  const [hoverState, setHoverState] = useState('default');
-  const [isVisible, setIsVisible] = useState(false);
-  const [sparks, setSparks] = useState([]);
-
-  const cursorX = useMotionValue(-100);
-  const cursorY = useMotionValue(-100);
-
-  const springConfig = { damping: 25, stiffness: 350 };
-  const trailX = useSpring(cursorX, springConfig);
-  const trailY = useSpring(cursorY, springConfig);
+  const root = useRef(null);
+  const ring = useRef(null);
+  const dot = useRef(null);
+  const stars = useRef(null);
 
   useEffect(() => {
-    // Only enable custom cursor on fine pointer devices (desktop mouse)
-    const isTouch = window.matchMedia('(pointer: coarse)').matches;
-    if (isTouch) return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return undefined;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const html = document.documentElement;
+    html.classList.add('has-custom-cursor');
 
-    let lastSparkTime = 0;
+    let tx = -100, ty = -100, rx = -100, ry = -100;
+    let raf = 0;
+    let state = 'default';
+    let overCompanion = false;
+    let overInteractive = false;
+    let shown = false;
+    let alive = 0;
+    const lastStar = { x: -999, y: -999, t: 0 };
 
-    const moveCursor = (e) => {
-      if (!isVisible) setIsVisible(true);
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-
-      // Spawn subtle particle sparkle occasionally on move
-      const now = Date.now();
-      if (now - lastSparkTime > 120 && Math.random() > 0.4) {
-        lastSparkTime = now;
-        const newSpark = {
-          id: now + Math.random(),
-          x: e.clientX + (Math.random() - 0.5) * 10,
-          y: e.clientY + (Math.random() - 0.5) * 10,
-          size: Math.random() * 3 + 2,
-        };
-        setSparks((prev) => [...prev.slice(-8), newSpark]);
+    const paint = () => {
+      const sz = SIZES[state];
+      ring.current.style.width = `${sz.ring}px`;
+      ring.current.style.height = `${sz.ring}px`;
+      ring.current.style.backgroundColor =
+        state === 'character' ? 'color-mix(in srgb, var(--accent) 16%, transparent)' : 'transparent';
+      ring.current.style.borderColor =
+        state === 'character' ? 'var(--accent)' : 'color-mix(in srgb, var(--text-ink) 40%, transparent)';
+      dot.current.style.width = `${sz.dot}px`;
+      dot.current.style.height = `${sz.dot}px`;
+      dot.current.style.backgroundColor = state === 'character' ? 'var(--accent)' : 'var(--text-ink)';
+    };
+    const setState = () => {
+      const next = overCompanion ? 'character' : overInteractive ? 'interactive' : 'default';
+      if (next !== state) {
+        state = next;
+        paint();
       }
     };
 
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => setIsVisible(true);
-
-    const handleHoverCheck = (e) => {
-      const target = e.target;
-      if (!target) return;
-
-      if (target.closest('.hero-character-zone')) {
-        setHoverState('character');
-      } else if (target.closest('a, button, [role="button"]')) {
-        setHoverState('interactive');
-      } else {
-        setHoverState('default');
-      }
+    const loop = () => {
+      rx += (tx - rx) * 0.2;
+      ry += (ty - ry) * 0.2;
+      ring.current.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
+      raf = Math.abs(tx - rx) + Math.abs(ty - ry) > 0.1 ? requestAnimationFrame(loop) : 0;
     };
 
-    window.addEventListener('mousemove', moveCursor);
-    window.addEventListener('mouseover', handleHoverCheck);
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', handleMouseEnter);
+    const spawnStar = (x, y) => {
+      if (reduced || alive >= 7) return;
+      const el = document.createElement('span');
+      el.textContent = '✦';
+      const size = 7 + Math.random() * 4;
+      el.style.cssText = `position:fixed;left:0;top:0;font-size:${size}px;line-height:1;color:var(--text-ink-muted);pointer-events:none;`;
+      stars.current.appendChild(el);
+      alive += 1;
+      const dx = (Math.random() - 0.5) * 14;
+      const a = el.animate(
+        [
+          { transform: `translate(${x + dx}px, ${y}px) scale(1) rotate(0deg)`, opacity: 0.75 },
+          { transform: `translate(${x + dx}px, ${y - 14}px) scale(0.3) rotate(45deg)`, opacity: 0 },
+        ],
+        { duration: 520, easing: 'ease-out' }
+      );
+      a.onfinish = () => { el.remove(); alive -= 1; };
+    };
+
+    const onMove = (e) => {
+      if (e.pointerType === 'touch') return;
+      tx = e.clientX;
+      ty = e.clientY;
+      dot.current.style.transform = `translate3d(${tx}px, ${ty}px, 0) translate(-50%, -50%)`;
+      if (!shown) {
+        shown = true;
+        rx = tx; ry = ty;
+        root.current.style.opacity = '1';
+      }
+      if (!raf) raf = requestAnimationFrame(loop);
+
+      const now = performance.now();
+      if (now - lastStar.t > 110 && Math.hypot(tx - lastStar.x, ty - lastStar.y) > 30 && Math.random() < 0.55) {
+        lastStar.x = tx; lastStar.y = ty; lastStar.t = now;
+        spawnStar(tx, ty);
+      }
+    };
+    const onOver = (e) => {
+      overInteractive = !!(e.target instanceof Element && e.target.closest('a, button, [role="button"], [data-look]'));
+      setState();
+    };
+    const onCompanion = (e) => { overCompanion = !!e.detail; setState(); };
+    const onDown = () => { dot.current.style.scale = '0.7'; ring.current.style.scale = '0.85'; };
+    const onUp = () => { dot.current.style.scale = ''; ring.current.style.scale = ''; };
+    const onLeave = () => { root.current.style.opacity = '0'; };
+    const onEnter = () => { if (shown) root.current.style.opacity = '1'; };
+
+    paint();
+    window.addEventListener('pointermove', onMove, { passive: true });
+    window.addEventListener('pointerover', onOver, { passive: true });
+    window.addEventListener('pointerdown', onDown, { passive: true });
+    window.addEventListener('pointerup', onUp, { passive: true });
+    window.addEventListener('companion-hover', onCompanion);
+    html.addEventListener('mouseleave', onLeave);
+    html.addEventListener('mouseenter', onEnter);
 
     return () => {
-      window.removeEventListener('mousemove', moveCursor);
-      window.removeEventListener('mouseover', handleHoverCheck);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('mouseenter', handleMouseEnter);
+      cancelAnimationFrame(raf);
+      html.classList.remove('has-custom-cursor');
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerover', onOver);
+      window.removeEventListener('pointerdown', onDown);
+      window.removeEventListener('pointerup', onUp);
+      window.removeEventListener('companion-hover', onCompanion);
+      html.removeEventListener('mouseleave', onLeave);
+      html.removeEventListener('mouseenter', onEnter);
     };
-  }, [cursorX, cursorY, isVisible]);
-
-  // Clean up old sparkles
-  useEffect(() => {
-    if (sparks.length === 0) return;
-    const timer = setTimeout(() => {
-      setSparks((prev) => prev.slice(1));
-    }, 400);
-    return () => clearTimeout(timer);
-  }, [sparks]);
-
-  if (!isVisible) return null;
+  }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden">
-      {/* Sparkles */}
-      {sparks.map((spark) => (
-        <motion.div
-          key={spark.id}
-          initial={{ opacity: 0.8, scale: 1 }}
-          animate={{ opacity: 0, scale: 0, y: spark.y - 12 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          style={{
-            position: 'fixed',
-            left: spark.x,
-            top: spark.y,
-            width: spark.size,
-            height: spark.size,
-            backgroundColor: 'var(--text-ink)',
-            borderRadius: '50%',
-          }}
-        />
-      ))}
-
-      {/* Lagging Soft Trail Ring */}
-      <motion.div
-        className="fixed top-0 left-0 rounded-full border border-ink/40 pointer-events-none"
-        style={{
-          x: trailX,
-          y: trailY,
-          width: hoverState === 'interactive' ? 38 : hoverState === 'character' ? 48 : 24,
-          height: hoverState === 'interactive' ? 38 : hoverState === 'character' ? 48 : 24,
-          translateX: '-50%',
-          translateY: '-50%',
-          backgroundColor: hoverState === 'character' ? 'var(--text-ink)' : 'transparent',
-          opacity: hoverState === 'character' ? 0.15 : 0.4,
-          transition: 'width 0.2s ease, height 0.2s ease, background-color 0.2s ease',
-        }}
+    <div
+      ref={root}
+      aria-hidden="true"
+      className="pointer-events-none fixed inset-0 z-[60] overflow-hidden"
+      style={{ opacity: 0, transition: 'opacity 0.2s ease' }}
+    >
+      <div ref={stars} />
+      <div
+        ref={ring}
+        className="fixed top-0 left-0 rounded-full border"
+        style={{ transition: 'width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, scale 0.15s ease' }}
       />
-
-      {/* Center Sharp Pointer Dot */}
-      <motion.div
-        className="fixed top-0 left-0 rounded-full bg-ink pointer-events-none"
-        style={{
-          x: cursorX,
-          y: cursorY,
-          width: hoverState === 'interactive' ? 8 : hoverState === 'character' ? 10 : 6,
-          height: hoverState === 'interactive' ? 8 : hoverState === 'character' ? 10 : 6,
-          translateX: '-50%',
-          translateY: '-50%',
-          transition: 'width 0.15s ease, height 0.15s ease',
-        }}
+      <div
+        ref={dot}
+        className="fixed top-0 left-0 rounded-full"
+        style={{ transition: 'width 0.15s ease, height 0.15s ease, background-color 0.2s ease, scale 0.15s ease' }}
       />
     </div>
   );

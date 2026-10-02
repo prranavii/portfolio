@@ -14,6 +14,7 @@
     --text-ink-muted: #888075;
     --text-ink-faint: #B8B0A2;
     --paper-grain-opacity: 0.35;
+    --accent: #C4573B;
   }
 
   [data-theme="dark"] {
@@ -27,6 +28,7 @@
     --text-ink-muted: #6B7280;
     --text-ink-faint: #374151;
     --paper-grain-opacity: 0.12;
+    --accent: #E07A5C;
   }
 
   [data-theme="minimal"] {
@@ -40,6 +42,7 @@
     --text-ink-muted: #888888;
     --text-ink-faint: #CCCCCC;
     --paper-grain-opacity: 0.04;
+    --accent: #C4573B;
   }
 
   html {
@@ -99,6 +102,27 @@
   letter-spacing: -0.01em;
   line-height: 1.6;
 }
+
+/* Hero companion: tiny hand-made details */
+.companion-steam path {
+  transform-box: fill-box;
+  animation: companion-steam 3.2s ease-in-out infinite;
+  opacity: 0.55;
+}
+@keyframes companion-steam {
+  0%   { opacity: 0;    transform: translateY(3px); }
+  40%  { opacity: 0.75; }
+  100% { opacity: 0;    transform: translateY(-8px); }
+}
+.companion-caret { animation: companion-caret 1.1s steps(1) infinite; }
+@keyframes companion-caret { 50% { opacity: 0; } }
+
+/* Custom cursor (enabled from JS only on fine pointers) */
+html.has-custom-cursor,
+html.has-custom-cursor * { cursor: none !important; }
+html.has-custom-cursor input,
+html.has-custom-cursor textarea,
+html.has-custom-cursor select { cursor: auto !important; }
 
 @media (prefers-reduced-motion: reduce) {
   * {
