@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Skills from './components/Skills';
 import Work from './components/Work';
 import Journey from './components/Journey';
 import Contact from './components/Contact';
@@ -15,6 +16,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <About />
+      <Skills />
       <Work />
       <Journey />
       <Contact />

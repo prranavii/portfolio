@@ -14,16 +14,6 @@ const About = () => {
 
   const emailDisplay = personalInfo.email.replace('mailto:', '');
 
-  const techStack = [
-    'Python / C++',
-    'React / Next.js',
-    'FastAPI / Node.js',
-    'FAISS / Vector DBs',
-    'LangChain / Ollama',
-    'MongoDB / PostgreSQL',
-    'Tailwind CSS / Git'
-  ];
-
   return (
     <section id="about" className="py-12 md:py-20 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
       {/* Header bar */}
@@ -78,7 +68,7 @@ const About = () => {
 
         </div>
 
-        {/* Right Column: Education & Tech Stack */}
+        {/* Right Column: Education */}
         <div className="lg:col-span-6 space-y-8">
           
           {/* .EDUCATION */}
@@ -94,23 +84,6 @@ const About = () => {
               <p className="text-ink-secondary text-xs leading-relaxed">
                 Focus on Algorithms, Distributed Computing & AI Systems.
               </p>
-            </div>
-          </div>
-
-          {/* .TECH STACK */}
-          <div className="space-y-3 pt-4 border-t border-paper-border/60">
-            <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
-              .TECH STACK
-            </h3>
-            <div className="flex flex-wrap gap-2 font-mono text-xs">
-              {techStack.map((tech) => (
-                <span 
-                  key={tech}
-                  className="px-2.5 py-1 border border-paper-border bg-paper-light text-ink font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
             </div>
           </div>
 

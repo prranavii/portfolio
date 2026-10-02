@@ -49,6 +49,12 @@ const Navbar = () => {
               .About
             </button>
             <button 
+              onClick={() => scrollToSection('skills')}
+              className="hover:text-ink transition-colors cursor-pointer"
+            >
+              .Skills
+            </button>
+            <button 
               onClick={() => scrollToSection('work')}
               className="hover:text-ink transition-colors cursor-pointer"
             >
@@ -122,9 +128,10 @@ const Navbar = () => {
               {[
                 { id: 'home', num: '00', label: 'Cover / Start' },
                 { id: 'about', num: '01', label: 'Curriculum Vitae' },
-                { id: 'work', num: '02', label: 'Selected Works' },
-                { id: 'journey', num: '03', label: 'Career Timeline' },
-                { id: 'contact', num: '04', label: 'Contact & Inquiries' },
+                { id: 'skills', num: '02', label: 'Technical Stack & Skills' },
+                { id: 'work', num: '03', label: 'Selected Works' },
+                { id: 'journey', num: '04', label: 'Career Timeline' },
+                { id: 'contact', num: '05', label: 'Contact & Inquiries' },
               ].map((item) => (
                 <div 
                   key={item.id}
