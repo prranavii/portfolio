@@ -43,11 +43,11 @@ const Hero = () => {
           {/* Action Buttons */}
           <div className="cta-button-group pt-4 flex flex-wrap justify-center lg:justify-start items-center gap-3 sm:gap-4 text-xs sm:text-sm font-mono">
             <a 
-              href="#about"
-              data-look="cv"
+              href="#skills"
+              data-look="skills"
               className="border border-paper-border px-4 py-2 text-ink hover:bg-paper-dark transition-colors bg-paper-light font-semibold"
             >
-              [ .Curriculum Vitae ]
+              [ .Technical Skills ]
             </a>
             <a 
               href="#work"

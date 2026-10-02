@@ -15,7 +15,7 @@ const Journey = () => {
       {/* Header bar of section */}
       <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-8 sm:mb-12">
         <span className="uppercase tracking-widest text-ink font-semibold">Experience & Roles</span>
-        <span className="text-ink-muted text-xs">04</span>
+        <span className="text-ink-muted text-xs">03</span>
       </div>
 
       {/* Experience Cards Grid */}

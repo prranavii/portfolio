@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
 import Skills from './components/Skills';
 import Work from './components/Work';
 import Journey from './components/Journey';
@@ -17,7 +16,6 @@ export default function App() {
       <CustomCursor />
       <Navbar />
       <Hero />
-      <About />
       <Skills />
       <Work />
       <Journey />
