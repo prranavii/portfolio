@@ -83,7 +83,7 @@ const Navbar = () => {
                   key={t.id}
                   onClick={() => setTheme(t.id)}
                   aria-label={`Switch to ${t.label} theme`}
-                  className={`px-2 py-0.5 uppercase tracking-wider transition-all cursor-pointer ${
+                  className={`px-2 py-0.5 uppercase tracking-wider transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent ${
                     theme === t.id
                       ? 'bg-ink text-paper font-bold shadow-xs'
                       : 'text-ink-muted hover:text-ink'

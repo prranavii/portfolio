@@ -17,33 +17,33 @@ const ProjectCardVisual = ({ projectId }) => {
           <div className="my-auto py-4 flex flex-col items-center justify-center relative">
             <svg viewBox="0 0 120 180" className="w-full max-h-56 stroke-ink stroke-[1.1] fill-none">
               <rect x="25" y="20" width="70" height="22" strokeDasharray="3 2" />
-              <text x="60" y="34" fontSize="8" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">DOC_CHUNKS</text>
+              <text x="60" y="34" fontSize="8" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink)" stroke="none">DOC_CHUNKS</text>
               
               <line x1="60" y1="42" x2="60" y2="58" strokeWidth="1" />
-              <polygon points="58,54 60,60 62,54" fill="#141414" />
+              <polygon points="58,54 60,60 62,54" fill="var(--text-ink)" />
 
               <circle cx="60" cy="74" r="16" />
               <circle cx="60" cy="74" r="8" strokeDasharray="2 2" />
-              <text x="60" y="77" fontSize="7" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">EMBED</text>
+              <text x="60" y="77" fontSize="7" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink)" stroke="none">EMBED</text>
 
               <line x1="60" y1="90" x2="60" y2="106" strokeWidth="1" />
-              <polygon points="58,102 60,108 62,102" fill="#141414" />
+              <polygon points="58,102 60,108 62,102" fill="var(--text-ink)" />
 
               <rect x="20" y="108" width="80" height="32" />
-              <circle cx="35" cy="120" r="2.5" fill="#141414" />
-              <circle cx="50" cy="128" r="2.5" fill="#141414" />
-              <circle cx="70" cy="118" r="2.5" fill="#141414" />
-              <circle cx="85" cy="126" r="2.5" fill="#141414" />
+              <circle cx="35" cy="120" r="2.5" fill="var(--text-ink)" />
+              <circle cx="50" cy="128" r="2.5" fill="var(--text-ink)" />
+              <circle cx="70" cy="118" r="2.5" fill="var(--text-ink)" />
+              <circle cx="85" cy="126" r="2.5" fill="var(--text-ink)" />
               <line x1="35" y1="120" x2="50" y2="128" strokeWidth="0.5" strokeDasharray="1 1" />
               <line x1="50" y1="128" x2="70" y2="118" strokeWidth="0.5" strokeDasharray="1 1" />
               <line x1="70" y1="118" x2="85" y2="126" strokeWidth="0.5" strokeDasharray="1 1" />
-              <text x="60" y="136" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#5A5A5A" stroke="none">FAISS INDEX</text>
+              <text x="60" y="136" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink-muted)" stroke="none">FAISS INDEX</text>
 
               <line x1="60" y1="140" x2="60" y2="152" strokeWidth="1" />
-              <polygon points="58,148 60,154 62,148" fill="#141414" />
+              <polygon points="58,148 60,154 62,148" fill="var(--text-ink)" />
 
-              <rect x="30" y="154" width="60" height="18" fill="#141414" />
-              <text x="60" y="166" fontSize="7.5" fontFamily="monospace" textAnchor="middle" fill="#F0EBE1" stroke="none">LLM GROUND</text>
+              <rect x="30" y="154" width="60" height="18" fill="var(--text-ink)" />
+              <text x="60" y="166" fontSize="7.5" fontFamily="monospace" textAnchor="middle" fill="var(--bg-paper)" stroke="none">LLM GROUND</text>
             </svg>
           </div>
 
@@ -66,21 +66,21 @@ const ProjectCardVisual = ({ projectId }) => {
             <svg viewBox="0 0 120 180" className="w-full max-h-56 stroke-ink stroke-[1.1] fill-none">
               <rect x="15" y="20" width="90" height="60" />
               <line x1="15" y1="32" x2="105" y2="32" strokeWidth="0.75" />
-              <circle cx="22" cy="26" r="1.5" fill="#141414" />
-              <circle cx="28" cy="26" r="1.5" fill="#141414" />
-              <circle cx="34" cy="26" r="1.5" fill="#141414" />
-              <text x="60" y="27" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#8C8479" stroke="none">ORIGINAL.PY</text>
+              <circle cx="22" cy="26" r="1.5" fill="var(--text-ink)" />
+              <circle cx="28" cy="26" r="1.5" fill="var(--text-ink)" />
+              <circle cx="34" cy="26" r="1.5" fill="var(--text-ink)" />
+              <text x="60" y="27" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink-muted)" stroke="none">ORIGINAL.PY</text>
 
               <line x1="22" y1="42" x2="80" y2="42" stroke="#B91C1C" strokeWidth="2" strokeDasharray="4 2" />
               <line x1="22" y1="52" x2="65" y2="52" stroke="#B91C1C" strokeWidth="2" strokeDasharray="4 2" />
               <line x1="22" y1="62" x2="90" y2="62" stroke="#B91C1C" strokeWidth="2" strokeDasharray="4 2" />
 
               <circle cx="60" cy="98" r="14" />
-              <text x="60" y="101" fontSize="7" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">SSE STREAM</text>
+              <text x="60" y="101" fontSize="7" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink)" stroke="none">SSE STREAM</text>
 
               <rect x="15" y="118" width="90" height="50" />
               <line x1="15" y1="128" x2="105" y2="128" strokeWidth="0.75" />
-              <text x="60" y="124" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#8C8479" stroke="none">OPTIMIZED.PY</text>
+              <text x="60" y="124" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink-muted)" stroke="none">OPTIMIZED.PY</text>
 
               <line x1="22" y1="138" x2="85" y2="138" stroke="#15803D" strokeWidth="2" />
               <line x1="22" y1="148" x2="70" y2="148" stroke="#15803D" strokeWidth="2" />
@@ -107,7 +107,7 @@ const ProjectCardVisual = ({ projectId }) => {
             <svg viewBox="0 0 120 180" className="w-full max-h-56 stroke-ink stroke-[1.1] fill-none">
               <rect x="15" y="16" width="90" height="34" />
               <line x1="15" y1="28" x2="105" y2="28" strokeWidth="0.75" />
-              <text x="22" y="25" fontSize="6" fontFamily="monospace" fill="#141414" stroke="none">RESUME_VECTORS</text>
+              <text x="22" y="25" fontSize="6" fontFamily="monospace" fill="var(--text-ink)" stroke="none">RESUME_VECTORS</text>
               <text x="82" y="25" fontSize="6" fontFamily="monospace" fill="#15803D" stroke="none">94% FIT</text>
               <line x1="22" y1="36" x2="75" y2="36" strokeWidth="1" strokeDasharray="3 1" />
               <line x1="22" y1="42" x2="90" y2="42" strokeWidth="1" strokeDasharray="3 1" />
@@ -115,26 +115,26 @@ const ProjectCardVisual = ({ projectId }) => {
               <line x1="60" y1="50" x2="60" y2="64" strokeWidth="1" />
               <circle cx="60" cy="78" r="14" />
               <circle cx="60" cy="78" r="7" strokeDasharray="2 2" />
-              <text x="60" y="81" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">JD MATCH</text>
+              <text x="60" y="81" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink)" stroke="none">JD MATCH</text>
 
               <line x1="60" y1="92" x2="60" y2="106" strokeWidth="1" />
-              <polygon points="58,102 60,108 62,102" fill="#141414" />
+              <polygon points="58,102 60,108 62,102" fill="var(--text-ink)" />
 
               <rect x="15" y="110" width="90" height="52" />
               <line x1="15" y1="122" x2="105" y2="122" strokeWidth="0.75" />
-              <text x="60" y="119" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">APPLICATION_PIPELINE</text>
+              <text x="60" y="119" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink)" stroke="none">APPLICATION_PIPELINE</text>
               
-              <rect x="20" y="128" width="22" height="14" fill="#141414" />
-              <text x="31" y="137" fontSize="5" fontFamily="monospace" textAnchor="middle" fill="#F0EBE1" stroke="none">APPLIED</text>
+              <rect x="20" y="128" width="22" height="14" fill="var(--text-ink)" />
+              <text x="31" y="137" fontSize="5" fontFamily="monospace" textAnchor="middle" fill="var(--bg-paper)" stroke="none">APPLIED</text>
 
               <rect x="49" y="128" width="22" height="14" strokeDasharray="2 2" />
-              <text x="60" y="137" fontSize="5" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">OA/INTERV</text>
+              <text x="60" y="137" fontSize="5" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink)" stroke="none">OA/INTERV</text>
 
               <rect x="78" y="128" width="22" height="14" />
-              <text x="89" y="137" fontSize="5" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">OFFER</text>
+              <text x="89" y="137" fontSize="5" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink)" stroke="none">OFFER</text>
 
               <line x1="20" y1="150" x2="100" y2="150" strokeWidth="0.75" strokeDasharray="2 2" />
-              <text x="60" y="157" fontSize="5.5" fontFamily="monospace" textAnchor="middle" fill="#5A5A5A" stroke="none">AI MOCK INTERVIEWER</text>
+              <text x="60" y="157" fontSize="5.5" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink-muted)" stroke="none">AI MOCK INTERVIEWER</text>
             </svg>
           </div>
 
@@ -156,39 +156,39 @@ const ProjectCardVisual = ({ projectId }) => {
           <div className="my-auto py-4 flex flex-col items-center justify-center">
             <svg viewBox="0 0 120 180" className="w-full max-h-56 stroke-ink stroke-[1.1] fill-none">
               <rect x="15" y="16" width="90" height="120" strokeDasharray="4 2" strokeWidth="0.75" />
-              <text x="20" y="26" fontSize="6" fontFamily="monospace" fill="#8C8479" stroke="none">FOV: 1280x720</text>
-              <text x="80" y="26" fontSize="6" fontFamily="monospace" fill="#8C8479" stroke="none">60 FPS</text>
+              <text x="20" y="26" fontSize="6" fontFamily="monospace" fill="var(--text-ink-muted)" stroke="none">FOV: 1280x720</text>
+              <text x="80" y="26" fontSize="6" fontFamily="monospace" fill="var(--text-ink-muted)" stroke="none">60 FPS</text>
 
-              <circle cx="60" cy="115" r="3.5" fill="#141414" />
+              <circle cx="60" cy="115" r="3.5" fill="var(--text-ink)" />
               
               <line x1="60" y1="115" x2="40" y2="95" />
               <circle cx="40" cy="95" r="2" />
               <line x1="40" y1="95" x2="30" y2="75" />
-              <circle cx="30" cy="75" r="2.5" fill="#141414" />
+              <circle cx="30" cy="75" r="2.5" fill="var(--text-ink)" />
 
               <line x1="60" y1="115" x2="52" y2="80" />
               <circle cx="52" cy="80" r="2" />
               <line x1="52" y1="80" x2="48" y2="45" />
-              <circle cx="48" cy="45" r="2.5" fill="#141414" />
+              <circle cx="48" cy="45" r="2.5" fill="var(--text-ink)" />
 
               <line x1="60" y1="115" x2="62" y2="75" />
               <circle cx="62" cy="75" r="2" />
               <line x1="62" y1="75" x2="64" y2="40" />
-              <circle cx="64" cy="40" r="2.5" fill="#141414" />
+              <circle cx="64" cy="40" r="2.5" fill="var(--text-ink)" />
 
               <line x1="60" y1="115" x2="72" y2="82" />
               <circle cx="72" cy="82" r="2" />
               <line x1="72" y1="82" x2="76" y2="52" />
-              <circle cx="76" cy="52" r="2.5" fill="#141414" />
+              <circle cx="76" cy="52" r="2.5" fill="var(--text-ink)" />
 
               <line x1="60" y1="115" x2="80" y2="92" />
               <circle cx="80" cy="92" r="2" />
               <line x1="80" y1="92" x2="86" y2="68" />
-              <circle cx="86" cy="68" r="2.5" fill="#141414" />
+              <circle cx="86" cy="68" r="2.5" fill="var(--text-ink)" />
 
-              <rect x="25" y="146" width="70" height="22" fill="#141414" />
-              <text x="60" y="156" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#A09890" stroke="none">OUTPUT_TOKEN</text>
-              <text x="60" y="165" fontSize="7.5" fontFamily="monospace" textAnchor="middle" fill="#FFFFFF" stroke="none">"HELLO WORLD"</text>
+              <rect x="25" y="146" width="70" height="22" fill="var(--text-ink)" />
+              <text x="60" y="156" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink-muted)" stroke="none">OUTPUT_TOKEN</text>
+              <text x="60" y="165" fontSize="7.5" fontFamily="monospace" textAnchor="middle" fill="var(--bg-paper)" stroke="none">"HELLO WORLD"</text>
             </svg>
           </div>
 
@@ -388,12 +388,12 @@ const Work = () => {
                       <circle cx="68" cy="105" r="42" strokeDasharray="3 2" />
                       <circle cx="132" cy="105" r="42" strokeDasharray="3 2" />
 
-                      <circle cx="100" cy="88" r="16" fill="#141414" />
-                      <text x="100" y="91" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#F0EBE1" stroke="none">CORE</text>
+                      <circle cx="100" cy="88" r="16" fill="var(--text-ink)" />
+                      <text x="100" y="91" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="var(--bg-paper)" stroke="none">CORE</text>
 
-                      <text x="100" y="45" fontSize="7" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">INGESTION</text>
-                      <text x="56" y="115" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">RETRIEVAL</text>
-                      <text x="144" y="115" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="#141414" stroke="none">INFERENCE</text>
+                      <text x="100" y="45" fontSize="7" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink)" stroke="none">INGESTION</text>
+                      <text x="56" y="115" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink)" stroke="none">RETRIEVAL</text>
+                      <text x="144" y="115" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fill="var(--text-ink)" stroke="none">INFERENCE</text>
                     </svg>
                   </div>
 
