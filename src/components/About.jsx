@@ -25,10 +25,10 @@ const About = () => {
       {/* Main Grid Spread */}
       <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 max-w-6xl mx-auto">
         
-        {/* Left Column: Identity & Concise Phrase Bio */}
-        <div className="lg:col-span-6 space-y-8">
+        {/* Left Column: Identity & Integrated Paragraph Bio */}
+        <div className="lg:col-span-7 space-y-4">
           
-          {/* Clean Identity Header */}
+          {/* Identity Header */}
           <div className="space-y-1 font-mono text-sm">
             <h2 className="font-bold text-ink uppercase tracking-wider text-base sm:text-lg">
               PRANAVI JAIN
@@ -39,7 +39,7 @@ const About = () => {
             <p className="text-ink-muted text-xs">
               India — Global Remote
             </p>
-            <div className="pt-3 flex items-center gap-4 text-xs font-mono">
+            <div className="pt-2 flex items-center gap-4 text-xs font-mono">
               <a href={personalInfo.email} className="text-ink underline hover:text-ink-secondary">
                 {emailDisplay}
               </a>
@@ -54,26 +54,19 @@ const About = () => {
             </div>
           </div>
 
-          {/* Shortened Phrase-Based About */}
-          <div className="space-y-3 pt-2">
-            <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
-              .ABOUT ME
-            </h3>
-            <ul className="font-mono text-xs sm:text-sm text-ink-secondary space-y-2 leading-relaxed">
-              <li>- Focus on resilient backend systems & production AI microservices.</li>
-              <li>- RAG pipelines, offline LLM orchestration (LangChain, Ollama) & vector search optimization.</li>
-              <li>- Algorithmic discipline, clean software design & performant full-stack architectures.</li>
-            </ul>
-          </div>
+          {/* Integrated Paragraph Bio directly under the name */}
+          <p className="typewriter-text text-xs sm:text-sm text-ink-secondary leading-relaxed pt-2">
+            Computer Science Engineering undergraduate focused on building resilient backend microservices, Retrieval-Augmented Generation (RAG) architectures, and production-ready intelligent software systems. Driven by algorithmic discipline, clean code patterns, and real-world system engineering.
+          </p>
 
         </div>
 
         {/* Right Column: Education */}
-        <div className="lg:col-span-6 space-y-8">
+        <div className="lg:col-span-5 space-y-8">
           
           {/* .EDUCATION */}
           <div className="space-y-3">
-            <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase">
+            <h3 className="font-mono font-bold text-xs sm:text-sm text-ink tracking-widest uppercase border-b border-paper-border pb-1.5">
               .EDUCATION
             </h3>
             <div className="font-mono text-xs sm:text-sm space-y-2">
