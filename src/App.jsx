@@ -16,8 +16,8 @@ export default function App() {
       <CustomCursor />
       <Navbar />
       <Hero />
-      <Skills />
       <Work />
+      <Skills />
       <Journey />
       <Contact />
       <Footer />

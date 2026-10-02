@@ -17,7 +17,7 @@ const Skills = () => {
       {/* Section Header */}
       <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-8 sm:mb-12">
         <span className="uppercase tracking-widest text-ink font-semibold">Technical Stack & Skills</span>
-        <span className="text-ink-muted text-xs">01</span>
+        <span className="text-ink-muted text-xs">02</span>
       </div>
 
       <div className="max-w-6xl mx-auto space-y-10">

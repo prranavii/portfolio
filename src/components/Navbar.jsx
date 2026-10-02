@@ -43,16 +43,16 @@ const Navbar = () => {
           {/* Center Quick Navigation (Desktop) */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8 text-xs uppercase tracking-wider text-ink-muted">
             <button 
-              onClick={() => scrollToSection('skills')}
-              className="hover:text-ink transition-colors cursor-pointer"
-            >
-              .Skills
-            </button>
-            <button 
               onClick={() => scrollToSection('work')}
               className="hover:text-ink transition-colors cursor-pointer"
             >
               .Works
+            </button>
+            <button 
+              onClick={() => scrollToSection('skills')}
+              className="hover:text-ink transition-colors cursor-pointer"
+            >
+              .Skills
             </button>
             <button 
               onClick={() => scrollToSection('journey')}
@@ -121,8 +121,8 @@ const Navbar = () => {
             <div className="flex flex-col space-y-4 sm:space-y-6 my-auto text-left max-w-xl mx-auto w-full">
               {[
                 { id: 'home', num: '00', label: 'Cover / Start' },
-                { id: 'skills', num: '01', label: 'Technical Stack & Skills' },
-                { id: 'work', num: '02', label: 'Selected Works' },
+                { id: 'work', num: '01', label: 'Selected Works' },
+                { id: 'skills', num: '02', label: 'Technical Stack & Skills' },
                 { id: 'journey', num: '03', label: 'Career Timeline' },
                 { id: 'contact', num: '04', label: 'Contact & Inquiries' },
               ].map((item) => (
