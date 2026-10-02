@@ -6,6 +6,7 @@ import Work from './components/Work';
 import Journey from './components/Journey';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       {/* Authentic Tactile Paper Grain Texture Overlay */}
       <div className="paper-grain" aria-hidden="true" />
 
+      <CustomCursor />
       <Navbar />
       <Hero />
       <About />
