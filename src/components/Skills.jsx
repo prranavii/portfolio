@@ -13,7 +13,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-12 md:py-20 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
+    <section id="skills" className="py-10 md:py-14 px-4 sm:px-10 md:px-16 border-t border-paper-border/60 relative">
       {/* Section Header */}
       <div className="flex justify-between items-center w-full font-mono text-xs sm:text-sm text-ink-secondary border-b border-paper-border pb-3 mb-8 sm:mb-12">
         <span className="uppercase tracking-widest text-ink font-semibold">Technical Stack & Skills</span>
