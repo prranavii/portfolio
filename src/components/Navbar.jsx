@@ -43,6 +43,18 @@ const Navbar = () => {
           {/* Center Quick Navigation (Desktop) */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8 text-xs uppercase tracking-wider text-ink-muted">
             <button 
+              onClick={() => scrollToSection('about')}
+              className="hover:text-ink transition-colors cursor-pointer"
+            >
+              .About
+            </button>
+            <button 
+              onClick={() => scrollToSection('experience')}
+              className="hover:text-ink transition-colors cursor-pointer"
+            >
+              .Experience
+            </button>
+            <button 
               onClick={() => scrollToSection('work')}
               className="hover:text-ink transition-colors cursor-pointer"
             >
@@ -53,12 +65,6 @@ const Navbar = () => {
               className="hover:text-ink transition-colors cursor-pointer"
             >
               .Skills
-            </button>
-            <button 
-              onClick={() => scrollToSection('journey')}
-              className="hover:text-ink transition-colors cursor-pointer"
-            >
-              .Timeline
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
@@ -121,10 +127,12 @@ const Navbar = () => {
             <div className="flex flex-col space-y-4 sm:space-y-6 my-auto text-left max-w-xl mx-auto w-full">
               {[
                 { id: 'home', num: '00', label: 'Cover / Start' },
-                { id: 'work', num: '01', label: 'Selected Works' },
-                { id: 'skills', num: '02', label: 'Technical Stack & Skills' },
-                { id: 'journey', num: '03', label: 'Career Timeline' },
-                { id: 'contact', num: '04', label: 'Contact & Inquiries' },
+                { id: 'about', num: '01', label: 'About & Profile' },
+                { id: 'experience', num: '02', label: 'Career Experience' },
+                { id: 'work', num: '03', label: 'Selected Works' },
+                { id: 'skills', num: '04', label: 'Technical Stack' },
+                { id: 'education', num: '05', label: 'Education & Achievements' },
+                { id: 'contact', num: '06', label: 'Contact & Inquiries' },
               ].map((item) => (
                 <div 
                   key={item.id}

@@ -3,8 +3,8 @@ export const portfolioData = {
     name: "Pranavi Jain",
     title: "Software Engineer",
     tagline: "I craft resilient backend systems and explore the intersection of software and intelligent systems.",
-    shortBio: "I'm Pranavi, a Computer Science Engineering student (Class of 2027) specializing in resilient backend architectures, full-stack systems, and Retrieval-Augmented Generation (RAG) applications.",
-    location: "India",
+    shortBio: "I build backend systems and intelligent applications, with a focus on clean architecture, RAG, and practical AI.",
+    location: "Greater Noida, India — Global Remote",
     resumeLink: "https://drive.google.com/file/d/1cOfJPlq8615lKFNkf-3f64mm6Rravd4V/view?usp=sharing",
     email: "mailto:pranavijain47@gmail.com",
     github: "https://github.com/prranavii",
@@ -18,6 +18,25 @@ export const portfolioData = {
     { value: "20+", label: "Hackathon Placements" }
   ],
 
+  education: {
+    institution: "Galgotias University",
+    degree: "B.Tech Computer Science & Engineering",
+    period: "2023 — 2027",
+    details: "Focus on Algorithms, Distributed Computing & AI Systems."
+  },
+
+  achievements: [
+    "800+ Data Structures & Algorithms problems solved",
+    "Competitive programming rating on LeetCode & platforms",
+    "Top placement in multiple engineering hackathons"
+  ],
+
+  certifications: [
+    { title: "Generative AI", issuer: "GeeksforGeeks" },
+    { title: "Python Programming", issuer: "GUVI" },
+    { title: "AI/ML Virtual Internship", issuer: "AWS Academy / EduSkills" }
+  ],
+
   experiences: [
     {
       id: "ordinal",
@@ -25,74 +44,70 @@ export const portfolioData = {
       role: "Software Engineering Intern",
       period: "Sep 2026 – Present",
       isCurrent: true,
-      badge: "Currently",
+      badge: "CURRENT",
       description: "Contributing to AI-powered voice agents that automate claims, dispute, and payment workflows. Working on AI-driven conversational workflows and software systems supporting business process automation.",
       highlights: [
         "AI-powered voice agents",
-        "Conversational AI",
-        "Workflow automation",
-        "Backend/API systems",
-        "AI engineering"
+        "Conversational workflows",
+        "Context retrieval",
+        "Intelligent human escalation",
+        "Multilingual agentic workflows"
       ]
     },
     {
       id: "bitecode",
       company: "BiteCode",
-      role: "Freelance Developer",
-      period: "Client Work",
+      role: "UI/UX & Frontend Developer",
+      period: "Aug 2026 – Present",
       isCurrent: false,
       badge: "FREELANCE",
-      description: "Worked as a freelance developer with BiteCode, contributing to the redesign and development of its web experience. Worked across UI/UX improvements, responsive frontend development, and implementation of client requirements to create a cleaner and more engaging developer-focused product experience.",
+      description: "Worked as a freelance developer with BiteCode, contributing to the redesign and development of its web experience across UI/UX improvements and responsive frontend development.",
       highlights: [
-        "Freelance / client work",
-        "UI/UX improvement",
-        "Frontend development",
-        "Responsive design",
-        "Working from client requirements and feedback"
+        "Web experience redesign",
+        "UI/UX improvements",
+        "Responsive frontend development",
+        "Client requirements & feedback implementation"
       ]
     }
   ],
 
   projects: [
     {
-      id: "placepilot",
-      title: "PlacePilot AI",
-      subtitle: "AI-powered placement command center & career preparation platform.",
-      tech: ["React", "Tailwind CSS", "LangChain", "Vector Search", "Python", "REST APIs"],
-      problem: "College placement preparation is fragmented across messy spreadsheets, ungrounded resume advice, and lack of realistic technical mock interview practice.",
-      idea: "An integrated career command center that combines RAG-based resume-to-job matching, adaptive AI mock interviewers, and real-time application pipeline tracking.",
-      architecture: "React interface communicating with intelligent evaluation microservices. Resumes and job descriptions are vectorized for semantic gap analysis, while an adaptive LLM engine conducts dynamic technical interview sessions with instant feedback.",
-      challenges: "Calibrating semantic matching thresholds between diverse resume formats and specialized job descriptions while maintaining low-latency conversational mock interview streams.",
-      solution: "Engineered a structured extraction and vector embedding pipeline for resume-JD alignment and implemented streaming evaluation prompts that score user responses across clarity, depth, and relevance.",
-      learning: "Production experience with end-to-end career intelligence workflows, semantic vector similarity, conversational AI state orchestration, and building responsive recruitment analytics dashboards.",
-      github: "https://github.com/prranavii/PlacePilot.git",
-      demo: "https://place-pilot-xi.vercel.app/"
-    },
-    {
       id: "intellirag",
       title: "IntelliRAG",
       subtitle: "AI-powered document intelligence system using Retrieval-Augmented Generation.",
       tech: ["Python", "Streamlit", "LangChain", "Ollama", "FAISS", "Llama 3.1"],
-      problem: "Finding specific information inside large documents is slow and inefficient, while traditional AI chatbots may generate answers without grounding them in the user's actual data.",
-      idea: "A document-aware AI assistant that lets users upload documents, ask questions in natural language, and receive context-aware answers grounded in the uploaded content.",
-      architecture: "Documents are parsed and divided into smaller chunks, converted into vector embeddings, and stored in a FAISS vector database. When a user asks a question, the system performs semantic retrieval to find the most relevant document chunks. Those chunks are injected into the LLM context and passed to a locally running model through Ollama to generate grounded responses.",
-      challenges: "Designing an effective chunking and retrieval strategy while maintaining accurate, relevant, and responsive answers for larger documents.",
-      solution: "Implemented semantic vector search using FAISS and optimized document chunking and retrieval so the LLM receives only the most relevant context before generating its response.",
-      learning: "Hands-on experience with Retrieval-Augmented Generation, vector embeddings, semantic search, vector databases, document processing, prompt engineering, context management, local LLM deployment, LangChain, Ollama, and AI application architecture.",
+      bullets: [
+        "Document-aware AI assistant performing semantic vector retrieval across uploaded content.",
+        "FAISS vector database indexing with locally running Llama 3.1 model through Ollama.",
+        "Grounding responses in context chunks to eliminate ungrounded hallucinations."
+      ],
       github: "https://github.com/prranavii/IntelliRAG.git",
       demo: "https://intellirag-rag.streamlit.app/"
+    },
+    {
+      id: "placepilot",
+      title: "PlacePilot AI",
+      subtitle: "AI-powered placement command center & career preparation platform.",
+      tech: ["React", "Tailwind CSS", "LangChain", "Vector Search", "Python", "REST APIs"],
+      bullets: [
+        "Integrated career command center combining resume-to-JD vector matching & dynamic AI mock interviewers.",
+        "Semantic similarity gap analysis pipeline with real-time application pipeline tracking.",
+        "Streaming evaluation prompts scoring user responses across depth and technical clarity."
+      ],
+      github: "https://github.com/prranavii/PlacePilot.git",
+      demo: "https://place-pilot-xi.vercel.app/"
     },
     {
       id: "refactoriq",
       title: "RefactorIQ",
       subtitle: "Generative AI-powered code refactoring platform.",
       tech: ["React", "FastAPI", "Python", "JavaScript", "Ollama", "Llama 3.1", "REST APIs"],
-      problem: "Developers sending proprietary/sensitive source code to cloud LLMs faces corporate policy blocks, data leak threats, high operational API costs, and network-dependent latency.",
-      idea: "Develop a secure local dashboard that scans desktop workspaces, highlights dead code or inefficiencies, and refactors it completely offline.",
-      architecture: "A React client interface connecting to a Python FastAPI backend which interfaces with local Ollama endpoints hosting Llama 3.1 8B, streaming diffs directly into the workspace.",
-      challenges: "Enabling real-time streaming tokens of syntax-colored code diffs into React without UI lockups, and configuring systemic prompt filters so the LLM responds in clean patches instead of full files.",
-      solution: "Employed Server-Sent Events (SSE) for sub-second text streaming and built a custom regex parser to render side-by-side git diffs dynamically in the React view.",
-      learning: "Deeper knowledge of Ollama parameter configurations (temperature, system templates), token streams in Python, and rendering virtualized DOM nodes for large codebases.",
+      bullets: [
+        "Secure local dashboard scanning desktop workspaces and refactoring code completely offline.",
+        "Server-Sent Events (SSE) streaming token diffs directly into React without UI lockups.",
+        "Side-by-side git diff rendering using custom regex parsers."
+      ],
       github: "https://github.com/prranavii/RefactorIQ.git",
       demo: "#"
     },
@@ -101,12 +116,11 @@ export const portfolioData = {
       title: "Hand Gesture → Text",
       subtitle: "Computer vision application converting hand gestures into text.",
       tech: ["Python", "OpenCV", "MediaPipe", "NumPy"],
-      problem: "Traditional input interfaces require manual keyboards, locking out individuals with severe motor or vocal disabilities.",
-      idea: "A computer vision gesture tracker converting dynamic palm coordinates into keyboard characters using standard laptop cameras.",
-      architecture: "Python OpenCV webcam capture pipe feeding frame arrays to Google MediaPipe's hand tracking mesh.",
-      challenges: "Fluctuating ambient shadows and camera distances distorting coordinate mapping relative to the image frame.",
-      solution: "Normalized all joint coordinate arrays relative to the hand's wrist node (as the origin point) to ensure consistent scale and positioning calculations.",
-      learning: "Real-time array manipulation using NumPy, matrix scaling, and basic mathematical coordinate systems.",
+      bullets: [
+        "Computer vision gesture tracker converting palm joint mesh coordinates into keyboard text.",
+        "Google MediaPipe hand tracking pipeline running frame arrays in real-time.",
+        "Normalized 21 3D landmark coordinates relative to wrist node origin."
+      ],
       github: "https://github.com/prranavii/handsign-gesture-to-text-converter.git",
       demo: "#"
     }
@@ -115,67 +129,29 @@ export const portfolioData = {
   skills: {
     categories: [
       {
-        name: "Languages",
-        items: [
-          { name: "Java", useCase: "Solving DSA, writing object-oriented software patterns, and enterprise APIs." },
-          { name: "Python", useCase: "Building AI/ML engines, OpenCV scripts, and FastAPI endpoints." },
-          { name: "JavaScript", useCase: "Creating interactive frontend components and Node/Express server routing." },
-          { name: "SQL", useCase: "Designing relational database systems, indexing, and writing complex joins." }
-        ]
+        name: "LANGUAGES",
+        items: ["Java", "Python", "JavaScript", "SQL"]
       },
       {
-        name: "Software Engineering",
-        items: [
-          { name: "Data Structures & Algorithms", useCase: "Analyzing computational complexity bounds and solving algorithm problems." },
-          { name: "REST APIs", useCase: "Designing uniform REST contracts with proper HTTP status codes." },
-          { name: "Git", useCase: "Tracking repository code versions, branch merges, and pull requests." },
-          { name: "GitHub", useCase: "Deploying codes, reviewing peers, and managing remote codebases." }
-        ]
+        name: "BACKEND",
+        items: ["Node.js", "Express.js", "FastAPI", "REST APIs"]
       },
       {
-        name: "Frontend",
-        items: [
-          { name: "React", useCase: "Developing premium stateful client UI portals and interactive layouts." },
-          { name: "HTML", useCase: "Writing clean, semantic, and highly accessible document markup." },
-          { name: "CSS", useCase: "Writing custom animations, fluid layouts, and responsive components." },
-          { name: "Tailwind CSS", useCase: "Accelerating design systems with clean utility classes and fast layouts." }
-        ]
+        name: "AI / ML",
+        items: ["RAG", "LangChain", "LLMs", "FAISS", "Ollama"]
       },
       {
-        name: "Backend",
-        items: [
-          { name: "Node.js", useCase: "Designing scalable backend event-driven architectures." },
-          { name: "Express", useCase: "Creating modular HTTP routers, controllers, and auth middleware." },
-          { name: "FastAPI", useCase: "Setting up high-performance ASGI server pipelines for local Python ML models." },
-          { name: "Spring Boot", useCase: "Structuring secure dependency-injection microservice configurations." }
-        ]
+        name: "FRONTEND",
+        items: ["React", "HTML", "CSS", "Tailwind CSS"]
       },
       {
-        name: "Databases",
-        items: [
-          { name: "MongoDB", useCase: "Creating dynamic document schema structures for healthcare and chat profiles." },
-          { name: "MySQL", useCase: "Managing transactional relational tables and normalized data integrity." },
-          { name: "PostgreSQL", useCase: "Executing relational schemas, complex JSON querying, and reliable transactions." }
-        ]
+        name: "DATABASES",
+        items: ["MongoDB", "MySQL", "PostgreSQL"]
       },
       {
-        name: "AI & Intelligent Systems",
-        items: [
-          { name: "Generative AI", useCase: "Exploring transformer architectures, text generation, and local weights deployment." },
-          { name: "RAG", useCase: "Building document intelligence retrieval pipelines grounded in vector databases." },
-          { name: "LangChain", useCase: "Orchestrating prompts, chains, vector retrieval, and LLM agent components." },
-          { name: "Ollama", useCase: "Interfacing and streaming prompts with local LLMs offline." },
-          { name: "FAISS", useCase: "Indexing text chunk vectors for high-efficiency semantic similarity search." },
-          { name: "Vector Embeddings", useCase: "Translating natural language paragraphs into mathematical coordinate arrays." },
-          { name: "Semantic Search", useCase: "Retrieving contextually matching context beyond literal keyword hits." },
-          { name: "Prompt Engineering", useCase: "Structuring context, rules, and few-shot templates to guide local model outputs." },
-          { name: "OpenCV", useCase: "Processing webcam pixel matrices and spatial hand movement arrays." }
-        ]
+        name: "TOOLS",
+        items: ["Git", "GitHub", "Streamlit", "NumPy"]
       }
     ]
-  },
-
-  dsa: {
-    problemsSolved: 800,
   }
 };
